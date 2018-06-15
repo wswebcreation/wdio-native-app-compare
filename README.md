@@ -1,7 +1,5 @@
 # wdio-native-app-compare
 
-[![Join the chat at https://gitter.im/wswebcreation/wdio-native-app-compare](https://badges.gitter.im/wswebcreation/wdio-native-app-compare.svg)]
-
 > Visual regression testing for Native iOS and Android apps with WebdriverIO
 
 # What can it do
