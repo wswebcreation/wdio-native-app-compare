@@ -2,6 +2,8 @@
 
 > Visual regression testing for Native iOS and Android apps with WebdriverIO
 
+> **THIS MODULE IS STILL BEING DEVELOPED AND RELEASED AS AN ALPHA, PLEASE FILE AN ISSUE IF YOU FOUND ONE**
+
 # What can it do
 This plugin for WebdriverIO will add 4 methods that can be used to save and or check element/screen-shots of a native iOS or Android app, see [Methods](./README.md#methods) for all the methods and details.
 When the compare methods are used a baseline image (each device + OS, and even OS version, needs to have it's own baseline image) will be compare to a actual screenshot. The outpu will be a mismatch percentage. This mismatch percentage can be used in expectations.
