@@ -1,0 +1,30 @@
+Hi there!
+
+Thanks for submitting an issue herer.
+
+To help me help you better, please do the following before submitting an issue:
+
+1. Review the FAQ section of [README.md](https://github.com/wswebcreation/wdio-native-app-compare/README.md#faq).
+2. Make sure you are not asking a usage or debugging question. If you are, use [Gitter](https://gitter.im/wswebcreation/wdio-native-app-compare) to get help.
+3. Provide a minimally reduced test case. This makes it much more likely that your bug will be fixed.
+4. Fill in the information that corresponds to your type of issue below.
+5. Delete this intro and any unrelated text :smile: (if you do not we'll assume you haven't read these instructions and automatically close the issue.)
+
+
+Bug report
+---
+
+- Node Version: ``
+- `wdio-native-app-compare` Version: ``
+- Platform System and Version ``
+- Your wdio configuration file
+- A relevant example test
+- Output from running the test
+- Steps to reproduce the bug
+
+
+Feature Request
+---
+
+- Reasons for adopting new feature
+- Is this a breaking change? (How will this affect existing functionality)

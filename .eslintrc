@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "extends": "standard",
+  "plugins": [
+    "mocha"
+  ],
+  "rules": {
+    "indent": [2, 4],
+    "mocha/no-exclusive-tests": "error"
+  },
+  "globals": {
+    "browser": true
+  }
+}
