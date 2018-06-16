@@ -99,8 +99,8 @@ The `tag` is the part that is used for determining the image name when it is sav
 browser.saveScreen('name-of-your-file');
 ```
 
-### Check methods
-#### checkElement
+### Compare methods
+#### compareElement
 With this methods you can compare a screenshot of an element in the view with a baseline image. **It will return a mismatch percentage between the actual elementscreenshot and the baseline.**
 You'll need to provide the following options
 
@@ -121,12 +121,12 @@ The `elementSelector` is the selector you normally use to select elements. This 
 The `tag` is the part that is used for determining the image name when it is saved
 
 ```js
-expect(browser.checkElement('~your-accessibility-id', 'name-of-your-file')).toEqual(0);
+expect(browser.compareElement('~your-accessibility-id', 'name-of-your-file')).toEqual(0);
 ```
 
 > **The major release will also hold options to resize dimensions, meaning that you provide options to make an element screenshot bigger by adding extra paddings to the initial element**
 
-#### checkScreen
+#### compareScreen
 With this methods you can compare a screenshot of the view with a baseline image. **It will return a mismatch percentage between the actual screenshot and the baseline.**
 You'll need to provide the following options
 
@@ -137,7 +137,7 @@ You'll need to provide the following options
 The `tag` is the part that is used for determining the image name when it is saved
 
 ```js
-expect(browser.checkScreen('name-of-your-file')).toEqual(0);
+expect(browser.compareScreen('name-of-your-file')).toEqual(0);
 ```
 
 ## FAQ
