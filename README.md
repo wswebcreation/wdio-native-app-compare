@@ -49,11 +49,14 @@ export.config = {
 
 The directory that will hold all the baseline images that are used to execute the comparison
 
-### `screenshotPath`
-- **Type:** `String`
-- **Mandatory:** Yes
+Each comparison failure will create a diff image. This is an allowable value of misMatchPercentage that prevents saving image with differences
 
-The directory that will
+### `blockOutStatusBar`
+- **Type:** `boolean`
+- **Mandatory:** No
+- **Default:** `false`
+
+Block out the status bar of iOS / Android during the comparison
 
 ### `debug`
 - **Type:** `boolean`
@@ -111,12 +114,24 @@ Compare images and it will ignore all pixels that have some transparency in one 
 
 If true the return percentage will be like `0.12345678`, default is `0.12`
 
+### `largeImageThreshold`
+- **Type:** `number`
+- **Default:** `0`
+- **Mandatory:** no
+
+Comparing large images can lead to performance issues.
+When providing a number for the amount of pixels here (higher then 0), the comparison algorithm skips pixels when the image width or height is larger than `largeImageThreshold` pixels.
+
 ### `saveAboveTolerance`
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
 
-Each comparison failure will create a diff image. This is an allowable value of misMatchPercentage that prevents saving image with differences
+### `screenshotPath`
+- **Type:** `String`
+- **Mandatory:** Yes
+
+The directory that will hold all the actual / difference screenshots
 
 > **MORE OPTIONS WILL FOLLOW A.S.A.P., THINK ABOUT IMAGE COMPARE OPTIONS AND SO ON**
 
