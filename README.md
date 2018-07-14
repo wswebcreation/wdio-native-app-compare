@@ -268,7 +268,8 @@ The following still needs to be done
     - [ ] `autoSaveBaseline` If no baseline image is found the image is automatically copied to the baselinefolder
     - [x] `debug` Add some extra logging and always save the image difference
     - [ ] `formatImageName` Custom variables for Image Name (default:?)
-    - [ ] `blockOutStatusBar`  If the statusbar on mobile / tablet needs to blocked out by default
+    - [x] `blockOutStatusBar`  If the statusbar on mobile / tablet needs to blocked out by default
+    - [ ] `blockout` blockout with x, y, width and height values
     - [x] `ignoreAlpha` compare images and discard alpha
     - [x] `ignoreAntialiasing` compare images and discard anti aliasing
     - [x] `ignoreColors` Even though the images are in colour, the comparison wil compare 2 black/white images
@@ -282,6 +283,17 @@ The following still needs to be done
     - [ ] resize dimensions
     - [ ] implement logging to webdriver.io
     - [ ] ...
+- [ ] Check how to determine DPR for Android
+- [ ] Make all work for Android
+    - [ ] `saveElement`
+    - [ ] `compareElement`
+    - [x] `saveScreen`
+    - [x] `compareScreen`
+- [ ] Make all work for iOS
+    - [x] `saveElement`
+    - [x] `compareElement`
+    - [x] `saveScreen`
+    - [x] `compareScreen`
 - [ ] Update docs
 - [ ] Add tests
 
