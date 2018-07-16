@@ -41,6 +41,7 @@ export.config = {
         'wdio-native-app-compare': {
           baselineFolder: '.dist/image-compare/baseline',
           screenshotPath: '.dist/image-compare/screenshots',
+          // See Options for more options
           //..
         },
       },
