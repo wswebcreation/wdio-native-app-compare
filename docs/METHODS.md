@@ -67,7 +67,7 @@ expect(browser.compareElement('~your-accessibility-id', 'name-of-your-file')).to
 - **Type:** `Object`
 - **Mandatory:** no
 
-You can provide an object with the following options, see [options](./README.md#options) for details
+You can provide an object with the following options, see [options](./OPTIONS.md#method-options) for details
 
 ```js
 expect(browser.compareElement(
@@ -102,7 +102,7 @@ expect(browser.compareScreen('name-of-your-file')).toEqual(0);
 - **Type:** `Object`
 - **Mandatory:** no
 
-You can provide an object with the following options, see [options](./README.md#options) for details
+You can provide an object with the following options, see [options](./OPTIONS.md#method-options) for details
 
 ```js
 expect(browser.compareElement(
