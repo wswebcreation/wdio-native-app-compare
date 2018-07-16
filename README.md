@@ -62,9 +62,9 @@ See [METHODS.md](./docs/METHODS.md)
 ## TODO:
 The following still needs to be done
 - Add more options for:
-    - [ ] `autoSaveBaseline` If no baseline image is found the image is automatically copied to the baselinefolder
+    - [x] `autoSaveBaseline` If no baseline image is found the image is automatically copied to the baselinefolder
     - [x] `debug` Add some extra logging and always save the image difference
-    - [ ] `formatImageName` Custom variables for Image Name (default:?)
+    - [x] `formatImageName` Custom variables for Image Name
     - [x] `blockOutStatusBar`  If the statusbar on mobile / tablet needs to blocked out by default
     - [ ] `blockout` blockout with x, y, width and height values
     - [x] `ignoreAlpha` compare images and discard alpha
@@ -74,16 +74,16 @@ The following still needs to be done
     - [x] `ignoreNothing` compare images and compare with red = 0, green = 0, blue = 0, alpha = 0, minBrightness=0, maxBrightness=255
     - [x] `ignoreTransparentPixel` Will ignore all pixels that have some transparency in one of the images
     - [x] `rawMisMatchPercentage` default false. If true the return percentage will be like 0.12345678, default is 0.12
-    - [ ] `androidOffsets` Object that will hold custom values for the statusBar
-    - [ ] `iosOffsets` Object that will hold the custom values for the statusBar
+    - [x] ~~`androidOffsets` Object that will hold custom values for the statusBar~~ => Not needed, determined dynamically
+    - [x] ~~`iosOffsets` Object that will hold the custom values for the statusBar~~ => Not needed, determined dynamically
     - [x] `saveAboveTolerance` Allowable value of misMatchPercentage that prevents saving image with differences
     - [ ] resize dimensions
     - [ ] implement logging to webdriver.io
     - [ ] ...
 - [ ] Check how to determine DPR for Android
 - [ ] Make all work for Android
-    - [ ] `saveElement`
-    - [ ] `compareElement`
+    - [ ] `saveElement` => **now only works with a custom method, not with `elementIdScreenshot`**
+    - [ ] `compareElement` => **now only works with a custom method, not with `elementIdScreenshot`**
     - [x] `saveScreen`
     - [x] `compareScreen`
 - [ ] Make all work for iOS
