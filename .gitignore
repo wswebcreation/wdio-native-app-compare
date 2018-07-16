@@ -17,3 +17,6 @@ node_modules
 
 # JetBrains IDE
 .idea
+
+# extra files
+package-lock.json
