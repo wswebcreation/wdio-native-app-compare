@@ -83,3 +83,38 @@ expect(browser.compareElement(
     },
 )).toEqual(0);
 ```
+
+### compareScreen
+With this method you can compare a screenshot of the view with a baseline image. **It will return a mismatch percentage between the actual screenshot and the baseline.**
+You'll need to provide the following options
+
+#### `tag`
+- **Type:** `String`
+- **Mandatory:** Yes
+
+The `tag` is the part that is used for determining the image name when it is saved
+
+```js
+expect(browser.compareScreen('name-of-your-file')).toEqual(0);
+```
+
+#### `options`
+- **Type:** `Object`
+- **Mandatory:** no
+
+You can provide an object with the following options, see [options](./README.md#options) for details
+
+```js
+expect(browser.compareElement(
+    '~your-accessibility-id',
+    'name-of-your-file',
+    {
+        ignoreAlpha: true,
+        ignoreAntialiasing: true,
+        ignoreColors: true,
+        ignoreLess: true,
+        ignoreNothing: true,
+        ignoreTransparentPixel: true,
+    },
+)).toEqual(0);
+```
