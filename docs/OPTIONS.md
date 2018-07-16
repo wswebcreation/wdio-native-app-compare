@@ -1,5 +1,12 @@
 # Options
 
+## `autoSaveBaseline`
+- **Type:** `boolean`
+- **Mandatory:** No
+- **Default:** `false`
+
+If no baseline image is found the image is automatically copied to the baselinefolder
+
 ## `baselineFolder`
 - **Type:** `String`
 - **Mandatory:** Yes
@@ -64,12 +71,24 @@ Compare images and compare with `red = 0, green = 0, blue = 0, alpha = 0, minBri
 
 Compare images and it will ignore all pixels that have some transparency in one of the images
 
-## `rawMisMatchPercentage`
-- **Type:** `boolean`
-- **Default:** `false`
+## `imageNameFormat`
+- **Type:** `string`
+- **Default:** `{tag}-{deviceName}`
 - **Mandatory:** no
 
-If true the return percentage will be like `0.12345678`, default is `0.12`
+The naming of the images can be customized by passing the parameter `imageNameFormat` with a format string like:
+
+```
+{tag}-{deviceName}
+```
+
+The following variables can be passed to format the string and will automatically been read from the [instance capabilities](http://webdriver.io/guide/testrunner/browserobject.html#Get-desired-capabilities).
+If they can't be determined the defaults will be use.
+
+* `deviceName`: The name of the device from the capabilities (default: 'no-device-name-in-caps')
+* `orientation`: The orientation from capabilities (default: 'no-orientation-in-caps')
+* `platformName`: The platformName from the capabilities (default: 'no-platformName-in-caps')
+* `platformVersion`: The platformVersion from capabilities (default: 'no-platformVersion-in-caps')
 
 ## `largeImageThreshold`
 - **Type:** `number`
@@ -79,10 +98,26 @@ If true the return percentage will be like `0.12345678`, default is `0.12`
 Comparing large images can lead to performance issues.
 When providing a number for the amount of pixels here (higher then 0), the comparison algorithm skips pixels when the image width or height is larger than `largeImageThreshold` pixels.
 
+## `rawMisMatchPercentage`
+- **Type:** `boolean`
+- **Default:** `false`
+- **Mandatory:** no
+
+If true the return percentage will be like `0.12345678`, default is `0.12`
+
 ## `saveAboveTolerance`
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
+
+Allowable value of misMatchPercentage that prevents saving image with differences
+
+## `savePerDevice`
+- **Type:** `boolean`
+- **Default:** `false`
+- **Mandatory:** no
+
+Save the images per device in a separate folder
 
 ## `screenshotPath`
 - **Type:** `String`
