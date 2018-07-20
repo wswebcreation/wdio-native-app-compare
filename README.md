@@ -67,7 +67,8 @@ The following still needs to be done
     - [x] `debug` Add some extra logging and always save the image difference
     - [x] `formatImageName` Custom variables for Image Name
     - [x] `blockOutStatusBar`  If the statusbar on mobile / tablet needs to blocked out by default
-    - [ ] `blockout` blockout with x, y, width and height values
+    - [x] `blockOuts` block out with x, y, width and height values
+    - [x] `elementBlockOuts` block out 1 or more elements
     - [x] `ignoreAlpha` compare images and discard alpha
     - [x] `ignoreAntialiasing` compare images and discard anti aliasing
     - [x] `ignoreColors` Even though the images are in colour, the comparison wil compare 2 black/white images
@@ -82,12 +83,12 @@ The following still needs to be done
     - [ ] implement logging to webdriver.io
     - [ ] ...
 - [ ] Check how to determine DPR for Android
-- [ ] Make all work for Android
-    - [ ] `saveElement` => **now only works with a custom method, not with `elementIdScreenshot`**
-    - [ ] `compareElement` => **now only works with a custom method, not with `elementIdScreenshot`**
+- [x] Make all work for Android
+    - [x] `saveElement` => ~~**now only works with a custom method, not with `elementIdScreenshot`**~~ => implemented UiAutomator2 support and fallback
+    - [x] `compareElement` => ~~**now only works with a custom method, not with `elementIdScreenshot`**~~ => implemented UiAutomator2 support and fallback
     - [x] `saveScreen`
     - [x] `compareScreen`
-- [ ] Make all work for iOS
+- [x] Make all work for iOS
     - [x] `saveElement`
     - [x] `compareElement`
     - [x] `saveScreen`
