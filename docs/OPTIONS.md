@@ -137,6 +137,7 @@ The directory that will hold all the actual / difference screenshots
 ####  `blockOuts`
 - **Type:** `object`
 - **Mandatory:** no
+- **For:** Can be used with and `compareScreen()` and `compareElements()`
 
 One or multiple block outs on a screen / element can be provided in an Array with objects like this
 
@@ -167,3 +168,25 @@ browser.compareScreen(
 The numbers need to be the pixels from the actual image. Just create a screenshot and determine `height`, `width`, `x`, `y` and pass it into here.
 
 > **THIS OPTION WILL NOT AUTOMATICALLY DETERMINE THE COORDINATES BASED ON A SREEN, THEY WILL BE THE SAME FOR ALL DEVICES.MEANING THAT BLOCKSOUTS CAN BE ON DIFFERENT PLACES ON DIFFERENT PHONES/SCREENS**
+
+
+####  `elementBlockOuts`
+- **Type:** `array`
+- **Mandatory:** no
+- **For:** Only for `compareScreen()`
+
+One or multiple elements that need to be blocked out on a screen that can be provided in an Array with objects like this
+
+```js
+browser.compareScreen(
+    'tag-name-of-image',
+    {
+        elementBlockOuts: [
+            // block out element 1
+            $('~the-selector-1'),
+            // block out element 2
+            $('~the-selector-2'),
+        ]
+    }
+);
+```
