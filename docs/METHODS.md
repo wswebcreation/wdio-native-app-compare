@@ -5,14 +5,19 @@ This tool will add 4 methods to the WebdriverIO `browser`-object that can be use
 ### saveElement
 With this method you can create a screenshot of an element in the view. You'll need to provide the following options
 
-#### `elementSelector`
-- **Type:** `String`
+#### `element`
+- **Type:** `object`
 - **Mandatory:** Yes
 
-The `elementSelector` is the selector you normally use to select elements. This can be for example:
-- Accessibility ID, see [here](http://webdriver.io/guide/usage/selectors.html#Accessibility-ID)
-- Class Name, see [here](http://webdriver.io/guide/usage/selectors.html#Class-Name)
-- XPath, see [here](http://webdriver.io/guide/usage/selectors.html#xPath)
+Provide the element, so **NOT** the selector, like for example
+
+```js
+// Default
+browser.saveElement(browser.element('~your-accessibility-id'), 'name-of-your-file');
+
+// Shorthand
+browser.saveElement($('~your-accessibility-id'), 'name-of-your-file');
+```
 
 #### `tag`
 - **Type:** `String`
@@ -21,7 +26,7 @@ The `elementSelector` is the selector you normally use to select elements. This 
 The `tag` is the part that is used for determining the image name when it is saved
 
 ```js
-browser.saveElement('~your-accessibility-id', 'name-of-your-file');
+browser.saveElement($('~your-accessibility-id'), 'name-of-your-file');
 ```
 
 > **The major release will also hold options to resize dimensions, meaning that you provide options to make an element screenshot bigger by adding extra paddings to the initial element**
@@ -44,14 +49,19 @@ browser.saveScreen('name-of-your-file');
 With this method you can compare a screenshot of an element in the view with a baseline image. **It will return a mismatch percentage between the actual element screenshot and the baseline.**
 You'll need to provide the following options
 
-#### `elementSelector`
-- **Type:** `String`
+#### `element`
+- **Type:** `object`
 - **Mandatory:** Yes
 
-The `elementSelector` is the selector you normally use to select elements. This can be for example:
-- Accessibility ID, see [here](http://webdriver.io/guide/usage/selectors.html#Accessibility-ID)
-- Class Name, see [here](http://webdriver.io/guide/usage/selectors.html#Class-Name)
-- XPath, see [here](http://webdriver.io/guide/usage/selectors.html#xPath)
+Provide the element, so **NOT** the selector, like for example
+
+```js
+// Default
+browser.compareElement(browser.element('~your-accessibility-id'), 'name-of-your-file');
+
+// Shorthand
+browser.compareElement($('~your-accessibility-id'), 'name-of-your-file');
+```
 
 #### `tag`
 - **Type:** `String`
@@ -60,7 +70,7 @@ The `elementSelector` is the selector you normally use to select elements. This 
 The `tag` is the part that is used for determining the image name when it is saved
 
 ```js
-expect(browser.compareElement('~your-accessibility-id', 'name-of-your-file')).toEqual(0);
+expect(browser.compareElement($('~your-accessibility-id'), 'name-of-your-file')).toEqual(0);
 ```
 
 #### `options`
@@ -74,12 +84,7 @@ expect(browser.compareElement(
     '~your-accessibility-id',
     'name-of-your-file',
     {
-        ignoreAlpha: true,
-        ignoreAntialiasing: true,
-        ignoreColors: true,
-        ignoreLess: true,
-        ignoreNothing: true,
-        ignoreTransparentPixel: true,
+        //.. options here
     },
 )).toEqual(0);
 ```
@@ -109,12 +114,7 @@ expect(browser.compareElement(
     '~your-accessibility-id',
     'name-of-your-file',
     {
-        ignoreAlpha: true,
-        ignoreAntialiasing: true,
-        ignoreColors: true,
-        ignoreLess: true,
-        ignoreNothing: true,
-        ignoreTransparentPixel: true,
+        //.. options here
     },
 )).toEqual(0);
 ```

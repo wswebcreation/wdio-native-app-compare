@@ -21,6 +21,7 @@ Each comparison failure will create a diff image. This is an allowable value of 
 - **Type:** `boolean`
 - **Mandatory:** No
 - **Default:** `false`
+- **Remark:** *Can also be used for `compareScreen()`. It will override the plugin setting*
 
 Block out the status bar of iOS / Android during the comparison
 
@@ -35,6 +36,7 @@ The directory that will
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
+- **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
 
 Compare images and discard alpha
 
@@ -42,6 +44,7 @@ Compare images and discard alpha
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
+- **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
 
 Compare images and discard anti aliasing
 
@@ -49,6 +52,7 @@ Compare images and discard anti aliasing
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
+- **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
 
 Even though the images are in colour, the comparison wil compare 2 black/white images
 
@@ -56,6 +60,7 @@ Even though the images are in colour, the comparison wil compare 2 black/white i
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
+- **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
 
 Compare images and compare with `red = 16, green = 16, blue = 16, alpha = 16, minBrightness=16, maxBrightness=240`
 
@@ -63,6 +68,7 @@ Compare images and compare with `red = 16, green = 16, blue = 16, alpha = 16, mi
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
+- **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
 
 Compare images and compare with `red = 0, green = 0, blue = 0, alpha = 0, minBrightness=0, maxBrightness=255`
 
@@ -70,6 +76,7 @@ Compare images and compare with `red = 0, green = 0, blue = 0, alpha = 0, minBri
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
+- **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
 
 Compare images and it will ignore all pixels that have some transparency in one of the images
 
@@ -96,6 +103,7 @@ If they can't be determined the defaults will be use.
 - **Type:** `number`
 - **Default:** `0`
 - **Mandatory:** no
+- **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
 
 Comparing large images can lead to performance issues.
 When providing a number for the amount of pixels here (higher then 0), the comparison algorithm skips pixels when the image width or height is larger than `largeImageThreshold` pixels.
@@ -104,6 +112,7 @@ When providing a number for the amount of pixels here (higher then 0), the compa
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
+- **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
 
 If true the return percentage will be like `0.12345678`, default is `0.12`
 
@@ -111,6 +120,7 @@ If true the return percentage will be like `0.12345678`, default is `0.12`
 - **Type:** `boolean`
 - **Default:** `false`
 - **Mandatory:** no
+- **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
 
 Allowable value of misMatchPercentage that prevents saving image with differences
 
@@ -127,9 +137,6 @@ Save the images per device in a separate folder
 
 The directory that will hold all the actual / difference screenshots
 
-> **MORE OPTIONS WILL FOLLOW A.S.A.P., THINK ABOUT IMAGE COMPARE OPTIONS AND SO ON**
-
-
 ## Method options
 
 ### Compare options
@@ -139,7 +146,7 @@ The directory that will hold all the actual / difference screenshots
 - **Mandatory:** no
 - **For:** Can be used with and `compareScreen()` and `compareElements()`
 
-One or multiple block outs on a screen / element can be provided in an Array with objects like this
+One or multiple block outs on a screen / element. It can be provided in an Array with objects like this
 
 ```js
 browser.compareScreen(
@@ -175,7 +182,8 @@ The numbers need to be the pixels from the actual image. Just create a screensho
 - **Mandatory:** no
 - **For:** Only for `compareScreen()`
 
-One or multiple elements that need to be blocked out on a screen that can be provided in an Array with objects like this
+One or multiple elements that need to be blocked out on a screen that can be provided in an Array with objects like this.
+You can also add an additional margin, this will be in pixels based on the actual screenshot.
 
 ```js
 browser.compareScreen(
@@ -183,9 +191,14 @@ browser.compareScreen(
     {
         elementBlockOuts: [
             // block out element 1
-            $('~the-selector-1'),
-            // block out element 2
-            $('~the-selector-2'),
+            {
+                element: browser.element('')
+            },
+            // block out element 2 (shorthand) with margin
+            {
+                element: $('~the-accessibility-selector'),
+                margin: 50
+            },
         ]
     }
 );
