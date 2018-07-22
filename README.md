@@ -7,9 +7,7 @@
 
 > Visual regression testing for Native iOS and Android apps with WebdriverIO
 
-> **THIS MODULE IS STILL BEING DEVELOPED AND RELEASED AS AN ALPHA, PLEASE FILE AN ISSUE IF YOU FOUND ONE**
-
-> **IOS IS FULLY SUPPORTED, ANDROID NOT SEE TODO**
+> **THIS MODULE IS STILL BEING DEVELOPED, PLEASE FILE AN ISSUE IF YOU FOUND ONE, OR CREATE A PR**
 
 # What can it do
 This plugin for WebdriverIO will add 4 methods that can be used to save and or check element/screen-shots of a native iOS or Android app, see [Methods](./README.md#methods) for all the methods and details.
@@ -58,7 +56,17 @@ See [OPTIONS.md](./docs/OPTIONS.md)
 See [METHODS.md](./docs/METHODS.md)
 
 ## FAQ
-> TO BE FILLED
+### I get a console log when I try to save/compare an element screenshot on Android
+When you are trying to save an element screenshot on Android the following log can be shown in your console
+
+```bash
+#####################################################################################
+ AN ELEMENT SCREENSHOT COULD NOT BE TAKEN WITH THE NEW 'elementScreenshop()' METHOD, 
+ A FALLBACK HAS BEEN EXECUTED AND THE ELEMENT WILL BE SAVED.
+ USE 'automationName: "UiAutomator2"' TO FULLY USE THE POWER OF APPIUM
+#####################################################################################
+```
+Please make sure you are using the `UiAutomator2`-driver when automating with Appium, see the Appium docs [here](http://appium.io/docs/en/drivers/android-uiautomator2/)
 
 ## TODO:
 The following still needs to be done
