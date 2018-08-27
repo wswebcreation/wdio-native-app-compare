@@ -11,6 +11,7 @@ The save methods return an object like this:
         "actual": "/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/actual/iphone_8"
     }
 }
+```
 
 Based on this info the file name can be determined and also where it can be found
 
