@@ -17,7 +17,7 @@ When the compare methods are used a baseline image (each device + OS, and even O
 The images are compared with the lovely module [ResembleJS](https://github.com/Huddle/Resemble.js).
 If you want to compare images online, and thus by hand, you can check the [online tool](https://huddleeng.github.io/Resemble.js/)
 
-Examples of saved images of elements / screens and diffs can be found [here](./docs/OUTPUT.md).
+Examples of saved images of elements / screens and diffs can be found [here](./docs/IMAGE-OUTPUT.md).
 
 # Installation
 You can install wdio-native-app-compare via NPM as usual:
@@ -52,8 +52,9 @@ export.config = {
 ## OPTIONS
 See [OPTIONS.md](./docs/OPTIONS.md)
 
-## METHODS
+## METHODS INCLUDING OUTPUTS
 See [METHODS.md](./docs/METHODS.md)
+
 
 ## FAQ
 ### I get a console log when I try to save/compare an element screenshot on Android
@@ -61,7 +62,7 @@ When you are trying to save an element screenshot on Android the following log c
 
 ```bash
 #####################################################################################
- AN ELEMENT SCREENSHOT COULD NOT BE TAKEN WITH THE NEW 'elementScreenshop()' METHOD, 
+ AN ELEMENT SCREENSHOT COULD NOT BE TAKEN WITH THE NEW 'elementScreenshop()' METHOD,
  A FALLBACK HAS BEEN EXECUTED AND THE ELEMENT WILL BE SAVED.
  USE 'automationName: "UiAutomator2"' TO FULLY USE THE POWER OF APPIUM
 #####################################################################################

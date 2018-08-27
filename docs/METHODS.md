@@ -2,6 +2,18 @@
 This tool will add 4 methods to the WebdriverIO `browser`-object that can be used during tests.
 
 ## Save methods
+The save methods return an object like this:
+
+```json
+{
+    fileName: 'your-tag-name-iphone_8-ios-11.4.png',
+    folders: {
+        actual: '/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/actual/iphone_8'
+    }
+}
+
+Based on this info the file name can be determined and also where it can be found
+
 ### saveElement
 With this method you can create a screenshot of an element in the view. You'll need to provide the following options
 
@@ -45,6 +57,22 @@ browser.saveScreen('name-of-your-file');
 ```
 
 ## Compare methods
+The compare methods return an object like this:
+
+```json
+{
+    fileName: 'your-tag-name-iphone_8-ios-11.4.png',
+    folders: {
+        actual: '/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/actual/iphone_8',
+        baseline: '/Users/wswebcreation/wdio-native-app-compare/__tests__/e2e/image-baseline/iphone_8',
+        diff: '/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/diff/iphone_8'
+    },
+    misMatchPercentage: 0
+}
+```
+
+Based on this info the `misMatchPercentage` can be determined, how is is called and also where it can be found
+
 ### compareElement
 With this method you can compare a screenshot of an element in the view with a baseline image. **It will return a mismatch percentage between the actual element screenshot and the baseline.**
 You'll need to provide the following options
@@ -86,7 +114,7 @@ expect(browser.compareElement(
     {
         //.. options here
     },
-)).toEqual(0);
+).misMatchPercentage).toEqual(0);
 ```
 
 ### compareScreen
@@ -100,7 +128,7 @@ You'll need to provide the following options
 The `tag` is the part that is used for determining the image name when it is saved
 
 ```js
-expect(browser.compareScreen('name-of-your-file')).toEqual(0);
+expect(browser.compareScreen('name-of-your-file').misMatchPercentage).toEqual(0);
 ```
 
 #### `options`
