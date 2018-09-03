@@ -185,6 +185,9 @@ The numbers need to be the pixels from the actual image. Just create a screensho
 One or multiple elements that need to be blocked out on a screen that can be provided in an Array with objects like this.
 You can also add an additional margin, this will be in pixels based on the actual screenshot.
 
+> **NOTE:**
+> If an element (selector) returns multiple matched elements all matching elements will automatically be blocked out.
+
 ```js
 browser.compareScreen(
     'tag-name-of-image',
