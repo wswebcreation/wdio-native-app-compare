@@ -6,11 +6,12 @@ The save methods return an object like this:
 
 ```json
 {
-    fileName: 'your-tag-name-iphone_8-ios-11.4.png',
-    folders: {
-        actual: '/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/actual/iphone_8'
+    "fileName": "your-tag-name-iphone_8-ios-11.4.png",
+    "folders": {
+        "actual": "/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/actual/iphone_8"
     }
 }
+```
 
 Based on this info the file name can be determined and also where it can be found
 
@@ -61,13 +62,13 @@ The compare methods return an object like this:
 
 ```json
 {
-    fileName: 'your-tag-name-iphone_8-ios-11.4.png',
-    folders: {
-        actual: '/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/actual/iphone_8',
-        baseline: '/Users/wswebcreation/wdio-native-app-compare/__tests__/e2e/image-baseline/iphone_8',
-        diff: '/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/diff/iphone_8'
+    "fileName": "your-tag-name-iphone_8-ios-11.4.png",
+    "folders": {
+        "actual": "/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/actual/iphone_8",
+        "baseline": "/Users/wswebcreation/wdio-native-app-compare/__tests__/e2e/image-baseline/iphone_8",
+        "diff": "/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/diff/iphone_8"
     },
-    misMatchPercentage: 0
+    "misMatchPercentage": 0
 }
 ```
 
