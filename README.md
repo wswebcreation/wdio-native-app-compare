@@ -55,6 +55,9 @@ See [OPTIONS.md](./docs/OPTIONS.md)
 ## METHODS INCLUDING OUTPUTS
 See [METHODS.md](./docs/METHODS.md)
 
+## CHANGELOG
+See [Releases](https://github.com/wswebcreation/wdio-native-app-compare/releases)
+
 
 ## FAQ
 ### I get a console log when I try to save/compare an element screenshot on Android

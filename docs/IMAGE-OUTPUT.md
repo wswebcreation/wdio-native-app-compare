@@ -120,3 +120,17 @@ device.compareScreen(
 
 #### ANDROID
 ![Android blockOutStatusBar](./assets/baseline/compare-home-screen-disabled-statusbar-nexus_5_7.1.1.png)
+
+### blockOutNavigationBar
+
+```js
+device.compareScreen(
+  'compare-home-screen-element-blockouts',
+  {
+    blockOutNavigationBar: true,
+  },
+);
+```
+
+#### ANDROID
+![Android blockOutStatusBar](./assets/baseline/compare-home-screen-disabled-status-navigation-bar-nexus_5_7.1.1.png)
