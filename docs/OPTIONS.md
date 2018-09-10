@@ -25,6 +25,14 @@ Each comparison failure will create a diff image. This is an allowable value of 
 
 Block out the status bar of iOS / Android during the comparison
 
+### `blockOutNavigationBar`
+- **Type:** `boolean`
+- **Mandatory:** No
+- **Default:** `false`
+- **Remark:** *Can also be used for `compareScreen()`. It will override the plugin setting. This will only work for Android*
+
+Block out the navigation bar Android during the comparison
+
 ### `debug`
 - **Type:** `boolean`
 - **Default:** `false`
