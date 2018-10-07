@@ -65,9 +65,9 @@ When you are trying to save an element screenshot on Android the following log c
 
 ```bash
 #####################################################################################
- AN ELEMENT SCREENSHOT COULD NOT BE TAKEN WITH THE NEW 'elementScreenshop()' METHOD,
+ AN ELEMENT SCREENSHOT COULD NOT BE TAKEN WITH THE NEW 'elementScreenshot()' METHOD,
  A FALLBACK HAS BEEN EXECUTED AND THE ELEMENT WILL BE SAVED.
- USE 'automationName: "UiAutomator2"' TO FULLY USE THE POWER OF APPIUM
+ USE 'automationName: "UiAutomator2"' FOR ANDROID TO FULLY USE THE POWER OF APPIUM
 #####################################################################################
 ```
 Please make sure you are using the `UiAutomator2`-driver when automating with Appium, see the Appium docs [here](http://appium.io/docs/en/drivers/android-uiautomator2/)

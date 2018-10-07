@@ -200,9 +200,10 @@ The numbers need to be the pixels from the actual image. Just create a screensho
 
 One or multiple elements that need to be blocked out on a screen that can be provided in an Array with objects like this.
 You can also add an additional margin, this will be in pixels based on the actual screenshot.
+If it is expected that the element his selector will return multiple elements an `elementNumber` can be provided to tell which element should be blocked out
 
 > **NOTE:**
-> If an element (selector) returns multiple matched elements all matching elements will automatically be blocked out.
+> If an element (selector) returns multiple matched elements all matching elements will automatically be blocked out, this can be prevented by providing the `elementNumber`
 
 ```js
 browser.compareScreen(
@@ -211,12 +212,17 @@ browser.compareScreen(
         elementBlockOuts: [
             // block out element 1
             {
-                element: browser.element('')
+                element: browser.element('~the-accessibility-selector-1')
             },
             // block out element 2 (shorthand) with margin
             {
-                element: $('~the-accessibility-selector'),
+                element: $('~the-accessibility-selector-2'),
                 margin: 50
+            },
+            // block out the second element of element 3 (shorthand)
+            {
+                element: $('~the-accessibility-selector-4'),
+                elementNumber: 1
             },
         ]
     }

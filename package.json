@@ -1,6 +1,6 @@
 {
     "name": "wdio-native-app-compare",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "description": "Visual regression testing for Native iOS and Android apps with WebdriverIO",
     "main": "build/index.js",
     "scripts": {
