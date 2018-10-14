@@ -42,7 +42,20 @@ The `tag` is the part that is used for determining the image name when it is sav
 browser.saveElement($('~your-accessibility-id'), 'name-of-your-file');
 ```
 
-> **The major release will also hold options to resize dimensions, meaning that you provide options to make an element screenshot bigger by adding extra paddings to the initial element**
+#### `options`
+- **Type:** `Object`
+- **Mandatory:** no
+
+You can provide an object with the following options, see [options](./OPTIONS.md#method-options) for details
+
+```js
+browser.saveElement(
+    $('~your-accessibility-id'),
+    'name-of-your-file',
+    {
+        //.. options here
+    });
+```
 
 ### saveScreen
 With this method you can create a screenshot of the view. You'll need to provide the following options
@@ -110,7 +123,7 @@ You can provide an object with the following options, see [options](./OPTIONS.md
 
 ```js
 expect(browser.compareElement(
-    '~your-accessibility-id',
+    $('~your-accessibility-id'),
     'name-of-your-file',
     {
         //.. options here
@@ -139,8 +152,7 @@ expect(browser.compareScreen('name-of-your-file').misMatchPercentage).toEqual(0)
 You can provide an object with the following options, see [options](./OPTIONS.md#method-options) for details
 
 ```js
-expect(browser.compareElement(
-    '~your-accessibility-id',
+expect(browser.compareScreen(
     'name-of-your-file',
     {
         //.. options here

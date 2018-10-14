@@ -155,12 +155,50 @@ The directory that will hold all the actual / difference screenshots
 
 ## Method options
 
+### Save options
+
+#### `resizeDimensions`
+- **Type:** `object`
+- **Mandatory:** no
+- **For:** Can be used with and `saveElement()`
+
+An object that can hold a `top`, `right`, `bottom` and or `left` amount of pixels that need to make the element cutout bigger.
+
+> **NOTE:**
+> If only 1, like `right`, is provided the rest is defaulted to `0`  
+
+```js
+// With all resize dimensions
+browser.saveElement(
+    $('~selector'),
+    'tag-name-of-image',
+    {
+        resizeDimensions: {
+            top: 10,
+            right: 20,
+            bottom: 30,
+            left: 40,
+        }
+    }
+);
+// With only 1 resize dimension
+browser.saveElement(
+    $('~selector'),
+    'tag-name-of-image',
+    {
+        resizeDimensions: {
+            left: 10,
+        }
+    }
+);
+```
+
 ### Compare options
 
 ####  `blockOuts`
 - **Type:** `object`
 - **Mandatory:** no
-- **For:** Can be used with and `compareScreen()` and `compareElements()`
+- **For:** Can be used with and `compareScreen()` and `compareElement()`
 
 One or multiple block outs on a screen / element. It can be provided in an Array with objects like this
 
@@ -228,3 +266,40 @@ browser.compareScreen(
     }
 );
 ```
+
+#### `resizeDimensions`
+- **Type:** `object`
+- **Mandatory:** no
+- **For:** Can be used with and `compareElement()`
+
+An object that can hold a `top`, `right`, `bottom` and or `left` amount of pixels that need to make the element cutout bigger.
+
+> **NOTE:**
+> If only 1, like `right`, is provided the rest is defaulted to `0`  
+
+```js
+// With all resize dimensions
+browser.compareElement(
+    $('~selector'),
+    'tag-name-of-image',
+    {
+        resizeDimensions: {
+            top: 10,
+            right: 20,
+            bottom: 30,
+            left: 40,
+        }
+    }
+);
+// With only 1 resize dimension
+browser.compareElement(
+    $('~selector'),
+    'tag-name-of-image',
+    {
+        resizeDimensions: {
+            left: 10,
+        }
+    }
+);
+```
+
