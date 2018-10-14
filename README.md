@@ -91,7 +91,7 @@ The following still needs to be done
     - [x] ~~`androidOffsets` Object that will hold custom values for the statusBar~~ => Not needed, determined dynamically
     - [x] ~~`iosOffsets` Object that will hold the custom values for the statusBar~~ => Not needed, determined dynamically
     - [x] `saveAboveTolerance` Allowable value of misMatchPercentage that prevents saving image with differences
-    - [ ] resize dimensions
+    - [x] resize dimensions
     - [ ] implement logging to webdriver.io
     - [ ] ...
 - [ ] Check how to determine DPR for Android
