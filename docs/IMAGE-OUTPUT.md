@@ -12,6 +12,23 @@ Below the output in real format and sizes
 #### ANDROID
 ![Android Logo](./assets/baseline/logo-nexus_5_7.1.1.png)
 
+##### With resizeDimensions
+```js
+browser.compareElement(
+    $('~selector'),
+    'compare-logo-resized',
+    {
+        resizeDimensions: {
+          top: 25,
+          right: 50,
+          bottom: 250,
+          left: 10
+        }
+    }
+);
+```
+![Android Logo](./assets/baseline/compare-logo-resized-nexus_5_7.1.1.png)
+
 ### saveScreen
 #### IOS
 ![iOS Home](./assets/baseline/home-screen-iphone_8.png)
