@@ -33,7 +33,7 @@ Instructions on how to install `WebdriverIO` can be found [here.](http://webdriv
 
 ```js
 // wdio.conf.js
-export.config = {
+exports.config = {
     // ...
       plugins: {
         'wdio-native-app-compare': {
