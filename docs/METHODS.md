@@ -157,5 +157,5 @@ expect(browser.compareScreen(
     {
         //.. options here
     },
-)).toEqual(0);
+).misMatchPercentage).toEqual(0);
 ```
