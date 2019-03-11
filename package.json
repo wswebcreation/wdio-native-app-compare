@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@wdio/logger": "^5.7.0",
-    "canvas-prebuilt": "^1.6.5-prerelease.1",
+    "canvas": "^2.3.1",
     "chalk": "^2.4.2",
     "fs-extra": "^6.0.1"
   },
