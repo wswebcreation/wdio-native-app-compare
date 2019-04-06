@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options defaultCompareOptions should return the provided options if they are provided 1`] = `
+Object {
+  "blockOutIphoneXBottomBar": true,
+  "blockOutNavigationBar": true,
+  "blockOutStatusBar": true,
+  "blockOuts": Array [],
+  "debug": true,
+  "elementBlockOuts": Array [],
+  "ignore": Array [],
+  "ignoreAlpha": true,
+  "ignoreAntialiasing": true,
+  "ignoreColors": true,
+  "ignoreLess": true,
+  "ignoreNothing": true,
+  "output": Object {
+    "errorColor": Object {
+      "blue": 255,
+      "green": 0,
+      "red": 255,
+    },
+    "largeImageThreshold": true,
+  },
+  "rawMisMatchPercentage": true,
+  "saveAboveTolerance": 1234,
+}
+`;
+
+exports[`Options defaultCompareOptions should set the default options if no options are provided 1`] = `
+Object {
+  "blockOutIphoneXBottomBar": false,
+  "blockOutNavigationBar": false,
+  "blockOutStatusBar": false,
+  "blockOuts": Array [],
+  "debug": false,
+  "elementBlockOuts": Array [],
+  "ignore": Array [],
+  "ignoreAlpha": false,
+  "ignoreAntialiasing": false,
+  "ignoreColors": false,
+  "ignoreLess": false,
+  "ignoreNothing": false,
+  "output": Object {
+    "errorColor": Object {
+      "blue": 255,
+      "green": 0,
+      "red": 255,
+    },
+    "largeImageThreshold": 0,
+  },
+  "rawMisMatchPercentage": false,
+  "saveAboveTolerance": 0,
+}
+`;
+
+exports[`Options initOptions should return the default baselineFolder if it is not provided 1`] = `
+Object {
+  "baselineFolder": "./baseline",
+  "foo": 1,
+  "screenshotPath": "./screenshotPath/",
+}
+`;
+
+exports[`Options initOptions should return the default screenshotPath if it is not provided 1`] = `
+Object {
+  "baselineFolder": "./somewhere/",
+  "screenshotPath": "./.tmp/screenshots",
+}
+`;
+
+exports[`Options initOptions should return the provided options if the baselineFolder and screenshotPath are provided 1`] = `
+Object {
+  "bar": Object {
+    "foo": 2,
+  },
+  "baselineFolder": "./baselineFolder/",
+  "foo": 1,
+  "screenshotPath": "./screenshotPath/",
+}
+`;
+
+exports[`Options initOptions should set the default options if no nativeAppCompare options are provided 1`] = `
+Object {
+  "baselineFolder": "./baseline",
+  "screenshotPath": "./.tmp/screenshots",
+}
+`;
+
+exports[`Options instanceCompareOptions should not return the provided instance ignore options if they are false 1`] = `Object {}`;
+
+exports[`Options instanceCompareOptions should return nothing if no instance options are provided 1`] = `Object {}`;
+
+exports[`Options instanceCompareOptions should return the provided instance blockout options and resize dimensions if they are provided 1`] = `
+Object {
+  "blockOuts": Array [
+    Object {
+      "height": 100,
+      "width": 100,
+      "x": 250,
+      "y": 900,
+    },
+    Object {
+      "height": 25,
+      "width": 75,
+      "x": 50,
+      "y": 400,
+    },
+  ],
+  "elementBlockOuts": Array [
+    Object {
+      "element": "LoginScreen.loginButton",
+    },
+    Object {
+      "element": "LoginScreen.email",
+      "margin": 50,
+    },
+  ],
+  "resizeDimensions": Object {
+    "bottom": 100,
+    "left": 40,
+    "right": 20,
+    "top": 200,
+  },
+}
+`;
+
+exports[`Options instanceCompareOptions should return the provided instance ignore options if they are true 1`] = `
+Object {
+  "blockOutIphoneXBottomBar": true,
+  "blockOutNavigationBar": true,
+  "blockOutStatusBar": true,
+  "ignoreAlpha": true,
+  "ignoreAntialiasing": true,
+  "ignoreColors": true,
+  "ignoreLess": true,
+  "ignoreNothing": true,
+}
+`;

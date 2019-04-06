@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Utils formatFileName should format a string when all capabilities are provided 1`] = `"devicename-orientation-platformname-platformversion.png"`;
+
+exports[`Utils formatFileName should format a string when no capabilities are provided 1`] = `"no-device-name-in-caps-no-orientation-in-caps-no-platform-name-in-caps-no-platform-version-in-caps.png"`;
+
+exports[`Utils getAndCreatePath should create the folder and return the folder name for a device that needs to have it's own folder 1`] = `false`;
+
+exports[`Utils getAndCreatePath should create the folder and return the folder name for a device that needs to have it's own folder 2`] = `true`;
+
+exports[`Utils getAndCreatePath should create the folder and return the folder name when there is no device name and no seperate folder needs to be created 1`] = `false`;
+
+exports[`Utils getAndCreatePath should create the folder and return the folder name when there is no device name and no seperate folder needs to be created 2`] = `true`;
