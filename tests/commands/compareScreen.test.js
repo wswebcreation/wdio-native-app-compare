@@ -13,11 +13,11 @@ describe('compareScreen', () => {
             actual: 'usr/save-screen-filename-folder',
         }
     }
-    global.browser = {
-        saveScreen: jest.fn().mockResolvedValue(saveScreenData),
-    }
 
     beforeEach(() => {
+        global.browser = {
+            saveScreen: jest.fn().mockResolvedValue(saveScreenData),
+        }
         checkBaselineImageExistsSpy = jest.spyOn(BaseLine, 'checkBaselineImageExists').mockResolvedValue()
     })
 
@@ -27,6 +27,9 @@ describe('compareScreen', () => {
         checkBaselineImageExistsSpy.mockRestore()
         determineIgnoreRectanglesSpy.mockRestore()
         executeCompareSpy.mockRestore()
+        global.browser = {
+            saveScreen: jest.fn().mockRestore(),
+        }
     })
 
     it('should be able to return compare screen data', async function () {
