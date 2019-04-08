@@ -5,7 +5,8 @@ import {
     determineIphoneXSeries,
     determineLargeIphoneXSeries,
     formatFileName,
-    getAndCreatePath, getScreenshotSize,
+    getAndCreatePath,
+    getScreenshotSize,
     multiplyIosObjectValuesAgainstDPR,
 } from '../../lib/helpers/utils'
 import { IPHONE_X_MAX_SIZE, IPHONE_X_SIZE } from '../../lib/helpers/constants'
