@@ -14,8 +14,8 @@ This plugin for WebdriverIO will add 4 methods that can be used to save and or c
 When the compare methods are used a baseline image (each device + OS, and even OS version, needs to have it's own baseline image) will be compared to an actual screenshot. The output will be a mismatch percentage. This mismatch percentage can be used in expectations.
 
 ## Comparison
-The images are compared with the lovely module [ResembleJS](https://github.com/Huddle/Resemble.js).
-If you want to compare images online, and thus by hand, you can check the [online tool](https://huddleeng.github.io/Resemble.js/)
+The images are compared with the lovely module [ResembleJS](https://github.com/rsmbl/Resemble.js).
+If you want to compare images online, and thus by hand, you can check the [online tool](http://rsmbl.github.io/Resemble.js/)
 
 Examples of saved images of elements / screens and diffs can be found [here](./docs/IMAGE-OUTPUT.md).
 
