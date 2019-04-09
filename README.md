@@ -7,13 +7,13 @@
 
 Visual regression testing for Native iOS and Android apps with WebdriverIO
 
-> This service works with WebdriverIO V5 and higher. To check support for WebdriverIO V4 go to the [`0.7.0`](https://github.com/wswebcreation/wdio-native-app-compare/tree/0.7.0) branch
+> This service works with WebdriverIO V5 and higher. To check support for WebdriverIO V4 go to the [`0.7.0`](https://github.com/wswebcreation/wdio-native-app-compare/tree/0.7.0) branch and following the instructions
 
 # What can it do
 This service for WebdriverIO will add 4 methods that can be used to save and or check element/screen-shots of a native iOS or Android app, see [Methods](./README.md#methods) for all the methods and details.
 
 When the compare methods are used a baseline image (each device + OS, and even OS version, needs to have it's own baseline image) will be compared to an actual screenshot. 
-The output will be an abject of data, check the `save..`-methods output [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#save-methods) and the `compare..`-methods [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#compare-methods)
+The output will be an object of data, check the `save..`-methods output [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#save-methods) and the `compare..`-methods [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#compare-methods)
 
 ## Comparison
 The images are compared with the lovely module [ResembleJS](https://github.com/rsmbl/Resemble.js).
@@ -63,6 +63,9 @@ See [METHODS.md](./docs/METHODS.md)
 ## CHANGELOG
 See [Releases](https://github.com/wswebcreation/wdio-native-app-compare/releases)
 
+## TODO
+- [ ] Add more UT's for the `index.js`-file
+- [ ] Add more tests for the excluded lib files in the `package.json`
 
 ## FAQ
 ### I get a console log when I try to save/compare an element screenshot on Android

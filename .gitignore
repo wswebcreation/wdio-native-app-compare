@@ -69,3 +69,6 @@ package-lock.json
 # folders
 .tmp
 .idea/
+
+# files
+.DS_Store
