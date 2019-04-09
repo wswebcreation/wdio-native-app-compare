@@ -1,7 +1,6 @@
-import { IMAGE_STRING } from '../mocks/mocks'
-
 jest.mock('fs-extra')
 
+import { IMAGE_STRING } from '../mocks/mocks'
 import { outputFile } from 'fs-extra'
 import { saveBase64Image } from '../../lib/methods/saveBase64Image'
 
