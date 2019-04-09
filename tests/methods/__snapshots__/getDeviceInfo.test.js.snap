@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getDeviceInfo should be able to get the device info 1`] = `
+Object {
+  "dpr": 100,
+  "isIphoneXSeries": false,
+  "isLargeIphoneXSeries": false,
+  "screenSize": Object {
+    "height": 20,
+    "width": 10,
+  },
+  "screenshotHeight": 2000,
+  "screenshotWidth": 1000,
+}
+`;
+
+exports[`getDeviceInfo should be able to get the device info 2`] = `
+Object {
+  "dpr": 100,
+  "isIphoneXSeries": false,
+  "isLargeIphoneXSeries": false,
+  "screenSize": Object {
+    "height": 20,
+    "width": 10,
+  },
+  "screenshotHeight": 2000,
+  "screenshotWidth": 1000,
+}
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compareScreen should be able to retrun compare screen data when rectangles are added 1`] = `
+Object {
+  "fileName": "save-screen-filename.png",
+  "folders": Object {
+    "actual": "usr/save-screen-filename-folder",
+  },
+  "misMatchPercentage": 0,
+}
+`;
+
+exports[`compareScreen should be able to return compare screen data 1`] = `
+Object {
+  "fileName": "save-screen-filename.png",
+  "folders": Object {
+    "actual": "usr/save-screen-filename-folder",
+  },
+  "misMatchPercentage": 0,
+}
+`;
+
+exports[`compareScreen should be able to return compare screen data with instance options are provided 1`] = `
+Object {
+  "fileName": "save-screen-filename.png",
+  "folders": Object {
+    "actual": "usr/save-screen-filename-folder",
+  },
+  "misMatchPercentage": 0,
+}
+`;

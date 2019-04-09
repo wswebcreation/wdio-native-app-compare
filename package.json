@@ -1,44 +1,81 @@
 {
-    "name": "wdio-native-app-compare",
-    "version": "0.7.0",
-    "description": "Visual regression testing for Native iOS and Android apps with WebdriverIO",
-    "main": "build/index.js",
-    "scripts": {
-        "compile": "babel lib/ -d build/",
-        "watch": "npm run compile -- --watch"
-    },
-    "keywords": [
-        "webdriver.io",
-        "native",
-        "screenshots",
-        "compare",
-        "image",
-        "android",
-        "ios",
-        "appium"
+  "name": "wdio-native-app-compare-service",
+  "version": "1.0.0",
+  "description": "Visual regression testing for Native iOS and Android apps with WebdriverIO",
+  "main": "build/index.js",
+  "scripts": {
+    "lint": "eslint ./lib",
+    "compile": "babel lib/ -d build/",
+    "watch": "npm run compile -- --watch",
+    "test.unit": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "keywords": [
+    "webdriver.io",
+    "native",
+    "screenshots",
+    "compare",
+    "image",
+    "android",
+    "ios",
+    "appium"
+  ],
+  "author": "wswebcreation.nl",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-optional-catch-binding": "^7.2.0",
+    "@babel/plugin-syntax-export-default-from": "^7.0.0",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.7.1",
+    "coveralls": "^3.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.8.0",
+    "inquirer": "^6.2.2",
+    "jest": "^24.7.1",
+    "webdriverio": "^5.7.9"
+  },
+  "dependencies": {
+    "@wdio/logger": "^5.7.8",
+    "canvas": "^2.4.1",
+    "chalk": "^2.4.2",
+    "fs-extra": "^6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wswebcreation/wdio-native-app-compare.git"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.js"
     ],
-    "author": "wswebcreation.nl",
-    "license": "MIT",
-    "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.3",
-        "babel-eslint": "^8.2.3",
-        "babel-plugin-add-module-exports": "^0.2.1",
-        "babel-plugin-transform-function-bind": "^6.22.0",
-        "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-plugin-transform-runtime": "^6.23.0",
-        "babel-preset-env": "^1.7.0",
-        "babel-runtime": "^6.26.0",
-        "eslint": "^4.19.1",
-        "inquirer": "^6.0.0"
+    "coverageDirectory": "./coverage/",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/lib/resemble/"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib/**",
+      "!lib/methods/addBlockOuts.js",
+      "!lib/methods/checkBaselineImageExists.js",
+      "!lib/methods/makeCroppedBase64Image.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 95,
+        "functions": 100,
+        "lines": 97,
+        "statements": 97
+      }
     },
-    "dependencies": {
-        "canvas-prebuilt": "^1.6.5-prerelease.1",
-        "chalk": "^2.4.1",
-        "fs-extra": "^6.0.1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/wswebcreation/wdio-native-app-compare.git"
-    }
+    "testEnvironment": "node"
+  }
 }

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`executeCompare should be able to execute a compare with all ignore options 1`] = `
+Object {
+  "fileName": "file-name.png",
+  "folders": Object {
+    "actual": "actual-folder",
+    "baseline": "actual-folder",
+    "diff": "diff-folder",
+  },
+  "misMatchPercentage": 1.23,
+}
+`;
+
+exports[`executeCompare should be able to execute a compare without ignore options 1`] = `
+Object {
+  "fileName": "file-name.png",
+  "folders": Object {
+    "actual": "actual-folder",
+    "baseline": "actual-folder",
+    "diff": "diff-folder",
+  },
+  "misMatchPercentage": 1.23,
+}
+`;
+
+exports[`executeCompare should be able to return the rawMisMatchPercentage 1`] = `
+Object {
+  "fileName": "file-name.png",
+  "folders": Object {
+    "actual": "actual-folder",
+    "baseline": "actual-folder",
+    "diff": "diff-folder",
+  },
+  "misMatchPercentage": 1.23456,
+}
+`;
+
+exports[`executeCompare should be able to store a diff image if the mismatch is above the tolerance 1`] = `
+Object {
+  "fileName": "file-name.png",
+  "folders": Object {
+    "actual": "actual-folder",
+    "baseline": "actual-folder",
+    "diff": "diff-folder",
+  },
+  "misMatchPercentage": 1.23456,
+}
+`;
+
+exports[`executeCompare should be able to store a diff image if the mismatch is above the tolerance and blockouts are provided 1`] = `
+Object {
+  "fileName": "file-name.png",
+  "folders": Object {
+    "actual": "actual-folder",
+    "baseline": "actual-folder",
+    "diff": "diff-folder",
+  },
+  "misMatchPercentage": 1.23456,
+}
+`;

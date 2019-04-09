@@ -5,81 +5,152 @@ Below the output in real format and sizes
 ## Save output
 ### saveElement
 #### IOS
-![iOS Logo](./assets/baseline/logo-iphone_8.png)
-
----
-
-#### ANDROID
-![Android Logo](./assets/baseline/logo-nexus_5_7.1.1.png)
-
-##### With resizeDimensions
 ```js
-browser.compareElement(
+browser.saveElement($('~selector'), 'saveElement');
+```
+![iOS Logo](./assets/saveelement-iphone_x.png)
+
+##### With positive resizeDimensions
+```js
+browser.saveElement(
     $('~selector'),
-    'compare-logo-resized',
+    'saveElement-positive-resized',
     {
         resizeDimensions: {
-          top: 25,
-          right: 50,
-          bottom: 250,
-          left: 10
+          top: 200,
+          right: 20,
+          bottom: 100,
+          left: 40
         }
     }
 );
 ```
-![Android Logo](./assets/baseline/compare-logo-resized-nexus_5_7.1.1.png)
+![Android Logo](./assets/saveelement-positive-resized-iphone_x.png)
+
+##### With negative resizeDimensions
+```js
+browser.saveElement(
+    $('~selector'),
+    'saveElement-negative-resized',
+    {
+        resizeDimensions: {
+          top: -40,
+          right: -20,
+          bottom: -70,
+          left: -250
+        }
+    }
+);
+```
+![Android Logo](./assets/saveelement-negative-resized-iphone_x.png)
+
+---
+
+#### ANDROID
+```js
+browser.saveElement($('~selector'), 'saveElement');
+```
+![Android Logo](./assets/saveelement-pixel_8.1.png)
+
+##### With positive resizeDimensions
+```js
+browser.saveElement(
+    $('~selector'),
+    'saveElement-positive-resized',
+    {
+        resizeDimensions: {
+          top: 200,
+          right: 20,
+          bottom: 100,
+          left: 40
+        }
+    }
+);
+```
+![Android Logo](./assets/saveelement-positive-resized-pixel_8.1.png)
+
+##### With negative resizeDimensions
+```js
+browser.saveElement(
+    $('~selector'),
+    'saveElement-negative-resized',
+    {
+        resizeDimensions: {
+          top: -40,
+          right: -20,
+          bottom: -70,
+          left: -250
+        }
+    }
+);
+```
+![Android Logo](./assets/saveelement-negative-resized-pixel_8.1.png)
 
 ### saveScreen
+```js
+driver.saveScreen('saveScreen');
+```
 #### IOS
-![iOS Home](./assets/baseline/home-screen-iphone_8.png)
+![iOS Home](./assets/savescreen-iphone_x.png)
 
 ---
 
 #### ANDROID
-![Android Home](./assets/baseline/home-screen-nexus_5_7.1.1.png)
+![Android Home](./assets/savescreen-pixel_8.1.png)
 
 ## Check output on failure
-### checkElement
+### compareElement
 #### IOS
-![iOS Logo diff](./assets/diff/compare-logo-iphone_8.png)
+```js
+driver.compareElement($('~selector'), 'compareElement');
+```
+![iOS Logo diff](./assets/compareelement-iphone_x.png)
 
 ---
 
 #### ANDROID
-![Android Logo diff](./assets/diff/compare-logo-nexus_5_7.1.1.png)
+```js
+driver.compareElement($('~selector'), 'compareElement');
+```
+![Android Logo diff](./assets/compareelement-pixel_8.1.png)
 
-### checkScreen
+### compareScreen
 #### IOS
-![iOS Home diff](./assets/diff/compare-home-screen-nexus_5_7.1.1.png)
+```js
+driver.compareScreen('compareScreen');
+```
+![iOS Home diff](./assets/comparescreen-iphone_x.png)
 
 ---
 
 #### ANDROID
-![Android Home diff](./assets/diff/compare-home-screen-nexus_5_7.1.1.png)
+```js
+driver.compareScreen('compareScreen');
+```
+![Android Home diff](./assets/comparescreen-pixel_8.1.png)
 
 ## Block outs
 >**Blockouts are only added on comparison, and are not saved in the actual images.They will be only shown when a difference is there and they can be found in the `diff`-folder**
 
 ### blockOuts
-
 ```js
-browser.compareScreen(
-  'compare-home-screen-blockouts',
+driver.compareScreen(
+  'compareScreen-blockOuts',
   {
     blockOuts: [
       // block out area 1
       {
         height: 100,
         width: 100,
-        x: 50,
-        y: 150,
+        x: 250,
+        y: 900,
       },
       // block out area 2
       {
         height: 25,
         width: 75,
-        x: 200,
-        y: 250,
+        x: 50,
+        y: 400,
       },
     ],
   },
@@ -87,24 +158,25 @@ browser.compareScreen(
 ```
 
 #### IOS
-![iOS blockOuts](./assets/baseline/compare-home-screen-blockouts-iphone_8.png)
+![iOS blockOuts](./assets/comparescreen-blockouts-iphone_x.png)
 
 ---
 
 #### ANDROID
-![Android blockOuts](./assets/baseline/compare-home-screen-blockouts-nexus_5_7.1.1.png)
+![Android blockOuts](./assets/comparescreen-blockouts-pixel_8.1.png)
 
 ### elementBlockOuts
-
 ```js
-device.compareScreen(
-  'compare-home-screen-element-blockouts',
+driver.compareScreen(
+  'compareScreen-elementBlockOuts',
   {
     elementBlockOuts: [
-      { element: $(logo) },
+      // block out element 1
+      { element: $('~selector') },
+      // block out element 2 (shorthand) with margin
       {
-        element: $(`${TEST_PREFIX}${labels.tabNavigator.webview}`),
-        margin: 10,
+        element: $('~selector-2'),
+        margin: 50,
       },
     ],
   },
@@ -112,42 +184,29 @@ device.compareScreen(
 ```
 
 #### IOS
-![iOS elementBlockOuts](./assets/baseline/compare-home-screen-element-blockouts-iphone_8.png)
+![iOS elementBlockOuts](./assets/comparescreen-elementblockouts-iphone_x.png)
 
 ---
 
 #### ANDROID
-![Android elementBlockOuts](./assets/baseline/compare-home-screen-element-blockouts-nexus_5_7.1.1.png)
+![Android elementBlockOuts](./assets/comparescreen-elementblockouts-pixel_8.1.png)
 
-### blockOutStatusBar
-
+### blockOutStatusBar || blockOutNavigationBar || blockOutIphoneXBottomBar
 ```js
-device.compareScreen(
+driver.compareScreen(
   'compare-home-screen-element-blockouts',
   {
     blockOutStatusBar: true,
+    blockOutNavigationBar: true,
+    blockOutIphoneXBottomBar: true,
   },
 );
 ```
 
 #### IOS
-![iOS blockOutStatusBar](./assets/baseline/compare-home-screen-disabled-statusbar-iphone_8.png)
+![iOS blockOutStatusBar](./assets/comparescreen-status-tool-home-blockout-iphone_x.png)
 
 ---
 
 #### ANDROID
-![Android blockOutStatusBar](./assets/baseline/compare-home-screen-disabled-statusbar-nexus_5_7.1.1.png)
-
-### blockOutNavigationBar
-
-```js
-device.compareScreen(
-  'compare-home-screen-element-blockouts',
-  {
-    blockOutNavigationBar: true,
-  },
-);
-```
-
-#### ANDROID
-![Android blockOutStatusBar](./assets/baseline/compare-home-screen-disabled-status-navigation-bar-nexus_5_7.1.1.png)
+![Android blockOutStatusBar](./assets/comparescreen-status-tool-home-blockout-pixel_8.1.png)

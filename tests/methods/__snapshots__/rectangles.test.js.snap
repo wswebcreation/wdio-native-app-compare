@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rectangles determineDimensions should be able to determine the dimensions when a negative margin is provided 1`] = `
+Object {
+  "height": 1950,
+  "width": 950,
+  "x": 125,
+  "y": 225,
+}
+`;
+
+exports[`rectangles determineDimensions should be able to determine the dimensions when a positive margin is provided 1`] = `
+Object {
+  "height": 2050,
+  "width": 1050,
+  "x": 75,
+  "y": 175,
+}
+`;
+
+exports[`rectangles determineDimensions should be able to determine the dimensions when no margin is provided 1`] = `
+Object {
+  "height": 2000,
+  "width": 1000,
+  "x": 100,
+  "y": 200,
+}
+`;
+
+exports[`rectangles determineElementBlockOuts should return an array of element blockouts if multiple elements are provided 1`] = `
+Array [
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+]
+`;
+
+exports[`rectangles determineElementBlockOuts should return an array of one element blockout if 1 element is provided 1`] = `
+Array [
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+]
+`;
+
+exports[`rectangles determineElementBlockOuts should return an array of one element blockout if multiple elements are provided but 1 with an element number 1`] = `
+Array [
+  Object {
+    "height": 20,
+    "width": 10,
+    "x": 1,
+    "y": 2,
+  },
+]
+`;
+
+exports[`rectangles determineElementBlockOuts should return an empty array if no elements are provided 1`] = `Array []`;
+
+exports[`rectangles determineIgnoreRectangles should get the android navigation bar block outs 1`] = `
+Array [
+  Object {
+    "height": 0,
+    "width": 812,
+    "x": 0,
+    "y": 0,
+  },
+]
+`;
+
+exports[`rectangles determineIgnoreRectangles should get the block outs 1`] = `
+Array [
+  Object {
+    "height": 44,
+    "width": 33,
+    "x": 11,
+    "y": 22,
+  },
+  Object {
+    "height": 54,
+    "width": 43,
+    "x": 21,
+    "y": 32,
+  },
+]
+`;
+
+exports[`rectangles determineIgnoreRectangles should get the status bar block outs 1`] = `
+Array [
+  Object {
+    "height": 26,
+    "width": 812,
+    "x": 0,
+    "y": 0,
+  },
+]
+`;
+
+exports[`rectangles determineIgnoreRectangles should return iPhone X Max bottom bar rectangles 1`] = `
+Array [
+  Object {
+    "height": 15,
+    "width": 444,
+    "x": 399,
+    "y": 2649,
+  },
+]
+`;
+
+exports[`rectangles determineIgnoreRectangles should return iPhone X regular bottom bar rectangles 1`] = `
+Array [
+  Object {
+    "height": 15,
+    "width": 402,
+    "x": 362,
+    "y": 2397,
+  },
+]
+`;
+
+exports[`rectangles determineIgnoreRectangles should return nothing if no ignore rectangles need to be returned 1`] = `Array []`;
+
+exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles 1`] = `
+Object {
+  "height": 0,
+  "width": 812,
+  "x": 0,
+  "y": 0,
+}
+`;
+
+exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles 2`] = `
+Object {
+  "height": 0,
+  "width": 812,
+  "x": 0,
+  "y": 0,
+}
+`;
+
+exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles 1`] = `
+Object {
+  "height": 26,
+  "width": 812,
+  "x": 0,
+  "y": 0,
+}
+`;
+
+exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles 2`] = `
+Object {
+  "height": 26,
+  "width": 812,
+  "x": 0,
+  "y": 0,
+}
+`;
+
+exports[`rectangles determineValidBlockOuts should return the valid blockouts if an array with invalid keys is provided 1`] = `
+Array [
+  Object {
+    "height": 8,
+    "width": 7,
+    "x": 5,
+    "y": 6,
+  },
+  Object {
+    "height": 14,
+    "width": 13,
+    "x": 9,
+    "y": 12,
+  },
+]
+`;
+
+exports[`rectangles determineValidBlockOuts should return the valid blockouts if an valid array if provided 1`] = `
+Array [
+  Object {
+    "height": 4,
+    "width": 3,
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "height": 4,
+    "width": 3,
+    "x": 1,
+    "y": 2,
+  },
+]
+`;
+
+exports[`rectangles getElementRectangles should return element rectangles 1`] = `
+Object {
+  "height": 20,
+  "width": 10,
+  "x": 1,
+  "y": 2,
+}
+`;

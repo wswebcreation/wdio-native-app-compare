@@ -19,3 +19,4 @@ node_modules
 package-lock.json
 docs/
 .tmp/
+.DS_Store

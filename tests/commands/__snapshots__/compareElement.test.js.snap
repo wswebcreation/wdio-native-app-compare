@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compareElement should be able to return compare element data 1`] = `
+Object {
+  "fileName": "save-element-filename.png",
+  "folders": Object {
+    "actual": "usr/save-element-filename-folder",
+  },
+  "misMatchPercentage": 0,
+}
+`;
+
+exports[`compareElement should be able to return compare screen data with instance options are provided 1`] = `
+Object {
+  "fileName": "save-element-filename.png",
+  "folders": Object {
+    "actual": "usr/save-element-filename-folder",
+  },
+  "misMatchPercentage": 0,
+}
+`;
