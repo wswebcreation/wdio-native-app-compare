@@ -56,8 +56,16 @@
       "<rootDir>/tests/**/*.test.js"
     ],
     "coverageDirectory": "./coverage/",
-    "coveragePathIgnorePatterns": ["<rootDir>/lib/resemble/"],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/lib/resemble/"
+    ],
     "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib/**",
+      "!lib/methods/addBlockOuts.js",
+      "!lib/methods/checkBaselineImageExists.js",
+      "!lib/methods/makeCroppedBase64Image.js"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 95,

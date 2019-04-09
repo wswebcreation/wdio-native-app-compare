@@ -1,7 +1,7 @@
 import compareScreen from '../../lib/commands/compareScreen'
 import * as Options from '../../lib/helpers/options'
 import * as BaseLine from '../../lib/methods/checkBaselineImageExists'
-import * as Regtangles from '../../lib/methods/determineIgnoreRectangles'
+import * as Regtangles from '../../lib/methods/rectangles'
 import * as Compare from '../../lib/methods/executeCompare'
 
 describe('compareScreen', () => {

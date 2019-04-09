@@ -1,41 +1,38 @@
 import { takeResizedElementScreenshot } from '../../lib/methods/takeResizedElementScreenshot'
+import * as Rectangles from '../../lib/methods/rectangles'
 import * as Screenshot from '../../lib/methods/takeBase64Screenshot'
 import * as DeviceInfo from '../../lib/methods/getDeviceInfo'
 import * as CroppedBase64Image from '../../lib/methods/makeCroppedBase64Image'
 
 describe('takeResizedElementScreenshot', () => {
-    let takeBase64ScreenshotSpy, getDeviceInfoSpy, makeCroppedBase64ImageSpy
+    let takeBase64ScreenshotSpy, getDeviceInfoSpy, makeCroppedBase64ImageSpy, getElementRectanglesSpy
     const takeBase64ScreenshotResult = 'takeBase64ScreenshotSpy-string'
     const imageString = 'take-resized-element-screenshot-string'
+    const element = { elementId: 1 }
 
     beforeEach(() => {
-        global.browser = {
-            getElementRect: jest.fn().mockResolvedValue({
-                x: 1,
-                y: 2,
-                width: 10,
-                height: 20,
-            }),
-        }
-
         takeBase64ScreenshotSpy = jest.spyOn(Screenshot, 'takeBase64Screenshot').mockResolvedValue(takeBase64ScreenshotResult)
         getDeviceInfoSpy = jest.spyOn(DeviceInfo, 'getDeviceInfo').mockResolvedValue({ dpr: 2 })
         makeCroppedBase64ImageSpy = jest.spyOn(CroppedBase64Image, 'makeCroppedBase64Image').mockResolvedValue(imageString)
+        getElementRectanglesSpy = jest.spyOn(Rectangles, 'getElementRectangles').mockResolvedValue({
+            x: 1,
+            y: 2,
+            width: 10,
+            height: 20,
+        })
     })
 
     afterEach(() => {
-        global.browser = {
-            getElementRect: jest.fn().mockRestore(),
-        }
         takeBase64ScreenshotSpy.mockRestore()
         getDeviceInfoSpy.mockRestore()
         makeCroppedBase64ImageSpy.mockRestore()
+        getElementRectanglesSpy.mockRestore()
     })
 
     it('should be able to take an element screenshot without resize dimensions', async () => {
-        expect(await takeResizedElementScreenshot({ elementId: 1 }, 'file-path')).toEqual(imageString)
+        expect(await takeResizedElementScreenshot(element, 'file-path')).toEqual(imageString)
 
-        expect(global.browser.getElementRect).toBeCalledWith(1)
+        expect(getElementRectanglesSpy).toBeCalledWith(element)
         expect(getDeviceInfoSpy).toBeCalledWith(takeBase64ScreenshotResult)
         expect(takeBase64ScreenshotSpy).toHaveBeenCalled()
         expect(makeCroppedBase64ImageSpy).toBeCalledWith(
@@ -47,12 +44,12 @@ describe('takeResizedElementScreenshot', () => {
 
     it('should be able to take an element screenshot with resize dimensions', async () => {
         expect(await takeResizedElementScreenshot(
-            { elementId: 1 },
+            element,
             'file-path',
             { bottom: 10, left: 20, right: 30, top: 40 },
         )).toEqual(imageString)
 
-        expect(global.browser.getElementRect).toBeCalledWith(1)
+        expect(getElementRectanglesSpy).toBeCalledWith(element)
         expect(getDeviceInfoSpy).toBeCalledWith(takeBase64ScreenshotResult)
         expect(takeBase64ScreenshotSpy).toHaveBeenCalled()
         expect(makeCroppedBase64ImageSpy).toBeCalledWith(
