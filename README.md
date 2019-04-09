@@ -16,8 +16,8 @@ When the compare methods are used a baseline image (each device + OS, and even O
 The output will be an abject of data, check the `save..`-methods output [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#save-methods) and the `compare..`-methods [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#compare-methods)
 
 ## Comparison
-The images are compared with the lovely module [ResembleJS](https://github.com/Huddle/Resemble.js).
-If you want to compare images online, and thus by hand, you can check the [online tool](https://huddleeng.github.io/Resemble.js/)
+The images are compared with the lovely module [ResembleJS](https://github.com/rsmbl/Resemble.js).
+If you want to compare images online, and thus by hand, you can check the [online tool](http://rsmbl.github.io/Resemble.js/)
 
 Examples of saved images of elements / screens and diffs can be found [here](./docs/IMAGE-OUTPUT.md).
 
