@@ -7,7 +7,8 @@
     "lint": "eslint ./lib",
     "compile": "babel lib/ -d build/",
     "watch": "npm run compile -- --watch",
-    "test.unit": "jest --coverage"
+    "test.unit": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "keywords": [
     "webdriver.io",
@@ -35,6 +36,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
+    "coveralls": "^3.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-import": "^2.8.0",
     "inquirer": "^6.2.2",

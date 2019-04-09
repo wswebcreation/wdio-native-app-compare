@@ -4,6 +4,7 @@
 [![npm](https://img.shields.io/npm/dw/localeval.svg)](https://www.npmjs.com/package/wdio-native-app-compare)
 [![npm](https://img.shields.io/npm/dm/localeval.svg)](https://www.npmjs.com/package/wdio-native-app-compare)
 [![License](https://img.shields.io/npm/l/express.svg)](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/wswebcreation/wdio-native-app-compare/badge.svg?branch=master)](https://coveralls.io/github/wswebcreation/wdio-native-app-compare?branch=master)
 
 Visual regression testing for Native iOS and Android apps with WebdriverIO
 
