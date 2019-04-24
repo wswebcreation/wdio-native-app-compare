@@ -2,86 +2,86 @@
 
 exports[`rectangles determineDimensions should be able to determine the dimensions when a negative margin is provided 1`] = `
 Object {
-  "height": 1950,
-  "width": 950,
-  "x": 125,
-  "y": 225,
+  "bottom": 1950,
+  "left": 125,
+  "right": 950,
+  "top": 225,
 }
 `;
 
 exports[`rectangles determineDimensions should be able to determine the dimensions when a positive margin is provided 1`] = `
 Object {
-  "height": 2050,
-  "width": 1050,
-  "x": 75,
-  "y": 175,
+  "bottom": 2050,
+  "left": 75,
+  "right": 1050,
+  "top": 175,
 }
 `;
 
 exports[`rectangles determineDimensions should be able to determine the dimensions when no margin is provided 1`] = `
 Object {
-  "height": 2000,
-  "width": 1000,
-  "x": 100,
-  "y": 200,
+  "bottom": 2000,
+  "left": 100,
+  "right": 1000,
+  "top": 200,
 }
 `;
 
 exports[`rectangles determineElementBlockOuts should return an array of element blockouts if multiple elements are provided 1`] = `
 Array [
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
 ]
 `;
@@ -89,10 +89,10 @@ Array [
 exports[`rectangles determineElementBlockOuts should return an array of one element blockout if 1 element is provided 1`] = `
 Array [
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
 ]
 `;
@@ -100,10 +100,10 @@ Array [
 exports[`rectangles determineElementBlockOuts should return an array of one element blockout if multiple elements are provided but 1 with an element number 1`] = `
 Array [
   Object {
-    "height": 20,
-    "width": 10,
-    "x": 1,
-    "y": 2,
+    "bottom": 20,
+    "left": 1,
+    "right": 10,
+    "top": 2,
   },
 ]
 `;
@@ -113,10 +113,10 @@ exports[`rectangles determineElementBlockOuts should return an empty array if no
 exports[`rectangles determineIgnoreRectangles should get the android navigation bar block outs 1`] = `
 Array [
   Object {
-    "height": 0,
-    "width": 812,
-    "x": 0,
-    "y": 0,
+    "bottom": undefined,
+    "left": undefined,
+    "right": 812,
+    "top": undefined,
   },
 ]
 `;
@@ -124,16 +124,16 @@ Array [
 exports[`rectangles determineIgnoreRectangles should get the block outs 1`] = `
 Array [
   Object {
-    "height": 44,
-    "width": 33,
-    "x": 11,
-    "y": 22,
+    "bottom": 44,
+    "left": 11,
+    "right": 33,
+    "top": 22,
   },
   Object {
-    "height": 54,
-    "width": 43,
-    "x": 21,
-    "y": 32,
+    "bottom": 54,
+    "left": 21,
+    "right": 43,
+    "top": 32,
   },
 ]
 `;
@@ -141,10 +141,10 @@ Array [
 exports[`rectangles determineIgnoreRectangles should get the status bar block outs 1`] = `
 Array [
   Object {
-    "height": 26,
-    "width": 812,
-    "x": 0,
-    "y": 0,
+    "bottom": undefined,
+    "left": 0,
+    "right": undefined,
+    "top": 0,
   },
 ]
 `;
@@ -152,10 +152,10 @@ Array [
 exports[`rectangles determineIgnoreRectangles should return iPhone X Max bottom bar rectangles 1`] = `
 Array [
   Object {
-    "height": 15,
-    "width": 444,
-    "x": 399,
-    "y": 2649,
+    "bottom": 15,
+    "left": 399,
+    "right": 444,
+    "top": 2649,
   },
 ]
 `;
@@ -163,10 +163,10 @@ Array [
 exports[`rectangles determineIgnoreRectangles should return iPhone X regular bottom bar rectangles 1`] = `
 Array [
   Object {
-    "height": 15,
-    "width": 402,
-    "x": 362,
-    "y": 2397,
+    "bottom": 15,
+    "left": 362,
+    "right": 402,
+    "top": 2397,
   },
 ]
 `;
@@ -175,53 +175,53 @@ exports[`rectangles determineIgnoreRectangles should return nothing if no ignore
 
 exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles 1`] = `
 Object {
-  "height": 0,
-  "width": 812,
-  "x": 0,
-  "y": 0,
+  "bottom": undefined,
+  "left": undefined,
+  "right": 812,
+  "top": undefined,
 }
 `;
 
 exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles 2`] = `
 Object {
-  "height": 0,
-  "width": 812,
-  "x": 0,
-  "y": 0,
+  "bottom": undefined,
+  "left": undefined,
+  "right": 812,
+  "top": undefined,
 }
 `;
 
 exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles 1`] = `
 Object {
-  "height": 26,
-  "width": 812,
-  "x": 0,
-  "y": 0,
+  "bottom": undefined,
+  "left": 0,
+  "right": undefined,
+  "top": 0,
 }
 `;
 
 exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles 2`] = `
 Object {
-  "height": 26,
-  "width": 812,
-  "x": 0,
-  "y": 0,
+  "bottom": undefined,
+  "left": 0,
+  "right": undefined,
+  "top": 0,
 }
 `;
 
 exports[`rectangles determineValidBlockOuts should return the valid blockouts if an array with invalid keys is provided 1`] = `
 Array [
   Object {
-    "height": 8,
-    "width": 7,
-    "x": 5,
-    "y": 6,
+    "bottom": 8,
+    "left": 5,
+    "right": 7,
+    "top": 6,
   },
   Object {
-    "height": 14,
-    "width": 13,
-    "x": 9,
-    "y": 12,
+    "bottom": 14,
+    "left": 9,
+    "right": 13,
+    "top": 12,
   },
 ]
 `;
@@ -229,16 +229,16 @@ Array [
 exports[`rectangles determineValidBlockOuts should return the valid blockouts if an valid array if provided 1`] = `
 Array [
   Object {
-    "height": 4,
-    "width": 3,
-    "x": 1,
-    "y": 2,
+    "bottom": 4,
+    "left": 1,
+    "right": 3,
+    "top": 2,
   },
   Object {
-    "height": 4,
-    "width": 3,
-    "x": 1,
-    "y": 2,
+    "bottom": 4,
+    "left": 1,
+    "right": 3,
+    "top": 2,
   },
 ]
 `;
