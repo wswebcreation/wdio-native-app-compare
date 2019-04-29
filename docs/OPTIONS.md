@@ -133,7 +133,7 @@ When providing a number for the amount of pixels here (higher then 0), the compa
 If true the return percentage will be like `0.12345678`, default is `0.12`
 
 ### `saveAboveTolerance`
-- **Type:** `boolean`
+- **Type:** `number`
 - **Default:** `false`
 - **Mandatory:** no
 - **Remark:** *Can also be used for `compareElement` and `compareScreen()`. It will override the plugin setting*
