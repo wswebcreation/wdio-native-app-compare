@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint ./lib",
     "compile": "babel lib/ -d build/",
+    "release": "np",
     "watch": "npm run compile -- --watch",
     "test.unit": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
@@ -41,6 +42,7 @@
     "eslint-plugin-import": "^2.18.2",
     "inquirer": "^6.5.1",
     "jest": "^24.9.0",
+    "np": "^5.0.3",
     "webdriverio": "^5.12.4"
   },
   "dependencies": {
