@@ -1,10 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getDeviceInfo should be able to get the device info 1`] = `
+exports[`getDeviceInfo should be able to get the default device info for the initial run 1`] = `
 Object {
   "dpr": 100,
+  "iosRectangles": Object {
+    "HOME_BAR": Object {
+      "PORTRAIT": Object {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0,
+      },
+    },
+    "STATUS_BAR": 20,
+  },
   "isIphoneXSeries": false,
   "isLargeIphoneXSeries": false,
+  "isPortrait": true,
   "screenSize": Object {
     "height": 20,
     "width": 10,
@@ -14,11 +26,127 @@ Object {
 }
 `;
 
-exports[`getDeviceInfo should be able to get the device info 2`] = `
+exports[`getDeviceInfo should be able to get the default device info for the second run 1`] = `
 Object {
   "dpr": 100,
+  "iosRectangles": Object {
+    "HOME_BAR": Object {
+      "PORTRAIT": Object {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0,
+      },
+    },
+    "STATUS_BAR": 20,
+  },
   "isIphoneXSeries": false,
   "isLargeIphoneXSeries": false,
+  "isPortrait": true,
+  "screenSize": Object {
+    "height": 20,
+    "width": 10,
+  },
+  "screenshotHeight": 2000,
+  "screenshotWidth": 1000,
+}
+`;
+
+exports[`getDeviceInfo should be able to get the default device info for the second run 2`] = `
+Object {
+  "dpr": 100,
+  "iosRectangles": Object {
+    "HOME_BAR": Object {
+      "PORTRAIT": Object {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0,
+      },
+    },
+    "STATUS_BAR": 20,
+  },
+  "isIphoneXSeries": false,
+  "isLargeIphoneXSeries": false,
+  "isPortrait": true,
+  "screenSize": Object {
+    "height": 20,
+    "width": 10,
+  },
+  "screenshotHeight": 2000,
+  "screenshotWidth": 1000,
+}
+`;
+
+exports[`getDeviceInfo should be able to get the device info for a landscape phone 1`] = `
+Object {
+  "dpr": 1,
+  "iosRectangles": Object {
+    "HOME_BAR": Object {
+      "PORTRAIT": Object {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0,
+      },
+    },
+    "STATUS_BAR": 20,
+  },
+  "isIphoneXSeries": false,
+  "isLargeIphoneXSeries": false,
+  "isPortrait": false,
+  "screenSize": Object {
+    "height": 500,
+    "width": 1000,
+  },
+  "screenshotHeight": 2000,
+  "screenshotWidth": 1000,
+}
+`;
+
+exports[`getDeviceInfo should be able to get the device info for an iPhone X 1`] = `
+Object {
+  "dpr": 100,
+  "iosRectangles": Object {
+    "HOME_BAR": Object {
+      "PORTRAIT": Object {
+        "height": 5,
+        "width": 135,
+        "x": 120,
+        "y": 799,
+      },
+    },
+    "STATUS_BAR": 44,
+  },
+  "isIphoneXSeries": true,
+  "isLargeIphoneXSeries": false,
+  "isPortrait": true,
+  "screenSize": Object {
+    "height": 20,
+    "width": 10,
+  },
+  "screenshotHeight": 2000,
+  "screenshotWidth": 1000,
+}
+`;
+
+exports[`getDeviceInfo should be able to get the device info for an iPhone X Large 1`] = `
+Object {
+  "dpr": 100,
+  "iosRectangles": Object {
+    "HOME_BAR": Object {
+      "PORTRAIT": Object {
+        "height": 5,
+        "width": 148,
+        "x": 133,
+        "y": 883,
+      },
+    },
+    "STATUS_BAR": 44,
+  },
+  "isIphoneXSeries": false,
+  "isLargeIphoneXSeries": true,
+  "isPortrait": true,
   "screenSize": Object {
     "height": 20,
     "width": 10,

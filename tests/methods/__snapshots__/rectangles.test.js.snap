@@ -141,9 +141,9 @@ Array [
 exports[`rectangles determineIgnoreRectangles should get the status bar block outs 1`] = `
 Array [
   Object {
-    "bottom": undefined,
+    "bottom": 26,
     "left": 0,
-    "right": undefined,
+    "right": 812,
     "top": 0,
   },
 ]
@@ -175,36 +175,63 @@ exports[`rectangles determineIgnoreRectangles should return nothing if no ignore
 
 exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles 1`] = `
 Object {
-  "bottom": undefined,
-  "left": undefined,
-  "right": 812,
-  "top": undefined,
+  "bottom": 20,
+  "left": 1,
+  "right": 500,
+  "top": 2,
 }
 `;
 
-exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles 2`] = `
+exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles by using the already defined one 1`] = `
 Object {
-  "bottom": undefined,
-  "left": undefined,
-  "right": 812,
-  "top": undefined,
+  "bottom": 20,
+  "left": 1,
+  "right": 500,
+  "top": 2,
 }
 `;
 
-exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles 1`] = `
+exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles by using the already defined one 2`] = `
 Object {
-  "bottom": undefined,
+  "bottom": 20,
+  "left": 1,
+  "right": 500,
+  "top": 2,
+}
+`;
+
+exports[`rectangles determineStatusBarRectangles should determine the iOS statusbar rectangles 1`] = `
+Object {
+  "bottom": 80,
   "left": 0,
-  "right": undefined,
+  "right": 1200,
   "top": 0,
 }
 `;
 
-exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles 2`] = `
+exports[`rectangles determineStatusBarRectangles should determine the initial statusbar rectangles 1`] = `
 Object {
-  "bottom": undefined,
+  "bottom": 26,
   "left": 0,
-  "right": undefined,
+  "right": 300,
+  "top": 0,
+}
+`;
+
+exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles by using the already defined one 1`] = `
+Object {
+  "bottom": 26,
+  "left": 0,
+  "right": 30,
+  "top": 0,
+}
+`;
+
+exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles by using the already defined one 2`] = `
+Object {
+  "bottom": 26,
+  "left": 0,
+  "right": 30,
   "top": 0,
 }
 `;
