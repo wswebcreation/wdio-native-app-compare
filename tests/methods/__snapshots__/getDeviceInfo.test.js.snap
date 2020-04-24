@@ -110,10 +110,10 @@ Object {
   "iosRectangles": Object {
     "HOME_BAR": Object {
       "PORTRAIT": Object {
-        "height": 5,
-        "width": 135,
-        "x": 120,
-        "y": 799,
+        "bottom": 6,
+        "left": 120,
+        "right": 135,
+        "top": 799,
       },
     },
     "STATUS_BAR": 44,
@@ -136,10 +136,10 @@ Object {
   "iosRectangles": Object {
     "HOME_BAR": Object {
       "PORTRAIT": Object {
-        "height": 5,
-        "width": 148,
-        "x": 133,
-        "y": 883,
+        "bottom": 6,
+        "left": 133,
+        "right": 148,
+        "top": 883,
       },
     },
     "STATUS_BAR": 44,
