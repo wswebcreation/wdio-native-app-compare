@@ -11,7 +11,7 @@ Visual regression testing for Native iOS and Android apps with WebdriverIO
 # What can it do
 This service for WebdriverIO will add 4 methods that can be used to save and or check element/screen-shots of a native iOS or Android app, see [Methods](./README.md#methods) for all the methods and details.
 
-When the compare methods are used a baseline image (each device + OS, and even OS version, needs to have it's own baseline image) will be compared to an actual screenshot. 
+When the compare methods are used a baseline image (each device + OS, and even OS version, needs to have it's own baseline image) will be compared to an actual screenshot.
 The output will be an object of data, check the `save..`-methods output [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#save-methods) and the `compare..`-methods [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#compare-methods)
 
 ## Comparison
@@ -78,6 +78,14 @@ When you are trying to save an element screenshot on Android the following log c
 #####################################################################################
 ```
 Please make sure you are using the `UiAutomator2`-driver when automating with Appium, see the Appium docs [here](http://appium.io/docs/en/drivers/android-uiautomator2/)
+
+## element screenshot on an iPhone 11 are borken
+There seems to be an issue with Appium and the iPhone 11 not giving back a correct element screenshot.
+I need to investigate this better, but a workaround would be to provide an empty `resizeDimensions`-object like this
+
+    driver.compareElement($('element'),'name', {resizeDimensions:{}});
+
+This will trigger taking an element screenshot by cutting it out a large screenshot.
 
 ## Credits
 - Credits go out to Tele2 Netherlands. They gave me the awesome assignment to automate a React Native app and also gave me the space to investigate the tools I needed to use to automate a React Native app.

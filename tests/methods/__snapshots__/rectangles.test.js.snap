@@ -1,5 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`rectangles determineAndroidNavigationBarRectangles should determine the navigationbar rectangles 1`] = `
+Object {
+  "bottom": 20,
+  "left": 1,
+  "right": 500,
+  "top": 2,
+}
+`;
+
+exports[`rectangles determineAndroidNavigationBarRectangles should determine the navigationbar rectangles by using the already defined one 1`] = `
+Object {
+  "bottom": 20,
+  "left": 1,
+  "right": 500,
+  "top": 2,
+}
+`;
+
+exports[`rectangles determineAndroidNavigationBarRectangles should determine the navigationbar rectangles by using the already defined one 2`] = `
+Object {
+  "bottom": 20,
+  "left": 1,
+  "right": 500,
+  "top": 2,
+}
+`;
+
 exports[`rectangles determineDimensions should be able to determine the dimensions when a negative margin is provided 1`] = `
 Object {
   "bottom": 1950,
@@ -141,70 +168,59 @@ Array [
 exports[`rectangles determineIgnoreRectangles should get the status bar block outs 1`] = `
 Array [
   Object {
-    "bottom": undefined,
+    "bottom": 26,
     "left": 0,
-    "right": undefined,
+    "right": 812,
     "top": 0,
   },
 ]
 `;
 
-exports[`rectangles determineIgnoreRectangles should return iPhone X Max bottom bar rectangles 1`] = `
+exports[`rectangles determineIgnoreRectangles should return iPhone X bottom bar rectangles 1`] = `
 Array [
   Object {
-    "bottom": 15,
-    "left": 399,
-    "right": 444,
-    "top": 2649,
-  },
-]
-`;
-
-exports[`rectangles determineIgnoreRectangles should return iPhone X regular bottom bar rectangles 1`] = `
-Array [
-  Object {
-    "bottom": 15,
-    "left": 362,
-    "right": 402,
-    "top": 2397,
+    "height": 10,
+    "width": 296,
+    "x": 266,
+    "y": 1766,
   },
 ]
 `;
 
 exports[`rectangles determineIgnoreRectangles should return nothing if no ignore rectangles need to be returned 1`] = `Array []`;
 
-exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles 1`] = `
+exports[`rectangles determineStatusBarRectangles should determine the iOS statusbar rectangles 1`] = `
 Object {
-  "bottom": undefined,
-  "left": undefined,
-  "right": 812,
-  "top": undefined,
-}
-`;
-
-exports[`rectangles determineNavigationBarRectangles should determine the navigationbar rectangles 2`] = `
-Object {
-  "bottom": undefined,
-  "left": undefined,
-  "right": 812,
-  "top": undefined,
-}
-`;
-
-exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles 1`] = `
-Object {
-  "bottom": undefined,
+  "bottom": 80,
   "left": 0,
-  "right": undefined,
+  "right": 1200,
   "top": 0,
 }
 `;
 
-exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles 2`] = `
+exports[`rectangles determineStatusBarRectangles should determine the initial statusbar rectangles 1`] = `
 Object {
-  "bottom": undefined,
+  "bottom": 26,
   "left": 0,
-  "right": undefined,
+  "right": 300,
+  "top": 0,
+}
+`;
+
+exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles by using the already defined one 1`] = `
+Object {
+  "bottom": 26,
+  "left": 0,
+  "right": 30,
+  "top": 0,
+}
+`;
+
+exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles by using the already defined one 2`] = `
+Object {
+  "bottom": 26,
+  "left": 0,
+  "right": 30,
   "top": 0,
 }
 `;
