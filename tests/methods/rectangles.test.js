@@ -88,26 +88,26 @@ describe('rectangles', () => {
             expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
         })
 
-        it('should return iPhone X regular bottom bar rectangles', async () => {
+        it('should return iPhone X bottom bar rectangles', async () => {
             ignoreRectanglesOptions.blockOutIphoneXBottomBar = true
             getDeviceInfoSpy = jest.spyOn(DeviceInfo, 'getDeviceInfo').mockResolvedValue({
                 dpr: 2,
                 screenshotWidth: 812,
                 isIphoneXSeries: true,
                 isLargeIphoneXSeries: false,
+                iosRectangles:{
+                    STATUS_BAR: 44,
+                    HOME_BAR: {
+                        PORTRAIT: {
+                            height: 5,
+                            width: 148,
+                            x: 133,
+                            y: 883,
+                        },
+                    },
+                }
             })
-
-            expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
-        })
-
-        it('should return iPhone X Max bottom bar rectangles', async () => {
-            ignoreRectanglesOptions.blockOutIphoneXBottomBar = true
-            getDeviceInfoSpy = jest.spyOn(DeviceInfo, 'getDeviceInfo').mockResolvedValue({
-                dpr: 2,
-                screenshotWidth: 812,
-                isIphoneXSeries: true,
-                isLargeIphoneXSeries: true,
-            })
+            global.browser.isIOS = true
 
             expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
         })
@@ -182,19 +182,19 @@ describe('rectangles', () => {
         })
     })
 
-    describe('determineNavigationBarRectangles', () => {
+    describe('determineAndroidNavigationBarRectangles', () => {
         it('should determine the navigationbar rectangles', async () => {
             global.$ = () => [{'element-selector-1': {}}]
 
-            expect(await Rectangles.determineNavigationBarRectangles(2, 500)).toMatchSnapshot()
+            expect(await Rectangles.determineAndroidNavigationBarRectangles({screenshotWidth: 500})).toMatchSnapshot()
         })
 
         it('should determine the navigationbar rectangles by using the already defined one', async () => {
             global.$ = () => [{'element-selector-1': {}}]
 
-            expect(await Rectangles.determineNavigationBarRectangles(2, 500)).toMatchSnapshot()
+            expect(await Rectangles.determineAndroidNavigationBarRectangles({screenshotWidth: 500})).toMatchSnapshot()
             // Call it again, this should not alter the outcome
-            expect(await Rectangles.determineNavigationBarRectangles(4, 1000)).toMatchSnapshot()
+            expect(await Rectangles.determineAndroidNavigationBarRectangles({screenshotWidth: 1000})).toMatchSnapshot()
         })
     })
 
@@ -221,7 +221,10 @@ describe('rectangles', () => {
 
     describe('determineElementBlockOuts', () => {
         it('should return an empty array if no elements are provided', async () => {
-            expect(await Rectangles.determineElementBlockOuts([], {dpr: 1})).toMatchSnapshot()
+            expect(await Rectangles.determineElementBlockOuts({
+                components: [],
+                dpr: 1,
+            })).toMatchSnapshot()
         })
 
         it('should return an array of one element blockout if 1 element is provided', async () => {
@@ -231,7 +234,10 @@ describe('rectangles', () => {
             ]
             global.$$ = () => [{'element-selector-1': {}}]
 
-            expect(await Rectangles.determineElementBlockOuts(components, {dpr: 1})).toMatchSnapshot()
+            expect(await Rectangles.determineElementBlockOuts({
+                components: components,
+                dpr: 1,
+            })).toMatchSnapshot()
         })
 
         it('should return an array of one element blockout if multiple elements are provided but 1 with an element number', async () => {
@@ -241,7 +247,10 @@ describe('rectangles', () => {
             ]
             global.$$ = () => [{'element-selector-1': {}}, {'element-selector-1': {}}, {'element-selector-1': {}}]
 
-            expect(await Rectangles.determineElementBlockOuts(components, {dpr: 1})).toMatchSnapshot()
+            expect(await Rectangles.determineElementBlockOuts({
+                components: components,
+                dpr: 1,
+            })).toMatchSnapshot()
         })
 
         it('should return an array of element blockouts if multiple elements are provided', async () => {
@@ -249,7 +258,10 @@ describe('rectangles', () => {
             const components = [{element: {selector}}, {element: {selector}}, {element: {selector}}]
             global.$$ = () => [{'element-selector-1': {}}, {'element-selector-1': {}}, {'element-selector-1': {}}]
 
-            expect(await Rectangles.determineElementBlockOuts(components, {dpr: 1})).toMatchSnapshot()
+            expect(await Rectangles.determineElementBlockOuts({
+                components: components,
+                dpr: 1,
+            })).toMatchSnapshot()
         })
     })
 
