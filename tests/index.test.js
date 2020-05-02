@@ -2,7 +2,7 @@ import WdioNativeAppCompareService from '../lib/'
 import * as Utils from '../lib/helpers/utils'
 
 
-class BrowserMock {
+class DriverMock {
     constructor() {
         this.addCommand = jest.fn().mockImplementation((name, fn) => {
             this[ name ] = fn
@@ -16,7 +16,7 @@ describe('index', () => {
     let getAndCreatePathSpy
 
     beforeEach(() => {
-        delete global.browser
+        delete global.driver
 
         getAndCreatePathSpy = jest.spyOn(Utils, 'getAndCreatePath').mockResolvedValue()
     })
@@ -28,11 +28,11 @@ describe('index', () => {
     describe('before hook', () => {
         it('should register all commands', () => {
             const service = new WdioNativeAppCompareService({})
-            global.browser = new BrowserMock()
+            global.driver = new DriverMock()
 
             service.before()
 
-            expect(global.browser.addCommand).toHaveBeenCalledTimes(4)
+            expect(global.driver.addCommand).toHaveBeenCalledTimes(4)
         })
     })
 })

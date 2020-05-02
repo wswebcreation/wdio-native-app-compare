@@ -1,5 +1,4 @@
 import {IMAGE_STRING} from '../mocks/mocks'
-// import {getDeviceInfo} from '../../lib/methods/getDeviceInfo'
 import * as Utils from '../../lib/helpers/utils'
 
 describe('getDeviceInfo', () => {
@@ -13,8 +12,9 @@ describe('getDeviceInfo', () => {
         jest.isolateModules(() => {
             getDeviceInfo = require('../../lib/methods/getDeviceInfo').getDeviceInfo
         })
-        delete global.browser
-        global.browser = {
+        delete global.driver
+        global.driver = {
+            capabilities:{},
             getWindowSize: jest.fn().mockResolvedValue(screenData),
         }
         getScreenshotSizeSpy = jest.spyOn(Utils, 'getScreenshotSize').mockReturnValue({
@@ -24,7 +24,7 @@ describe('getDeviceInfo', () => {
     })
 
     afterEach(() => {
-        global.browser = {
+        global.driver = {
             getWindowSize: jest.fn().mockRestore(),
         }
         determineIphoneXSeriesSpy.mockRestore()
@@ -38,7 +38,7 @@ describe('getDeviceInfo', () => {
 
         expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
         expect(getScreenshotSizeSpy).toBeCalledWith(IMAGE_STRING)
-        expect(global.browser.getWindowSize).toHaveBeenCalled()
+        expect(global.driver.getWindowSize).toHaveBeenCalled()
         expect(determineIphoneXSeriesSpy).toBeCalledWith(screenData)
         expect(determineLargeIphoneXSeriesSpy).toBeCalledWith(screenData)
     })
@@ -49,19 +49,19 @@ describe('getDeviceInfo', () => {
 
         expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
         expect(getScreenshotSizeSpy).toBeCalledWith(IMAGE_STRING)
-        expect(global.browser.getWindowSize).toHaveBeenCalled()
+        expect(global.driver.getWindowSize).toHaveBeenCalled()
         expect(determineIphoneXSeriesSpy).toBeCalledWith(screenData)
         expect(determineLargeIphoneXSeriesSpy).toBeCalledWith(screenData)
 
         getScreenshotSizeSpy.mockRestore()
         determineIphoneXSeriesSpy.mockRestore()
         determineLargeIphoneXSeriesSpy.mockRestore()
-        global.browser = {
+        global.driver = {
             getWindowSize: jest.fn().mockRestore(),
         }
 
         // The second run to check that the data is stored in the `DEVICE_INFO` and all methods are not called again
-        global.browser = {
+        global.driver = {
             getWindowSize: jest.fn().mockResolvedValue(screenData),
         }
         getScreenshotSizeSpy = jest.spyOn(Utils, 'getScreenshotSize').mockReturnValue({
@@ -73,7 +73,7 @@ describe('getDeviceInfo', () => {
 
         expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
         expect(getScreenshotSizeSpy).not.toHaveBeenCalled()
-        expect(global.browser.getWindowSize).not.toHaveBeenCalled()
+        expect(global.driver.getWindowSize).not.toHaveBeenCalled()
         expect(determineIphoneXSeriesSpy).not.toHaveBeenCalled()
         expect(determineLargeIphoneXSeriesSpy).not.toHaveBeenCalled()
     })
@@ -93,10 +93,27 @@ describe('getDeviceInfo', () => {
     })
 
     it('should be able to get the device info for a landscape phone', async () => {
-        global.browser = {
+        global.driver = {
+            capabilities: {},
             getWindowSize: jest.fn().mockResolvedValue({
                 width: 1000,
                 height: 500,
+            }),
+        }
+
+        expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
+    })
+
+    it('should be able to get the device info an Android phone', async () => {
+        global.driver = {
+            capabilities: {
+                pixelRatio: 2.75,
+                statBarHeight: 66,
+                viewportRect: { left: 0, top: 66, width: 1000, height: 1802 }
+            },
+            getWindowSize: jest.fn().mockResolvedValue({
+                width: 1000,
+                height: 2000,
             }),
         }
 

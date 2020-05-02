@@ -11,6 +11,9 @@ describe('takeResizedElementScreenshot', () => {
     const element = { elementId: 1 }
 
     beforeEach(() => {
+        global.driver = {
+            isIOS: false
+        }
         takeBase64ScreenshotSpy = jest.spyOn(Screenshot, 'takeBase64Screenshot').mockResolvedValue(takeBase64ScreenshotResult)
         getDeviceInfoSpy = jest.spyOn(DeviceInfo, 'getDeviceInfo').mockResolvedValue({ dpr: 2 })
         makeCroppedBase64ImageSpy = jest.spyOn(CroppedBase64Image, 'makeCroppedBase64Image').mockResolvedValue(imageString)
@@ -37,7 +40,7 @@ describe('takeResizedElementScreenshot', () => {
         expect(takeBase64ScreenshotSpy).toHaveBeenCalled()
         expect(makeCroppedBase64ImageSpy).toBeCalledWith(
             takeBase64ScreenshotResult,
-            { height: 40, width: 20, x: 2, y: 4 },
+            { height: 20, width: 10, x: 1, y: 2 },
             { bottom: 0, left: 0, right: 0, top: 0 },
         )
     })
@@ -54,7 +57,7 @@ describe('takeResizedElementScreenshot', () => {
         expect(takeBase64ScreenshotSpy).toHaveBeenCalled()
         expect(makeCroppedBase64ImageSpy).toBeCalledWith(
             takeBase64ScreenshotResult,
-            { height: 40, width: 20, x: 2, y: 4 },
+            { height: 20, width: 10, x: 1, y: 2 },
             { bottom: 10, left: 20, right: 30, top: 40 },
         )
     })

@@ -1,32 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`rectangles determineAndroidNavigationBarRectangles should determine the navigationbar rectangles 1`] = `
-Object {
-  "bottom": 20,
-  "left": 1,
-  "right": 500,
-  "top": 2,
-}
-`;
-
-exports[`rectangles determineAndroidNavigationBarRectangles should determine the navigationbar rectangles by using the already defined one 1`] = `
-Object {
-  "bottom": 20,
-  "left": 1,
-  "right": 500,
-  "top": 2,
-}
-`;
-
-exports[`rectangles determineAndroidNavigationBarRectangles should determine the navigationbar rectangles by using the already defined one 2`] = `
-Object {
-  "bottom": 20,
-  "left": 1,
-  "right": 500,
-  "top": 2,
-}
-`;
-
 exports[`rectangles determineDimensions should be able to determine the dimensions when a negative margin is provided 1`] = `
 Object {
   "bottom": 1950,
@@ -140,10 +113,10 @@ exports[`rectangles determineElementBlockOuts should return an empty array if no
 exports[`rectangles determineIgnoreRectangles should get the android navigation bar block outs 1`] = `
 Array [
   Object {
-    "bottom": undefined,
-    "left": undefined,
+    "bottom": 26,
+    "left": 0,
     "right": 812,
-    "top": undefined,
+    "top": 0,
   },
 ]
 `;
@@ -179,51 +152,15 @@ Array [
 exports[`rectangles determineIgnoreRectangles should return iPhone X bottom bar rectangles 1`] = `
 Array [
   Object {
-    "height": 10,
-    "width": 296,
-    "x": 266,
-    "y": 1766,
+    "bottom": 5,
+    "left": 133,
+    "right": 148,
+    "top": 883,
   },
 ]
 `;
 
 exports[`rectangles determineIgnoreRectangles should return nothing if no ignore rectangles need to be returned 1`] = `Array []`;
-
-exports[`rectangles determineStatusBarRectangles should determine the iOS statusbar rectangles 1`] = `
-Object {
-  "bottom": 80,
-  "left": 0,
-  "right": 1200,
-  "top": 0,
-}
-`;
-
-exports[`rectangles determineStatusBarRectangles should determine the initial statusbar rectangles 1`] = `
-Object {
-  "bottom": 26,
-  "left": 0,
-  "right": 300,
-  "top": 0,
-}
-`;
-
-exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles by using the already defined one 1`] = `
-Object {
-  "bottom": 26,
-  "left": 0,
-  "right": 30,
-  "top": 0,
-}
-`;
-
-exports[`rectangles determineStatusBarRectangles should determine the statusbar rectangles by using the already defined one 2`] = `
-Object {
-  "bottom": 26,
-  "left": 0,
-  "right": 30,
-  "top": 0,
-}
-`;
 
 exports[`rectangles determineValidBlockOuts should return the valid blockouts if an array with invalid keys is provided 1`] = `
 Array [

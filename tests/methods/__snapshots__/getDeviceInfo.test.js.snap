@@ -3,20 +3,29 @@
 exports[`getDeviceInfo should be able to get the default device info for the initial run 1`] = `
 Object {
   "dpr": 100,
-  "iosRectangles": Object {
-    "HOME_BAR": Object {
-      "PORTRAIT": Object {
-        "height": 0,
-        "width": 0,
-        "x": 0,
-        "y": 0,
-      },
-    },
-    "STATUS_BAR": 20,
-  },
   "isIphoneXSeries": false,
   "isLargeIphoneXSeries": false,
   "isPortrait": true,
+  "rectangles": Object {
+    "androidNavigationBar": Object {
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+    },
+    "iOSHomeBar": Object {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0,
+    },
+    "statusBar": Object {
+      "bottom": 2000,
+      "left": 0,
+      "right": 1000,
+      "top": 0,
+    },
+  },
   "screenSize": Object {
     "height": 20,
     "width": 10,
@@ -29,20 +38,29 @@ Object {
 exports[`getDeviceInfo should be able to get the default device info for the second run 1`] = `
 Object {
   "dpr": 100,
-  "iosRectangles": Object {
-    "HOME_BAR": Object {
-      "PORTRAIT": Object {
-        "height": 0,
-        "width": 0,
-        "x": 0,
-        "y": 0,
-      },
-    },
-    "STATUS_BAR": 20,
-  },
   "isIphoneXSeries": false,
   "isLargeIphoneXSeries": false,
   "isPortrait": true,
+  "rectangles": Object {
+    "androidNavigationBar": Object {
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+    },
+    "iOSHomeBar": Object {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0,
+    },
+    "statusBar": Object {
+      "bottom": 2000,
+      "left": 0,
+      "right": 1000,
+      "top": 0,
+    },
+  },
   "screenSize": Object {
     "height": 20,
     "width": 10,
@@ -55,20 +73,29 @@ Object {
 exports[`getDeviceInfo should be able to get the default device info for the second run 2`] = `
 Object {
   "dpr": 100,
-  "iosRectangles": Object {
-    "HOME_BAR": Object {
-      "PORTRAIT": Object {
-        "height": 0,
-        "width": 0,
-        "x": 0,
-        "y": 0,
-      },
-    },
-    "STATUS_BAR": 20,
-  },
   "isIphoneXSeries": false,
   "isLargeIphoneXSeries": false,
   "isPortrait": true,
+  "rectangles": Object {
+    "androidNavigationBar": Object {
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+    },
+    "iOSHomeBar": Object {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0,
+    },
+    "statusBar": Object {
+      "bottom": 2000,
+      "left": 0,
+      "right": 1000,
+      "top": 0,
+    },
+  },
   "screenSize": Object {
     "height": 20,
     "width": 10,
@@ -78,23 +105,67 @@ Object {
 }
 `;
 
+exports[`getDeviceInfo should be able to get the device info an Android phone 1`] = `
+Object {
+  "dpr": 2.75,
+  "isIphoneXSeries": false,
+  "isLargeIphoneXSeries": false,
+  "isPortrait": true,
+  "rectangles": Object {
+    "androidNavigationBar": Object {
+      "bottom": 2000,
+      "left": 0,
+      "right": 1000,
+      "top": 1868,
+    },
+    "iOSHomeBar": Object {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0,
+    },
+    "statusBar": Object {
+      "bottom": 66,
+      "left": 0,
+      "right": 1000,
+      "top": 0,
+    },
+  },
+  "screenSize": Object {
+    "height": 2000,
+    "width": 1000,
+  },
+  "screenshotHeight": 2000,
+  "screenshotWidth": 1000,
+}
+`;
+
 exports[`getDeviceInfo should be able to get the device info for a landscape phone 1`] = `
 Object {
   "dpr": 1,
-  "iosRectangles": Object {
-    "HOME_BAR": Object {
-      "PORTRAIT": Object {
-        "height": 0,
-        "width": 0,
-        "x": 0,
-        "y": 0,
-      },
-    },
-    "STATUS_BAR": 20,
-  },
   "isIphoneXSeries": false,
   "isLargeIphoneXSeries": false,
   "isPortrait": false,
+  "rectangles": Object {
+    "androidNavigationBar": Object {
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+    },
+    "iOSHomeBar": Object {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0,
+    },
+    "statusBar": Object {
+      "bottom": 20,
+      "left": 0,
+      "right": 1000,
+      "top": 0,
+    },
+  },
   "screenSize": Object {
     "height": 500,
     "width": 1000,
@@ -107,20 +178,29 @@ Object {
 exports[`getDeviceInfo should be able to get the device info for an iPhone X 1`] = `
 Object {
   "dpr": 100,
-  "iosRectangles": Object {
-    "HOME_BAR": Object {
-      "PORTRAIT": Object {
-        "bottom": 6,
-        "left": 120,
-        "right": 135,
-        "top": 799,
-      },
-    },
-    "STATUS_BAR": 44,
-  },
   "isIphoneXSeries": true,
   "isLargeIphoneXSeries": false,
   "isPortrait": true,
+  "rectangles": Object {
+    "androidNavigationBar": Object {
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+    },
+    "iOSHomeBar": Object {
+      "bottom": 6,
+      "left": 120,
+      "right": 135,
+      "top": 799,
+    },
+    "statusBar": Object {
+      "bottom": 4400,
+      "left": 0,
+      "right": 1000,
+      "top": 0,
+    },
+  },
   "screenSize": Object {
     "height": 20,
     "width": 10,
@@ -133,20 +213,29 @@ Object {
 exports[`getDeviceInfo should be able to get the device info for an iPhone X Large 1`] = `
 Object {
   "dpr": 100,
-  "iosRectangles": Object {
-    "HOME_BAR": Object {
-      "PORTRAIT": Object {
-        "bottom": 6,
-        "left": 133,
-        "right": 148,
-        "top": 883,
-      },
-    },
-    "STATUS_BAR": 44,
-  },
   "isIphoneXSeries": false,
   "isLargeIphoneXSeries": true,
   "isPortrait": true,
+  "rectangles": Object {
+    "androidNavigationBar": Object {
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+    },
+    "iOSHomeBar": Object {
+      "bottom": 6,
+      "left": 133,
+      "right": 148,
+      "top": 883,
+    },
+    "statusBar": Object {
+      "bottom": 4400,
+      "left": 0,
+      "right": 1000,
+      "top": 0,
+    },
+  },
   "screenSize": Object {
     "height": 20,
     "width": 10,

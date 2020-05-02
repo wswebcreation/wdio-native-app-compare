@@ -15,7 +15,7 @@ describe('compareScreen', () => {
     }
 
     beforeEach(() => {
-        global.browser = {
+        global.driver = {
             saveScreen: jest.fn().mockResolvedValue(saveScreenData),
         }
         checkBaselineImageExistsSpy = jest.spyOn(BaseLine, 'checkBaselineImageExists').mockResolvedValue()
@@ -27,7 +27,7 @@ describe('compareScreen', () => {
         checkBaselineImageExistsSpy.mockRestore()
         determineIgnoreRectanglesSpy.mockRestore()
         executeCompareSpy.mockRestore()
-        global.browser = {
+        global.driver = {
             saveScreen: jest.fn().mockRestore(),
         }
     })
@@ -50,7 +50,7 @@ describe('compareScreen', () => {
         }, 'tag')
 
         expect(instanceCompareOptionsSpy).toHaveBeenCalled()
-        expect(global.browser.saveScreen).toBeCalledWith('tag', true)
+        expect(global.driver.saveScreen).toBeCalledWith('tag', true)
         expect(checkBaselineImageExistsSpy).toHaveBeenCalled()
         expect(determineIgnoreRectanglesSpy).toBeCalledWith(saveScreenData.base64Screenshot, options)
         expect(executeCompareSpy).toBeCalledWith(saveScreenData.folders, saveScreenData.fileName, options)
@@ -76,7 +76,7 @@ describe('compareScreen', () => {
         }, 'tag', instanceOptions)
 
         expect(instanceCompareOptionsSpy).toHaveBeenCalled()
-        expect(global.browser.saveScreen).toBeCalledWith('tag', true)
+        expect(global.driver.saveScreen).toBeCalledWith('tag', true)
         expect(checkBaselineImageExistsSpy).toHaveBeenCalled()
         expect(determineIgnoreRectanglesSpy).toBeCalledWith(saveScreenData.base64Screenshot, instanceOptions)
         expect(executeCompareSpy).toBeCalledWith(saveScreenData.folders, saveScreenData.fileName, instanceOptions)
@@ -102,7 +102,7 @@ describe('compareScreen', () => {
         }, 'tag')
 
         expect(instanceCompareOptionsSpy).toHaveBeenCalled()
-        expect(global.browser.saveScreen).toBeCalledWith('tag', true)
+        expect(global.driver.saveScreen).toBeCalledWith('tag', true)
         expect(checkBaselineImageExistsSpy).toHaveBeenCalled()
         expect(determineIgnoreRectanglesSpy).toBeCalledWith(saveScreenData.base64Screenshot, options)
         expect(executeCompareSpy).toBeCalledWith(saveScreenData.folders, saveScreenData.fileName, options)
