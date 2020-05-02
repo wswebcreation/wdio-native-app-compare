@@ -12,6 +12,7 @@ module.exports = {
     $: true,
     $$: true,
     browser: true,
+    driver: true,
   },
   parser: 'babel-eslint',
   parserOptions: {

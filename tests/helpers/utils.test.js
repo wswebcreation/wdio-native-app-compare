@@ -71,18 +71,18 @@ describe('utils', () => {
 
     describe('multiplyIosObjectValuesAgainstDPR', () => {
         beforeEach(() => {
-            delete global.browser
-            global.browser = {}
+            delete global.driver
+            global.driver = {}
         })
 
         it('should be able to return data back for Android', () => {
-            global.browser.isIOS = false
+            global.driver.isIOS = false
 
             expect(multiplyIosObjectValuesAgainstDPR({ v: 0, x: 1, y: 2, z: 3 }, 3)).toMatchSnapshot()
         })
 
         it('should be able to return data back for iOS', () => {
-            global.browser.isIOS = true
+            global.driver.isIOS = true
 
             expect(multiplyIosObjectValuesAgainstDPR({ v: 0, x: 1, y: 2, z: 3 }, 3)).toMatchSnapshot()
         })
@@ -90,60 +90,60 @@ describe('utils', () => {
 
     describe('determineIphoneXSeries', () => {
         beforeEach(() => {
-            delete global.browser
-            global.browser = {}
+            delete global.driver
+            global.driver = {}
         })
 
         it('should determine that a portrait Android device with the iPhone default X screensize is not an iPhone X series device', () => {
-            global.browser.isIOS = false
+            global.driver.isIOS = false
 
             expect(determineIphoneXSeries({ width: IPHONE_X_SIZE, height: 200 })).toEqual(false)
         })
 
         it('should determine that a landscape Android device with the iPhone default X screensize is not an iPhone X series device', () => {
-            global.browser.isIOS = false
+            global.driver.isIOS = false
 
             expect(determineIphoneXSeries({ width: 200, height: IPHONE_X_SIZE })).toEqual(false)
         })
 
         it('should determine that a portrait Android device with the iPhone max X screensize is not an iPhone X series device', () => {
-            global.browser.isIOS = false
+            global.driver.isIOS = false
 
             expect(determineIphoneXSeries({ width: IPHONE_X_MAX_SIZE, height: 200 })).toEqual(false)
         })
 
         it('should determine that a landscape Android device with the iPhone max X screensize is not an iPhone X series device', () => {
-            global.browser.isIOS = false
+            global.driver.isIOS = false
 
             expect(determineIphoneXSeries({ width: 200, height: IPHONE_X_MAX_SIZE })).toEqual(false)
         })
 
         it('should determine that a iOS device with non matching screensize is not an iPhone X series device', () => {
-            global.browser.isIOS = true
+            global.driver.isIOS = true
 
             expect(determineIphoneXSeries({ width: 200, height: 600 })).toEqual(false)
         })
 
         it('should determine that a portrait iOS device with the iPhone default X screensize is an iPhone X series device', () => {
-            global.browser.isIOS = true
+            global.driver.isIOS = true
 
             expect(determineIphoneXSeries({ width: IPHONE_X_SIZE, height: 200 })).toEqual(true)
         })
 
         it('should determine that a landscape iOS device with the iPhone default X screensize is an iPhone X series device', () => {
-            global.browser.isIOS = true
+            global.driver.isIOS = true
 
             expect(determineIphoneXSeries({ width: 200, height: IPHONE_X_SIZE })).toEqual(true)
         })
 
         it('should determine that a portrait iOS device with the iPhone max X screensize is an iPhone X series device', () => {
-            global.browser.isIOS = true
+            global.driver.isIOS = true
 
             expect(determineIphoneXSeries({ width: IPHONE_X_MAX_SIZE, height: 200 })).toEqual(true)
         })
 
         it('should determine that a landscape iOS device with the iPhone max X screensize is an iPhone X series device', () => {
-            global.browser.isIOS = true
+            global.driver.isIOS = true
 
             expect(determineIphoneXSeries({ width: 200, height: IPHONE_X_MAX_SIZE })).toEqual(true)
         })
@@ -151,42 +151,42 @@ describe('utils', () => {
 
     describe('determineLargeIphoneXSeries', () => {
         beforeEach(() => {
-            delete global.browser
-            global.browser = {}
+            delete global.driver
+            global.driver = {}
         })
 
         it('should determine that a portrait Android device with the iPhone max X screensize is not an iPhone X Max series device', () => {
-            global.browser.isIOS = false
+            global.driver.isIOS = false
 
             expect(determineLargeIphoneXSeries({ width: IPHONE_X_MAX_SIZE, height: 200 })).toEqual(false)
         })
 
         it('should determine that a landscape Android device with the iPhone max X screensize is not an iPhone X Max series device', () => {
-            global.browser.isIOS = false
+            global.driver.isIOS = false
 
             expect(determineLargeIphoneXSeries({ width: 200, height: IPHONE_X_MAX_SIZE })).toEqual(false)
         })
 
         it('should determine that a portrait iPhone default X device with the iPhone default X screensize is not an iPhone X Max series device', () => {
-            global.browser.isIOS = false
+            global.driver.isIOS = false
 
             expect(determineLargeIphoneXSeries({ width: IPHONE_X_MAX_SIZE, height: 200 })).toEqual(false)
         })
 
         it('should determine that a landscape iPhone default X device with the iPhone default X screensize is not an iPhone X Max series device', () => {
-            global.browser.isIOS = false
+            global.driver.isIOS = false
 
             expect(determineLargeIphoneXSeries({ width: 200, height: IPHONE_X_MAX_SIZE })).toEqual(false)
         })
 
         it('should determine that a portrait iOS device with the iPhone max X screensize is an iPhone X series device', () => {
-            global.browser.isIOS = true
+            global.driver.isIOS = true
 
             expect(determineLargeIphoneXSeries({ width: IPHONE_X_MAX_SIZE, height: 200 })).toEqual(true)
         })
 
         it('should determine that a landscape iOS device with the iPhone max X screensize is an iPhone X series device', () => {
-            global.browser.isIOS = true
+            global.driver.isIOS = true
 
             expect(determineLargeIphoneXSeries({ width: 200, height: IPHONE_X_MAX_SIZE })).toEqual(true)
         })

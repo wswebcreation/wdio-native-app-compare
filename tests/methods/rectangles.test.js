@@ -8,11 +8,12 @@ describe('rectangles', () => {
         jest.isolateModules(() => {
             Rectangles = require('../../lib/methods/rectangles')
         })
-        delete global.browser
+        delete global.driver
         delete global.$$
 
         global.$$ = () => [{'element-selector-1': {}}]
-        global.browser = {
+        global.driver = {
+            capabilities: {},
             getElementRect: jest.fn().mockResolvedValue({x: 1, y: 2, width: 10, height: 20}),
             getSettings: jest.fn().mockResolvedValue({allowInvisibleElements: false}),
             updateSettings: jest.fn().mockResolvedValue({}),
@@ -30,15 +31,24 @@ describe('rectangles', () => {
             screenshotHeight: 1700,
             screenshotWidth: 812,
             isPortrait: true,
-            iosRectangles: {
-                STATUS_BAR: 20,
-                HOME_BAR: {
-                    PORTRAIT: {
-                        height: 0,
-                        width: 0,
-                        x: 0,
-                        y: 0,
-                    },
+            rectangles: {
+                androidNavigationBar: {
+                    bottom: 800,
+                    top: 760,
+                    left: 0,
+                    right: 400,
+                },
+                iOSHomeBar: {
+                    bottom: 5,
+                    top: 883,
+                    left: 133,
+                    right: 148,
+                },
+                statusBar: {
+                    bottom: 26,
+                    top: 0,
+                    left: 0,
+                    right: 812,
                 },
             },
         })
@@ -51,7 +61,7 @@ describe('rectangles', () => {
     })
 
     afterEach(() => {
-        global.browser = {
+        global.driver = {
             getElementRect: jest.fn().mockRestore(),
             getSettings: jest.fn().mockRestore(),
             updateSettings: jest.fn().mockRestore(),
@@ -71,7 +81,7 @@ describe('rectangles', () => {
         })
 
         it('should get the android navigation bar block outs', async () => {
-            global.browser.isAndroid = true
+            global.driver.isAndroid = true
             ignoreRectanglesOptions.blockOutNavigationBar = true
 
             expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
@@ -90,111 +100,20 @@ describe('rectangles', () => {
 
         it('should return iPhone X bottom bar rectangles', async () => {
             ignoreRectanglesOptions.blockOutIphoneXBottomBar = true
-            getDeviceInfoSpy = jest.spyOn(DeviceInfo, 'getDeviceInfo').mockResolvedValue({
-                dpr: 2,
-                screenshotWidth: 812,
-                isIphoneXSeries: true,
-                isLargeIphoneXSeries: false,
-                iosRectangles:{
-                    STATUS_BAR: 44,
-                    HOME_BAR: {
-                        PORTRAIT: {
-                            height: 5,
-                            width: 148,
-                            x: 133,
-                            y: 883,
-                        },
-                    },
-                }
-            })
-            global.browser.isIOS = true
+            global.driver.isIOS = true
 
             expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
         })
 
-        it('should call the settings API for android when the status bar needs to be blocked out', async () => {
-            global.browser.isAndroid = true
-            ignoreRectanglesOptions.blockOutStatusBar = true
-
-            await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)
-
-            expect(global.browser.getSettings).toBeCalled()
-            expect(global.browser.updateSettings).toBeCalledWith({allowInvisibleElements: true})
-            expect(global.browser.updateSettings).toHaveBeenLastCalledWith({allowInvisibleElements: false})
-        })
-
-        it('should call the settings API for android when the navigation bar needs to be blocked out', async () => {
-            global.browser.isAndroid = true
-            ignoreRectanglesOptions.blockOutNavigationBar = true
-
-            await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)
-
-            expect(global.browser.getSettings).toBeCalled()
-            expect(global.browser.updateSettings).toBeCalledWith({allowInvisibleElements: true})
-            expect(global.browser.updateSettings).toHaveBeenLastCalledWith({allowInvisibleElements: false})
-        })
-
         it('should call the settings API for android when elements needs to be blocked out', async () => {
-            global.browser.isAndroid = true
+            global.driver.isAndroid = true
             ignoreRectanglesOptions.elementBlockOuts = [{element: {selector: 'selector-1'}}, {
                 element: {selector: 'selector-1'}
             }]
             await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)
-            expect(global.browser.getSettings).toBeCalled()
-            expect(global.browser.updateSettings).toBeCalledWith({allowInvisibleElements: true})
-            expect(global.browser.updateSettings).toHaveBeenLastCalledWith({allowInvisibleElements: false})
-        })
-    })
-
-    describe('determineStatusBarRectangles', () => {
-        it('should determine the initial statusbar rectangles', async () => {
-            expect(await Rectangles.determineStatusBarRectangles({
-                dpr: 4,
-                iosStatusBar: 20,
-                screenshotWidth: 300,
-            })).toMatchSnapshot()
-        })
-
-        it('should determine the statusbar rectangles by using the already defined one', async () => {
-            expect(await Rectangles.determineStatusBarRectangles({
-                dpr: 10,
-                iosStatusBar: 20,
-                screenshotWidth: 30,
-            })).toMatchSnapshot()
-
-            // Call it again, this should not alter the outcome
-            expect(await Rectangles.determineStatusBarRectangles({
-                dpr: 40,
-                iosStatusBar: 50,
-                screenshotWidth: 60,
-            })).toMatchSnapshot()
-        })
-
-        it('should determine the iOS statusbar rectangles', async () => {
-            global.$ = () => [{'element-selector-1': {}}]
-            global.browser.isIOS = true
-
-            expect(await Rectangles.determineStatusBarRectangles({
-                dpr: 4,
-                iosStatusBar: 20,
-                screenshotWidth: 300,
-            })).toMatchSnapshot()
-        })
-    })
-
-    describe('determineAndroidNavigationBarRectangles', () => {
-        it('should determine the navigationbar rectangles', async () => {
-            global.$ = () => [{'element-selector-1': {}}]
-
-            expect(await Rectangles.determineAndroidNavigationBarRectangles({screenshotWidth: 500})).toMatchSnapshot()
-        })
-
-        it('should determine the navigationbar rectangles by using the already defined one', async () => {
-            global.$ = () => [{'element-selector-1': {}}]
-
-            expect(await Rectangles.determineAndroidNavigationBarRectangles({screenshotWidth: 500})).toMatchSnapshot()
-            // Call it again, this should not alter the outcome
-            expect(await Rectangles.determineAndroidNavigationBarRectangles({screenshotWidth: 1000})).toMatchSnapshot()
+            expect(global.driver.getSettings).toBeCalled()
+            expect(global.driver.updateSettings).toBeCalledWith({allowInvisibleElements: true})
+            expect(global.driver.updateSettings).toHaveBeenLastCalledWith({allowInvisibleElements: false})
         })
     })
 
@@ -298,7 +217,7 @@ describe('rectangles', () => {
         it('should return element rectangles', async () => {
 
             expect(await Rectangles.getElementRectangles({elementId: 1})).toMatchSnapshot()
-            expect(global.browser.getElementRect).toBeCalledWith(1)
+            expect(global.driver.getElementRect).toBeCalledWith(1)
         })
     })
 })

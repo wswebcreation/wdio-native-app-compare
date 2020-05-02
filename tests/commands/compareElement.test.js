@@ -14,7 +14,7 @@ describe('compareElement', () => {
     }
 
     beforeEach(() => {
-        global.browser = {
+        global.driver = {
             saveElement: jest.fn().mockResolvedValue(saveElementData),
         }
         checkBaselineImageExistsSpy = jest.spyOn(BaseLine, 'checkBaselineImageExists').mockResolvedValue()
@@ -25,7 +25,7 @@ describe('compareElement', () => {
         instanceCompareOptionsSpy.mockRestore()
         checkBaselineImageExistsSpy.mockRestore()
         executeCompareSpy.mockRestore()
-        global.browser = {
+        global.driver = {
             saveElement: jest.fn().mockRestore(),
         }
     })
@@ -47,7 +47,7 @@ describe('compareElement', () => {
         }, {}, 'tag')
 
         expect(instanceCompareOptionsSpy).toHaveBeenCalled()
-        expect(global.browser.saveElement).toBeCalledWith({}, 'tag', {})
+        expect(global.driver.saveElement).toBeCalledWith({}, 'tag', {})
         expect(checkBaselineImageExistsSpy).toHaveBeenCalled()
         expect(executeCompareSpy).toBeCalledWith(saveElementData.folders, saveElementData.fileName, options)
         expect(data).toMatchSnapshot()
@@ -71,7 +71,7 @@ describe('compareElement', () => {
         }, {}, 'tag', {})
 
         expect(instanceCompareOptionsSpy).toHaveBeenCalled()
-        expect(global.browser.saveElement).toBeCalledWith({}, 'tag', {})
+        expect(global.driver.saveElement).toBeCalledWith({}, 'tag', {})
         expect(checkBaselineImageExistsSpy).toHaveBeenCalled()
         expect(executeCompareSpy).toBeCalledWith(saveElementData.folders, saveElementData.fileName, instanceOptions)
         expect(data).toMatchSnapshot()
