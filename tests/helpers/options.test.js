@@ -1,33 +1,64 @@
-import { defaultCompareOptions, initOptions, instanceCompareOptions } from '../../lib/helpers/options'
+import {defaultCompareOptions, initOptions, instanceCompareOptions} from '../../lib/helpers/options'
 
 describe('Options', () => {
     describe('initOptions', () => {
-        it('should set the default options if no nativeAppCompare options are provided', () => {
+        it('should set the default options if no options are provided', () => {
             expect(initOptions({})).toMatchSnapshot()
         })
 
-        it('should return the default baselineFolder if it is not provided', () => {
-            const options = {
-                nativeAppCompare: {
+        describe('V5', () => {
+            it('should return the default baselineFolder if it is not provided', () => {
+                const options = {
+                    nativeAppCompare: {
+                        foo: 1,
+                        screenshotPath: './screenshotPath/',
+                    }
+                }
+                expect(initOptions(options)).toMatchSnapshot()
+            })
+
+            it('should return the default screenshotPath if it is not provided', () => {
+                const options = {
+                    nativeAppCompare: {
+                        baselineFolder: './somewhere/'
+                    }
+                }
+                expect(initOptions(options)).toMatchSnapshot()
+            })
+
+            it('should return the provided options if the baselineFolder and screenshotPath are provided', () => {
+                const options = {
+                    nativeAppCompare: {
+                        baselineFolder: './baselineFolder/',
+                        screenshotPath: './screenshotPath/',
+                        foo: 1,
+                        bar: {
+                            foo: 2,
+                        }
+                    }
+                }
+                expect(initOptions(options)).toMatchSnapshot()
+            })
+        })
+
+        describe('V6', () => {
+            it('should return the default baselineFolder if it is not provided', () => {
+                const options = {
                     foo: 1,
                     screenshotPath: './screenshotPath/',
                 }
-            }
-            expect(initOptions(options)).toMatchSnapshot()
-        })
+                expect(initOptions(options)).toMatchSnapshot()
+            })
 
-        it('should return the default screenshotPath if it is not provided', () => {
-            const options = {
-                nativeAppCompare: {
+            it('should return the default screenshotPath if it is not provided', () => {
+                const options = {
                     baselineFolder: './somewhere/'
                 }
-            }
-            expect(initOptions(options)).toMatchSnapshot()
-        })
+                expect(initOptions(options)).toMatchSnapshot()
+            })
 
-        it('should return the provided options if the baselineFolder and screenshotPath are provided', () => {
-            const options = {
-                nativeAppCompare: {
+            it('should return the provided options if the baselineFolder and screenshotPath are provided', () => {
+                const options = {
                     baselineFolder: './baselineFolder/',
                     screenshotPath: './screenshotPath/',
                     foo: 1,
@@ -35,8 +66,8 @@ describe('Options', () => {
                         foo: 2,
                     }
                 }
-            }
-            expect(initOptions(options)).toMatchSnapshot()
+                expect(initOptions(options)).toMatchSnapshot()
+            })
         })
     })
 
@@ -71,9 +102,9 @@ describe('Options', () => {
 
         it('should return the provided instance blockout options and resize dimensions if they are provided', () => {
             const options = {
-                blockOuts: [ { height: 100, width: 100, x: 250, y: 900 }, { height: 25, width: 75, x: 50, y: 400 } ],
-                elementBlockOuts: [ { element: 'LoginScreen.loginButton' }, { element: 'LoginScreen.email', margin: 50 } ],
-                resizeDimensions: { top: 200, right: 20, bottom: 100, left: 40 },
+                blockOuts: [{height: 100, width: 100, x: 250, y: 900}, {height: 25, width: 75, x: 50, y: 400}],
+                elementBlockOuts: [{element: 'LoginScreen.loginButton'}, {element: 'LoginScreen.email', margin: 50}],
+                resizeDimensions: {top: 200, right: 20, bottom: 100, left: 40},
             }
             expect(instanceCompareOptions(options)).toMatchSnapshot()
         })

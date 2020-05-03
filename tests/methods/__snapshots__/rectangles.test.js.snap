@@ -113,10 +113,10 @@ exports[`rectangles determineElementBlockOuts should return an empty array if no
 exports[`rectangles determineIgnoreRectangles should get the android navigation bar block outs 1`] = `
 Array [
   Object {
-    "bottom": 26,
+    "bottom": 800,
     "left": 0,
-    "right": 812,
-    "top": 0,
+    "right": 400,
+    "top": 760,
   },
 ]
 `;
