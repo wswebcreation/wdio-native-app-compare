@@ -54,7 +54,7 @@ Object {
 }
 `;
 
-exports[`Options initOptions should return the default baselineFolder if it is not provided 1`] = `
+exports[`Options initOptions V5 should return the default baselineFolder if it is not provided 1`] = `
 Object {
   "baselineFolder": "./baseline",
   "foo": 1,
@@ -62,14 +62,14 @@ Object {
 }
 `;
 
-exports[`Options initOptions should return the default screenshotPath if it is not provided 1`] = `
+exports[`Options initOptions V5 should return the default screenshotPath if it is not provided 1`] = `
 Object {
   "baselineFolder": "./somewhere/",
   "screenshotPath": "./.tmp/screenshots",
 }
 `;
 
-exports[`Options initOptions should return the provided options if the baselineFolder and screenshotPath are provided 1`] = `
+exports[`Options initOptions V5 should return the provided options if the baselineFolder and screenshotPath are provided 1`] = `
 Object {
   "bar": Object {
     "foo": 2,
@@ -80,7 +80,33 @@ Object {
 }
 `;
 
-exports[`Options initOptions should set the default options if no nativeAppCompare options are provided 1`] = `
+exports[`Options initOptions V6 should return the default baselineFolder if it is not provided 1`] = `
+Object {
+  "baselineFolder": "./baseline",
+  "foo": 1,
+  "screenshotPath": "./screenshotPath/",
+}
+`;
+
+exports[`Options initOptions V6 should return the default screenshotPath if it is not provided 1`] = `
+Object {
+  "baselineFolder": "./somewhere/",
+  "screenshotPath": "./.tmp/screenshots",
+}
+`;
+
+exports[`Options initOptions V6 should return the provided options if the baselineFolder and screenshotPath are provided 1`] = `
+Object {
+  "bar": Object {
+    "foo": 2,
+  },
+  "baselineFolder": "./baselineFolder/",
+  "foo": 1,
+  "screenshotPath": "./screenshotPath/",
+}
+`;
+
+exports[`Options initOptions should set the default options if no options are provided 1`] = `
 Object {
   "baselineFolder": "./baseline",
   "screenshotPath": "./.tmp/screenshots",

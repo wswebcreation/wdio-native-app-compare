@@ -6,7 +6,7 @@
 
 Visual regression testing for Native iOS and Android apps with WebdriverIO
 
-> This service works with WebdriverIO V5 and higher. To check support for WebdriverIO V4 go to the [`0.7.0`](https://github.com/wswebcreation/wdio-native-app-compare/tree/0.7.0) branch and following the instructions
+> This service works with WebdriverIO V5 and V6. To check support for WebdriverIO V4 go to the [`0.7.0`](https://github.com/wswebcreation/wdio-native-app-compare/tree/0.7.0) branch and following the instructions
 
 # What can it do
 This service for WebdriverIO will add 4 methods that can be used to save and or check element/screen-shots of a native iOS or Android app, see [Methods](./README.md#methods) for all the methods and details.
@@ -39,17 +39,18 @@ exports.config = {
     // ========================
     // Native app compare setup
     // ========================
-    services: [ 'native-app-compare' ],
-    // The options
-    nativeAppCompare: {
-        // Mandatory
-        baselineFolder: 'test/image-baseline',
-        screenshotPath: '.tmp/image-compare',
-        // Optional
-        // See Options for more options
-        //..
-    },
-    // ...
+    services: [ [
+        'native-app-compare',
+        // The options
+        {
+            // Mandatory
+            baselineFolder: 'test/image-baseline',
+            screenshotPath: '.tmp/image-compare',
+            // Optional
+            // See Options for more options
+            //..
+        },
+    ] ],
 };
 ```
 
