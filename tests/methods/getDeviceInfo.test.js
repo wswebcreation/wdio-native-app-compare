@@ -2,7 +2,7 @@ import {IMAGE_STRING} from '../mocks/mocks'
 import * as Utils from '../../lib/helpers/utils'
 
 describe('getDeviceInfo', () => {
-    let determineIphoneXSeriesSpy, determineLargeIphoneXSeriesSpy, getDeviceInfo, getScreenshotSizeSpy
+    let determineIphoneXSeriesSpy, determineLargeIphoneXSeriesSpy, determineIphone12Spy, getDeviceInfo, getScreenshotSizeSpy
     const screenData = {
         width: 10,
         height: 20,
@@ -29,33 +29,39 @@ describe('getDeviceInfo', () => {
         }
         determineIphoneXSeriesSpy.mockRestore()
         determineLargeIphoneXSeriesSpy.mockRestore()
+        determineIphone12Spy.mockRestore()
         getScreenshotSizeSpy.mockRestore()
     })
 
     it('should be able to get the default device info for the initial run', async () => {
         determineIphoneXSeriesSpy = jest.spyOn(Utils, 'determineIphoneXSeries').mockReturnValue(false)
         determineLargeIphoneXSeriesSpy = jest.spyOn(Utils, 'determineLargeIphoneXSeries').mockReturnValue(false)
+        determineIphone12Spy = jest.spyOn(Utils, 'determineIphone12').mockReturnValue(false)
 
         expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
         expect(getScreenshotSizeSpy).toBeCalledWith(IMAGE_STRING)
         expect(global.driver.getWindowSize).toHaveBeenCalled()
         expect(determineIphoneXSeriesSpy).toBeCalledWith(screenData)
         expect(determineLargeIphoneXSeriesSpy).toBeCalledWith(screenData)
+        expect(determineIphone12Spy).toBeCalledWith(screenData)
     })
 
     it('should be able to get the default device info for the second run', async () => {
         determineIphoneXSeriesSpy = jest.spyOn(Utils, 'determineIphoneXSeries').mockReturnValue(false)
         determineLargeIphoneXSeriesSpy = jest.spyOn(Utils, 'determineLargeIphoneXSeries').mockReturnValue(false)
+        determineIphone12Spy = jest.spyOn(Utils, 'determineIphone12').mockReturnValue(false)
 
         expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
         expect(getScreenshotSizeSpy).toBeCalledWith(IMAGE_STRING)
         expect(global.driver.getWindowSize).toHaveBeenCalled()
         expect(determineIphoneXSeriesSpy).toBeCalledWith(screenData)
         expect(determineLargeIphoneXSeriesSpy).toBeCalledWith(screenData)
+        expect(determineIphone12Spy).toBeCalledWith(screenData)
 
         getScreenshotSizeSpy.mockRestore()
         determineIphoneXSeriesSpy.mockRestore()
         determineLargeIphoneXSeriesSpy.mockRestore()
+        determineIphone12Spy.mockRestore()
         global.driver = {
             getWindowSize: jest.fn().mockRestore(),
         }
@@ -70,17 +76,28 @@ describe('getDeviceInfo', () => {
         })
         determineIphoneXSeriesSpy = jest.spyOn(Utils, 'determineIphoneXSeries').mockReturnValue(false)
         determineLargeIphoneXSeriesSpy = jest.spyOn(Utils, 'determineLargeIphoneXSeries').mockReturnValue(false)
+        determineIphone12Spy = jest.spyOn(Utils, 'determineIphone12').mockReturnValue(false)
 
         expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
         expect(getScreenshotSizeSpy).not.toHaveBeenCalled()
         expect(global.driver.getWindowSize).not.toHaveBeenCalled()
         expect(determineIphoneXSeriesSpy).not.toHaveBeenCalled()
         expect(determineLargeIphoneXSeriesSpy).not.toHaveBeenCalled()
+        expect(determineIphone12Spy).not.toHaveBeenCalled()
     })
 
     it('should be able to get the device info for an iPhone X', async () => {
         determineIphoneXSeriesSpy = jest.spyOn(Utils, 'determineIphoneXSeries').mockReturnValue(true)
         determineLargeIphoneXSeriesSpy = jest.spyOn(Utils, 'determineLargeIphoneXSeries').mockReturnValue(false)
+        determineIphone12Spy = jest.spyOn(Utils, 'determineIphone12').mockReturnValue(false)
+
+        expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
+    })
+
+    it('should be able to get the device info for an iPhone 12', async () => {
+        determineIphoneXSeriesSpy = jest.spyOn(Utils, 'determineIphoneXSeries').mockReturnValue(false)
+        determineLargeIphoneXSeriesSpy = jest.spyOn(Utils, 'determineLargeIphoneXSeries').mockReturnValue(false)
+        determineIphone12Spy = jest.spyOn(Utils, 'determineIphone12').mockReturnValue(true)
 
         expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
     })
@@ -88,6 +105,7 @@ describe('getDeviceInfo', () => {
     it('should be able to get the device info for an iPhone X Large', async () => {
         determineIphoneXSeriesSpy = jest.spyOn(Utils, 'determineIphoneXSeries').mockReturnValue(false)
         determineLargeIphoneXSeriesSpy = jest.spyOn(Utils, 'determineLargeIphoneXSeries').mockReturnValue(true)
+        determineIphone12Spy = jest.spyOn(Utils, 'determineIphone12').mockReturnValue(false)
 
         expect(await getDeviceInfo(IMAGE_STRING)).toMatchSnapshot()
     })
