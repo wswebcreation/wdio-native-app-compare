@@ -28,9 +28,10 @@ describe('utils', () => {
                 orientation: 'orientation',
                 platformName: 'platformName',
                 platformVersion: 'platformVersion',
+                appearance: 'appearance',
             }
 
-            expect(formatFileName(capabilities, '{deviceName}-{orientation}-{platformName}-{platformVersion}', 'tag-string')).toMatchSnapshot()
+            expect(formatFileName(capabilities, '{deviceName}-{orientation}-{platformName}-{platformVersion}-{appearance}', 'tag-string')).toMatchSnapshot()
         })
     })
 

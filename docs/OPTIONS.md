@@ -114,6 +114,7 @@ If they can't be determined the defaults will be use.
 * `orientation`: The orientation from capabilities (default: 'no-orientation-in-caps')
 * `platformName`: The platformName from the capabilities (default: 'no-platformName-in-caps')
 * `platformVersion`: The platformVersion from capabilities (default: 'no-platformVersion-in-caps')
+* `appearance`: The appearance from capabilities (default: 'no-appearance-in-caps')
 
 ### `largeImageThreshold`
 - **Type:** `number`
