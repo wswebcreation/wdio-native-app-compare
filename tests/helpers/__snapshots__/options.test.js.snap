@@ -2,7 +2,7 @@
 
 exports[`Options defaultCompareOptions should return the provided options if they are provided 1`] = `
 Object {
-  "blockOutIphoneXBottomBar": true,
+  "blockOutIphoneHomeBar": true,
   "blockOutNavigationBar": true,
   "blockOutStatusBar": true,
   "blockOuts": Array [],
@@ -29,7 +29,7 @@ Object {
 
 exports[`Options defaultCompareOptions should set the default options if no options are provided 1`] = `
 Object {
-  "blockOutIphoneXBottomBar": false,
+  "blockOutIphoneHomeBar": false,
   "blockOutNavigationBar": false,
   "blockOutStatusBar": false,
   "blockOuts": Array [],
@@ -153,7 +153,7 @@ Object {
 
 exports[`Options instanceCompareOptions should return the provided instance ignore options if they are true 1`] = `
 Object {
-  "blockOutIphoneXBottomBar": true,
+  "blockOutIphoneHomeBar": true,
   "blockOutNavigationBar": true,
   "blockOutStatusBar": true,
   "ignoreAlpha": true,

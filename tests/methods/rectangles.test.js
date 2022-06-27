@@ -102,7 +102,7 @@ describe('rectangles', () => {
         })
 
         it('should return iPhone X bottom bar rectangles', async () => {
-            ignoreRectanglesOptions.blockOutIphoneXBottomBar = true
+            ignoreRectanglesOptions.blockOutIphoneHomeBar = true
             global.driver.isIOS = true
 
             expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
@@ -110,7 +110,7 @@ describe('rectangles', () => {
 
         it('should return iPhone 12 bottom bar rectangles', async () => {
             getDeviceInfoSpy.mockResolvedValue({ ...deviceInfo, isIphone12: true })
-            ignoreRectanglesOptions.blockOutIphoneXBottomBar = true
+            ignoreRectanglesOptions.blockOutIphoneHomeBar = true
             global.driver.isIOS = true
 
             expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
