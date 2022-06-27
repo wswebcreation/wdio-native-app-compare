@@ -6,9 +6,10 @@ describe('rectangles', () => {
 
     const deviceInfo = {
         dpr: 2,
-        isIphoneXSeries: true,
-        isLargeIphoneXSeries: false,
-        isIphone12: false,
+        isSmallIphone: true,
+        isLargeIphone: false,
+        isMediumIphone: false,
+        isExtraLargeIphone: false,
         screenSize: {
             height: 1700,
             width: 812,
@@ -109,7 +110,23 @@ describe('rectangles', () => {
         })
 
         it('should return iPhone 12 bottom bar rectangles', async () => {
-            getDeviceInfoSpy.mockResolvedValue({ ...deviceInfo, isIphone12: true })
+            getDeviceInfoSpy.mockResolvedValue({ ...deviceInfo, isMediumIphone: true })
+            ignoreRectanglesOptions.blockOutIphoneHomeBar = true
+            global.driver.isIOS = true
+
+            expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
+        })
+
+        it('should return iPhone 11 bottom bar rectangles', async () => {
+            getDeviceInfoSpy.mockResolvedValue({ ...deviceInfo, isLargeIphone: true })
+            ignoreRectanglesOptions.blockOutIphoneHomeBar = true
+            global.driver.isIOS = true
+
+            expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
+        })
+
+        it('should return iPhone 12 Pro Max bottom bar rectangles', async () => {
+            getDeviceInfoSpy.mockResolvedValue({ ...deviceInfo, isExtraLargeIphone: true })
             ignoreRectanglesOptions.blockOutIphoneHomeBar = true
             global.driver.isIOS = true
 
