@@ -91,57 +91,125 @@ describe('utils', () => {
     })
 
     describe('determineSmallIphone', () => {
+        beforeEach(() => {
+            delete global.driver
+            global.driver = {}
+        })
+
+        it('should determine that a android device with matching screensize is not a small Iphone device', () => {
+            global.driver.isIOS = false
+
+            expect(determineSmallIphone({ width: IPHONE_SMALL_SIZE, height: 600 })).toEqual(false)
+        })
+
         it('should determine that a iOS device with non matching screensize is not a small Iphone device', () => {
+            global.driver.isIOS = true
+
             expect(determineSmallIphone({ width: IPHONE_LARGE_SIZE, height: 600 })).toEqual(false)
         })
 
         it('should determine that a portrait iOS device with the iPhone default X screensize is a small Iphone', () => {
+            global.driver.isIOS = true
+
             expect(determineSmallIphone({ width: IPHONE_SMALL_SIZE, height: 200 })).toEqual(true)
         })
 
         it('should determine that a landscape iOS device with the iPhone default X screensize is a small Iphone', () => {
+            global.driver.isIOS = true
+
             expect(determineSmallIphone({ width: 200, height: IPHONE_SMALL_SIZE })).toEqual(true)
         })
     })
 
     describe('determineLargeIphone', () => {
+        beforeEach(() => {
+            delete global.driver
+            global.driver = {}
+        })
+
+        it('should determine that a android device with matching screensize is not a large Iphone device', () => {
+            global.driver.isIOS = false
+
+            expect(determineLargeIphone({ width: IPHONE_LARGE_SIZE, height: 600 })).toEqual(false)
+        })
+
         it('should determine that a iOS device with non matching screensize is not a large Iphone device', () => {
+            global.driver.isIOS = true
+
             expect(determineLargeIphone({ width: IPHONE_SMALL_SIZE, height: 600 })).toEqual(false)
         })
 
         it('should determine that a portrait iOS device with the 11 screensize is a large Iphone', () => {
+            global.driver.isIOS = true
+
             expect(determineLargeIphone({ width: IPHONE_LARGE_SIZE, height: 200 })).toEqual(true)
         })
 
         it('should determine that a landscape iOS device with the 11 screensize is a large Iphone', () => {
+            global.driver.isIOS = true
+
             expect(determineLargeIphone({ width: 200, height: IPHONE_LARGE_SIZE })).toEqual(true)
         })
     })
 
     describe('determineMediumIphone', () => {
+        beforeEach(() => {
+            delete global.driver
+            global.driver = {}
+        })
+
+        it('should determine that a android device with matching screensize is not a medium Iphone device', () => {
+            global.driver.isIOS = false
+
+            expect(determineMediumIphone({ width: IPHONE_MEDIUM_SIZE, height: 600 })).toEqual(false)
+        })
+
         it('should determine that a iOS device with non matching screensize is not a medium Iphone device', () => {
+            global.driver.isIOS = true
+
             expect(determineMediumIphone({ width: IPHONE_SMALL_SIZE, height: 600 })).toEqual(false)
         })
 
         it('should determine that a portrait iOS device with the 12 screensize is a medium Iphone', () => {
+            global.driver.isIOS = true
+
             expect(determineMediumIphone({ width: IPHONE_MEDIUM_SIZE, height: 200 })).toEqual(true)
         })
 
         it('should determine that a landscape iOS device with the 12 screensize is a medium Iphone', () => {
+            global.driver.isIOS = true
+
             expect(determineMediumIphone({ width: 200, height: IPHONE_MEDIUM_SIZE })).toEqual(true)
         })
     })
 
     describe('determineExtraLargeIphone', () => {
+        beforeEach(() => {
+            delete global.driver
+            global.driver = {}
+        })
+
+        it('should determine that a android device with matching screensize is not a extra large Iphone device', () => {
+            global.driver.isIOS = false
+
+            expect(determineExtraLargeIphone({ width: IPHONE_EXTRA_LARGE_SIZE, height: 600 })).toEqual(false)
+        })
+
         it('should determine that a iOS device with non matching screensize is not a extra large Iphone device', () => {
+            global.driver.isIOS = true
+
             expect(determineExtraLargeIphone({ width: IPHONE_SMALL_SIZE, height: 600 })).toEqual(false)
         })
 
         it('should determine that a portrait iOS device with the 12 Pro Max screensize is a extra large Iphone', () => {
+            global.driver.isIOS = true
+
             expect(determineExtraLargeIphone({ width: IPHONE_EXTRA_LARGE_SIZE, height: 200 })).toEqual(true)
         })
 
         it('should determine that a landscape iOS device with the 12 Pro Max screensize is a extra large Iphone', () => {
+            global.driver.isIOS = true
+
             expect(determineExtraLargeIphone({ width: 200, height: IPHONE_EXTRA_LARGE_SIZE })).toEqual(true)
         })
     })
