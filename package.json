@@ -4,7 +4,7 @@
   "description": "Visual regression testing for Native iOS and Android apps with WebdriverIO",
   "main": "build/index.js",
   "scripts": {
-    "compile": "babel lib/ -d build/",
+    "build": "babel lib/ -d build/",
     "release": "release-it --github.release",
     "release:ci": "npm run release -- --ci --npm.skipChecks --no-git.requireCleanWorkingDir",
     "release:patch": "npm run release -- patch",
@@ -13,7 +13,7 @@
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint ./lib",
     "test:unit": "jest --coverage",
-    "watch": "npm run compile -- --watch",
+    "watch": "npm run build -- --watch",
     "prepare": "husky install"
   },
   "keywords": [
