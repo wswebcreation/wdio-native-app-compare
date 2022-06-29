@@ -149,6 +149,57 @@ Array [
 ]
 `;
 
+exports[`rectangles determineIgnoreRectangles should return iPhone 11 bottom bar rectangles 1`] = `
+Array [
+  Object {
+    "bottom": 5,
+    "left": 133,
+    "right": 148,
+    "top": 883,
+  },
+  Object {
+    "bottom": 5,
+    "left": 133,
+    "right": 148,
+    "top": 883,
+  },
+]
+`;
+
+exports[`rectangles determineIgnoreRectangles should return iPhone 12 Pro Max bottom bar rectangles 1`] = `
+Array [
+  Object {
+    "bottom": 5,
+    "left": 133,
+    "right": 148,
+    "top": 883,
+  },
+  Object {
+    "bottom": 5,
+    "left": 133,
+    "right": 148,
+    "top": 883,
+  },
+]
+`;
+
+exports[`rectangles determineIgnoreRectangles should return iPhone 12 bottom bar rectangles 1`] = `
+Array [
+  Object {
+    "bottom": 5,
+    "left": 133,
+    "right": 148,
+    "top": 883,
+  },
+  Object {
+    "bottom": 5,
+    "left": 133,
+    "right": 148,
+    "top": 883,
+  },
+]
+`;
+
 exports[`rectangles determineIgnoreRectangles should return iPhone X bottom bar rectangles 1`] = `
 Array [
   Object {

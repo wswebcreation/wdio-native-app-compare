@@ -25,7 +25,7 @@ Each comparison failure will create a diff image. This is an allowable value of 
 
 Block out the status bar of iOS / Android during the comparison
 
-### `blockOutIphoneXBottomBar`
+### `blockOutIphoneHomeBar`
 - **Type:** `boolean`
 - **Mandatory:** No
 - **Default:** `false`

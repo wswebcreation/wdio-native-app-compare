@@ -4,6 +4,41 @@ import {IMAGE_STRING} from '../mocks/mocks'
 describe('rectangles', () => {
     let getDeviceInfoSpy, ignoreRectanglesOptions, Rectangles
 
+    const deviceInfo = {
+        dpr: 2,
+        isSmallIphone: true,
+        isLargeIphone: false,
+        isMediumIphone: false,
+        isExtraLargeIphone: false,
+        screenSize: {
+            height: 1700,
+            width: 812,
+        },
+        screenshotHeight: 1700,
+        screenshotWidth: 812,
+        isPortrait: true,
+        rectangles: {
+            androidNavigationBar: {
+                bottom: 800,
+                top: 760,
+                left: 0,
+                right: 400,
+            },
+            iOSHomeBar: {
+                bottom: 5,
+                top: 883,
+                left: 133,
+                right: 148,
+            },
+            statusBar: {
+                bottom: 26,
+                top: 0,
+                left: 0,
+                right: 812,
+            },
+        },
+    }
+
     beforeEach(() => {
         jest.isolateModules(() => {
             Rectangles = require('../../lib/methods/rectangles')
@@ -20,38 +55,7 @@ describe('rectangles', () => {
             isIOS: false,
             isAndroid: false,
         }
-        getDeviceInfoSpy = jest.spyOn(DeviceInfo, 'getDeviceInfo').mockResolvedValue({
-            dpr: 2,
-            isIphoneXSeries: true,
-            isLargeIphoneXSeries: false,
-            screenSize: {
-                height: 1700,
-                width: 812,
-            },
-            screenshotHeight: 1700,
-            screenshotWidth: 812,
-            isPortrait: true,
-            rectangles: {
-                androidNavigationBar: {
-                    bottom: 800,
-                    top: 760,
-                    left: 0,
-                    right: 400,
-                },
-                iOSHomeBar: {
-                    bottom: 5,
-                    top: 883,
-                    left: 133,
-                    right: 148,
-                },
-                statusBar: {
-                    bottom: 26,
-                    top: 0,
-                    left: 0,
-                    right: 812,
-                },
-            },
-        })
+        getDeviceInfoSpy = jest.spyOn(DeviceInfo, 'getDeviceInfo').mockResolvedValue(deviceInfo)
         ignoreRectanglesOptions = {
             blockOuts: [],
             blockOutNavigationBar: false,
@@ -99,7 +103,31 @@ describe('rectangles', () => {
         })
 
         it('should return iPhone X bottom bar rectangles', async () => {
-            ignoreRectanglesOptions.blockOutIphoneXBottomBar = true
+            ignoreRectanglesOptions.blockOutIphoneHomeBar = true
+            global.driver.isIOS = true
+
+            expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
+        })
+
+        it('should return iPhone 12 bottom bar rectangles', async () => {
+            getDeviceInfoSpy.mockResolvedValue({ ...deviceInfo, isMediumIphone: true })
+            ignoreRectanglesOptions.blockOutIphoneHomeBar = true
+            global.driver.isIOS = true
+
+            expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
+        })
+
+        it('should return iPhone 11 bottom bar rectangles', async () => {
+            getDeviceInfoSpy.mockResolvedValue({ ...deviceInfo, isLargeIphone: true })
+            ignoreRectanglesOptions.blockOutIphoneHomeBar = true
+            global.driver.isIOS = true
+
+            expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()
+        })
+
+        it('should return iPhone 12 Pro Max bottom bar rectangles', async () => {
+            getDeviceInfoSpy.mockResolvedValue({ ...deviceInfo, isExtraLargeIphone: true })
+            ignoreRectanglesOptions.blockOutIphoneHomeBar = true
             global.driver.isIOS = true
 
             expect(await Rectangles.determineIgnoreRectangles(IMAGE_STRING, ignoreRectanglesOptions)).toMatchSnapshot()

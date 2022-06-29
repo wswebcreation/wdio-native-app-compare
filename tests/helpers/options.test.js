@@ -80,7 +80,7 @@ describe('Options', () => {
             const options = {
                 blockOutStatusBar: true,
                 blockOutNavigationBar: true,
-                blockOutIphoneXBottomBar: true,
+                blockOutIphoneHomeBar: true,
                 debug: true,
                 ignoreAlpha: true,
                 ignoreAntialiasing: true,
@@ -112,7 +112,7 @@ describe('Options', () => {
         it('should not return the provided instance ignore options if they are false', () => {
             const options = {
                 blockOutStatusBar: false,
-                blockOutIphoneXBottomBar: false,
+                blockOutIphoneHomeBar: false,
                 blockOutNavigationBar: false,
                 ignoreAlpha: false,
                 ignoreAntialiasing: false,
@@ -126,7 +126,7 @@ describe('Options', () => {
         it('should return the provided instance ignore options if they are true', () => {
             const options = {
                 blockOutStatusBar: true,
-                blockOutIphoneXBottomBar: true,
+                blockOutIphoneHomeBar: true,
                 blockOutNavigationBar: true,
                 ignoreAlpha: true,
                 ignoreAntialiasing: true,

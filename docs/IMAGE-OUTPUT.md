@@ -191,14 +191,14 @@ driver.compareScreen(
 #### ANDROID
 ![Android elementBlockOuts](./assets/comparescreen-elementblockouts-pixel_8.1.png)
 
-### blockOutStatusBar || blockOutNavigationBar || blockOutIphoneXBottomBar
+### blockOutStatusBar || blockOutNavigationBar || blockOutIphoneHomeBar
 ```js
 driver.compareScreen(
   'compare-home-screen-element-blockouts',
   {
     blockOutStatusBar: true,
     blockOutNavigationBar: true,
-    blockOutIphoneXBottomBar: true,
+    blockOutIphoneHomeBar: true,
   },
 );
 ```
