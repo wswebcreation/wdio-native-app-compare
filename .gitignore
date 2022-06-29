@@ -61,7 +61,6 @@ typings/
 .next
 
 build
-package-lock.json
 /*.js
 !.eslintrc.js
 !babel.config.js
@@ -69,6 +68,7 @@ package-lock.json
 # folders
 .tmp
 .idea/
+.vscode/
 
 # files
 .DS_Store

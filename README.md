@@ -1,8 +1,7 @@
 # wdio-native-app-compare
 
 [![npm version](https://badge.fury.io/js/wdio-native-app-compare-service.svg)](https://badge.fury.io/js/wdio-native-app-compare-service)
-[![License](https://img.shields.io/npm/l/express.svg)](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/LICENSE)
-[![Coverage Status](https://coveralls.io/repos/github/wswebcreation/wdio-native-app-compare/badge.svg?branch=master)](https://coveralls.io/github/wswebcreation/wdio-native-app-compare?branch=master)
+[![License](https://img.shields.io/npm/l/express.svg)](https://github.com/wswebcreation/wdio-native-app-compare/blob/main/LICENSE)
 
 Visual regression testing for Native iOS and Android apps with WebdriverIO
 
@@ -12,7 +11,7 @@ Visual regression testing for Native iOS and Android apps with WebdriverIO
 This service for WebdriverIO will add 4 methods that can be used to save and or check element/screen-shots of a native iOS or Android app, see [Methods](./README.md#methods) for all the methods and details.
 
 When the compare methods are used a baseline image (each device + OS, and even OS version, needs to have it's own baseline image) will be compared to an actual screenshot.
-The output will be an object of data, check the `save..`-methods output [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#save-methods) and the `compare..`-methods [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/master/docs/METHODS.md#compare-methods)
+The output will be an object of data, check the `save..`-methods output [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/main/docs/METHODS.md#save-methods) and the `compare..`-methods [here](https://github.com/wswebcreation/wdio-native-app-compare/blob/main/docs/METHODS.md#compare-methods)
 
 ## Comparison
 The images are compared with the lovely module [ResembleJS](https://github.com/rsmbl/Resemble.js).
