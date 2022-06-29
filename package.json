@@ -4,12 +4,17 @@
   "description": "Visual regression testing for Native iOS and Android apps with WebdriverIO",
   "main": "build/index.js",
   "scripts": {
-    "lint": "eslint ./lib",
     "compile": "babel lib/ -d build/",
-    "release": "np",
+    "release": "release-it --github.release",
+    "release:ci": "npm run release -- --ci --npm.skipChecks --no-git.requireCleanWorkingDir",
+    "release:patch": "npm run release -- patch",
+    "release:minor": "npm run release -- minor",
+    "release:major": "npm run release -- major",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "eslint ./lib",
+    "test:unit": "jest --coverage",
     "watch": "npm run compile -- --watch",
-    "test.unit": "jest --coverage",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "prepare": "husky install"
   },
   "keywords": [
     "webdriver.io",
@@ -37,12 +42,12 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
-    "coveralls": "^3.0.9",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.0",
+    "husky": "^8.0.1",
     "inquirer": "^7.0.4",
     "jest": "^25.1.0",
-    "np": "^5.2.1"
+    "release-it": "^15.1.1"
   },
   "dependencies": {
     "@wdio/logger": "^5.16.10",
