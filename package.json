@@ -83,5 +83,10 @@
       }
     },
     "testEnvironment": "node"
+  },
+  "prettier": {
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
   }
 }
