@@ -52,7 +52,7 @@ Block out the navigation bar Android during the comparison
 -   **Default:** `false`
 -   **Mandatory:** no
 
-The directory that will
+Add some extra logging and always save the image difference
 
 ### `ignoreAlpha`
 

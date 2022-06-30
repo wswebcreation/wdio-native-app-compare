@@ -75,9 +75,23 @@ describe('utils', () => {
     describe('getAndCreatePath', () => {
         afterEach(() => removeSync(folder))
 
-        it('should create the folder and return the folder name for a device that needs to have it\'s own folder', () => {
-            const capabilities = { deviceName: 'iphone_x' }
+        it('should create the folder and return the folder name for a device that needs to have it\'s own folder with JSON Wire Protocol', () => {
+            const capabilities = { deviceName: 'jwp-iphone_x' }
             const expectedFolderName = join(folder, capabilities.deviceName)
+
+            expect(pathExistsSync(expectedFolderName)).toEqual(false)
+            expect(getAndCreatePath(capabilities, folder, true)).toEqual(
+                expectedFolderName
+            )
+            expect(pathExistsSync(expectedFolderName)).toEqual(true)
+        })
+
+        it('should create the folder and return the folder name for a device that needs to have it\'s own folder with W3C Protocol', () => {
+            const capabilities = { 'appium:deviceName': 'w3c-iphone_x' }
+            const expectedFolderName = join(
+                folder,
+                capabilities['appium:deviceName']
+            )
 
             expect(pathExistsSync(expectedFolderName)).toEqual(false)
             expect(getAndCreatePath(capabilities, folder, true)).toEqual(
