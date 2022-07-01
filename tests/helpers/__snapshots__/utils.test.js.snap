@@ -1,6 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`utils formatFileName should format a string when all capabilities are provided 1`] = `"devicename-orientation-platformname-platformversion-appearance.png"`;
+exports[`utils formatFileName should format a string when all capabilities are provided with JSON Wire Protocol 1`] = `"jwp-devicename-jwp-orientation-jwp-platformname-jwp-platformversion-jwp-appearance.png"`;
+
+exports[`utils formatFileName should format a string when all capabilities are provided with W3C Protocol 1`] = `"w3c-devicename-w3c-orientation-w3c-platformname-w3c-platformversion-w3c-appearance.png"`;
 
 exports[`utils formatFileName should format a string when no capabilities are provided 1`] = `"no-device-name-in-caps-no-orientation-in-caps-no-platform-name-in-caps-no-platform-version-in-caps.png"`;
 

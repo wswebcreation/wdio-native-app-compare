@@ -52,7 +52,7 @@ Block out the navigation bar Android during the comparison
 -   **Default:** `false`
 -   **Mandatory:** no
 
-The directory that will
+Add some extra logging and always save the image difference
 
 ### `ignoreAlpha`
 
@@ -120,14 +120,24 @@ The naming of the images can be customized by passing the parameter `imageNameFo
 {tag}-{deviceName}
 ```
 
-The following variables can be passed to format the string and will automatically been read from the [instance capabilities](http://webdriver.io/guide/testrunner/browserobject.html#Get-desired-capabilities).
-If they can't be determined the defaults will be use.
+The following variables can be passed to format the string and will automatically been read from the instance capabilities.
+If they can't be determined the defaults will be used. This module will support the old JSON Wire Protocol as the new W3C Protocol, see below.
 
-* `deviceName`: The name of the device from the capabilities (default: 'no-device-name-in-caps')
-* `orientation`: The orientation from capabilities (default: 'no-orientation-in-caps')
-* `platformName`: The platformName from the capabilities (default: 'no-platformName-in-caps')
-* `platformVersion`: The platformVersion from capabilities (default: 'no-platformVersion-in-caps')
-* `appearance`: The appearance from capabilities (default: 'no-appearance-in-caps')
+**W3C Protocol**
+
+-   `appium:deviceName`: The name of the device from the capabilities (default: 'no-device-name-in-caps')
+-   `appium:orientation`: The orientation from capabilities (default: 'no-orientation-in-caps')
+-   `appium:platformName`: The platformName from the capabilities (default: 'no-platformName-in-caps')
+-   `appium:platformVersion`: The platformVersion from capabilities (default: 'no-platformVersion-in-caps')
+-   `nacs:appearance`: The appearance from capabilities (default: 'no-appearance-in-caps')
+
+**Old JSON Wire Protocol**
+
+-   `deviceName`: The name of the device from the capabilities (default: 'no-device-name-in-caps')
+-   `orientation`: The orientation from capabilities (default: 'no-orientation-in-caps')
+-   `platformName`: The platformName from the capabilities (default: 'no-platformName-in-caps')
+-   `platformVersion`: The platformVersion from capabilities (default: 'no-platformVersion-in-caps')
+-   `appearance`: The appearance from capabilities (default: 'no-appearance-in-caps')
 
 ### `largeImageThreshold`
 
@@ -189,20 +199,20 @@ An object that can hold a `top`, `right`, `bottom` and or `left` amount of pixel
 
 ```js
 // With all resize dimensions
-await driver.saveElement(await $("~selector"), "tag-name-of-image", {
+await driver.saveElement(await $('~selector'), 'tag-name-of-image', {
     resizeDimensions: {
         top: 10,
         right: 20,
         bottom: 30,
         left: 40,
     },
-});
+})
 // With only 1 resize dimension
-await driver.saveElement(await $("~selector"), "tag-name-of-image", {
+await driver.saveElement(await $('~selector'), 'tag-name-of-image', {
     resizeDimensions: {
         left: 10,
     },
-});
+})
 ```
 
 ### Compare options
@@ -216,7 +226,7 @@ await driver.saveElement(await $("~selector"), "tag-name-of-image", {
 One or multiple block outs on a screen / element. It can be provided in an Array with objects like this
 
 ```js
-await driver.compareScreen("tag-name-of-image", {
+await driver.compareScreen('tag-name-of-image', {
     blockOuts: [
         // block out area 1
         {
@@ -233,7 +243,7 @@ await driver.compareScreen("tag-name-of-image", {
             y: 150,
         },
     ],
-});
+})
 ```
 
 The numbers need to be the pixels from the actual image. Just create a screenshot and determine `height`, `width`, `x`, `y` and pass it into here.
@@ -254,20 +264,20 @@ If it is expected that the element his selector will return multiple elements an
 > If an element (selector) returns multiple matched elements all matching elements will automatically be blocked out, this can be prevented by providing the `elementNumber`
 
 ```js
-await driver.compareScreen("tag-name-of-image", {
+await driver.compareScreen('tag-name-of-image', {
     elementBlockOuts: [
         // block out element 1 with margin
         {
-            element: await $("~the-accessibility-selector-2"),
+            element: await $('~the-accessibility-selector-2'),
             margin: 50,
         },
         // block out the second element of element 3
         {
-            element: await $$("~the-accessibility-selector-4"),
+            element: await $$('~the-accessibility-selector-4'),
             elementNumber: 1,
         },
     ],
-});
+})
 ```
 
 #### `resizeDimensions`
@@ -283,18 +293,18 @@ An object that can hold a `top`, `right`, `bottom` and or `left` amount of pixel
 
 ```js
 // With all resize dimensions
-await driver.compareElement(await $("~selector"), "tag-name-of-image", {
+await driver.compareElement(await $('~selector'), 'tag-name-of-image', {
     resizeDimensions: {
         top: 10,
         right: 20,
         bottom: 30,
         left: 40,
     },
-});
+})
 // With only 1 resize dimension
-await driver.compareElement(await $("~selector"), "tag-name-of-image", {
+await driver.compareElement(await $('~selector'), 'tag-name-of-image', {
     resizeDimensions: {
         left: 10,
     },
-});
+})
 ```

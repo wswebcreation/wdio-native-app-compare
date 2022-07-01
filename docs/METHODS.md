@@ -29,10 +29,7 @@ With this method you can create a screenshot of an element in the view. You'll n
 Provide the element, so **NOT** the selector, like for example
 
 ```js
-await driver.saveElement(
-    await $("~your-accessibility-id"),
-    "name-of-your-file"
-);
+await driver.saveElement(await $('~your-accessibility-id'), 'name-of-your-file')
 ```
 
 #### `tag`
@@ -43,10 +40,7 @@ await driver.saveElement(
 The `tag` is the part that is used for determining the image name when it is saved
 
 ```js
-await driver.saveElement(
-    await $("~your-accessibility-id"),
-    "name-of-your-file"
-);
+await driver.saveElement(await $('~your-accessibility-id'), 'name-of-your-file')
 ```
 
 #### `options`
@@ -58,12 +52,12 @@ You can provide an object with the following options, see [options](./OPTIONS.md
 
 ```js
 await driver.saveElement(
-    await $("~your-accessibility-id"),
-    "name-of-your-file",
+    await $('~your-accessibility-id'),
+    'name-of-your-file',
     {
         //.. options here
     }
-);
+)
 ```
 
 ### saveScreen
@@ -78,7 +72,7 @@ With this method you can create a screenshot of the view. You'll need to provide
 The `tag` is the part that is used for determining the image name when it is saved
 
 ```js
-await driver.saveScreen("name-of-your-file");
+await driver.saveScreen('name-of-your-file')
 ```
 
 ## Compare methods
@@ -112,10 +106,14 @@ You'll need to provide the following options
 Provide the element, so **NOT** the selector, like for example
 
 ```js
-await driver.compareElement(
-    await $("~your-accessibility-id"),
-    "name-of-your-file"
-);
+await expect(
+    (
+        await driver.compareElement(
+            await $('~your-accessibility-id'),
+            'name-of-your-file'
+        )
+    ).misMatchPercentage
+).toEqual(0)
 ```
 
 #### `tag`
@@ -127,11 +125,13 @@ The `tag` is the part that is used for determining the image name when it is sav
 
 ```js
 await expect(
-    await driver.compareElement(
-        await $("~your-accessibility-id"),
-        "name-of-your-file"
-    )
-).toEqual(0);
+    (
+        await driver.compareElement(
+            await $('~your-accessibility-id'),
+            'name-of-your-file'
+        )
+    ).misMatchPercentage
+).toEqual(0)
 ```
 
 #### `options`
@@ -145,14 +145,14 @@ You can provide an object with the following options, see [options](./OPTIONS.md
 await expect(
     (
         await driver.compareElement(
-            await $("~your-accessibility-id"),
-            "name-of-your-file",
+            await $('~your-accessibility-id'),
+            'name-of-your-file',
             {
                 //.. options here
             }
         )
     ).misMatchPercentage
-).toEqual(0);
+).toEqual(0)
 ```
 
 ### compareScreen
@@ -169,8 +169,10 @@ The `tag` is the part that is used for determining the image name when it is sav
 
 ```js
 await expect(
-    await driver.compareScreen("name-of-your-file").misMatchPercentage
-).toEqual(0);
+    (
+        await driver.compareScreen('name-of-your-file')
+    ).misMatchPercentage
+).toEqual(0)
 ```
 
 #### `options`
@@ -183,9 +185,9 @@ You can provide an object with the following options, see [options](./OPTIONS.md
 ```js
 await expect(
     (
-        await driver.compareScreen("name-of-your-file", {
+        await driver.compareScreen('name-of-your-file', {
             //.. options here
         })
     ).misMatchPercentage
-).toEqual(0);
+).toEqual(0)
 ```

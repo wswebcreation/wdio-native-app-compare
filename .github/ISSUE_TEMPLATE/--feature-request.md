@@ -1,7 +1,6 @@
 ---
 name: "\U0001F4A1Feature request"
 about: Suggest an idea for this module.
-
 ---
 
 **Is your feature request related to a problem? Please describe.**

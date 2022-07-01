@@ -1,11 +1,10 @@
 import WdioNativeAppCompareService from '../lib/'
 import * as Utils from '../lib/helpers/utils'
 
-
 class DriverMock {
     constructor() {
         this.addCommand = jest.fn().mockImplementation((name, fn) => {
-            this[ name ] = fn
+            this[name] = fn
         })
 
         this.call = jest.fn().mockImplementation((fn) => fn())
@@ -18,7 +17,9 @@ describe('index', () => {
     beforeEach(() => {
         delete global.driver
 
-        getAndCreatePathSpy = jest.spyOn(Utils, 'getAndCreatePath').mockResolvedValue()
+        getAndCreatePathSpy = jest
+            .spyOn(Utils, 'getAndCreatePath')
+            .mockResolvedValue()
     })
 
     afterEach(() => {
