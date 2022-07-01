@@ -9,7 +9,7 @@ Below the output in real format and sizes
 #### IOS
 
 ```js
-await driver.saveElement(await $("~selector"), "saveElement");
+await driver.saveElement(await $('~selector'), 'saveElement')
 ```
 
 ![iOS Logo](./assets/saveelement-iphone_x.png)
@@ -17,18 +17,14 @@ await driver.saveElement(await $("~selector"), "saveElement");
 ##### With positive resizeDimensions
 
 ```js
-await driver.saveElement(
-    await $("~selector"),
-    "saveElement-positive-resized",
-    {
-        resizeDimensions: {
-            top: 200,
-            right: 20,
-            bottom: 100,
-            left: 40,
-        },
-    }
-);
+await driver.saveElement(await $('~selector'), 'saveElement-positive-resized', {
+    resizeDimensions: {
+        top: 200,
+        right: 20,
+        bottom: 100,
+        left: 40,
+    },
+})
 ```
 
 ![Android Logo](./assets/saveelement-positive-resized-iphone_x.png)
@@ -36,18 +32,14 @@ await driver.saveElement(
 ##### With negative resizeDimensions
 
 ```js
-await driver.saveElement(
-    await $("~selector"),
-    "saveElement-negative-resized",
-    {
-        resizeDimensions: {
-            top: -40,
-            right: -20,
-            bottom: -70,
-            left: -250,
-        },
-    }
-);
+await driver.saveElement(await $('~selector'), 'saveElement-negative-resized', {
+    resizeDimensions: {
+        top: -40,
+        right: -20,
+        bottom: -70,
+        left: -250,
+    },
+})
 ```
 
 ![Android Logo](./assets/saveelement-negative-resized-iphone_x.png)
@@ -57,7 +49,7 @@ await driver.saveElement(
 #### ANDROID
 
 ```js
-await driver.saveElement(await $("~selector"), "saveElement");
+await driver.saveElement(await $('~selector'), 'saveElement')
 ```
 
 ![Android Logo](./assets/saveelement-pixel_8.1.png)
@@ -65,18 +57,14 @@ await driver.saveElement(await $("~selector"), "saveElement");
 ##### With positive resizeDimensions
 
 ```js
-await driver.saveElement(
-    await $("~selector"),
-    "saveElement-positive-resized",
-    {
-        resizeDimensions: {
-            top: 200,
-            right: 20,
-            bottom: 100,
-            left: 40,
-        },
-    }
-);
+await driver.saveElement(await $('~selector'), 'saveElement-positive-resized', {
+    resizeDimensions: {
+        top: 200,
+        right: 20,
+        bottom: 100,
+        left: 40,
+    },
+})
 ```
 
 ![Android Logo](./assets/saveelement-positive-resized-pixel_8.1.png)
@@ -84,18 +72,14 @@ await driver.saveElement(
 ##### With negative resizeDimensions
 
 ```js
-await driver.saveElement(
-    await $("~selector"),
-    "saveElement-negative-resized",
-    {
-        resizeDimensions: {
-            top: -40,
-            right: -20,
-            bottom: -70,
-            left: -250,
-        },
-    }
-);
+await driver.saveElement(await $('~selector'), 'saveElement-negative-resized', {
+    resizeDimensions: {
+        top: -40,
+        right: -20,
+        bottom: -70,
+        left: -250,
+    },
+})
 ```
 
 ![Android Logo](./assets/saveelement-negative-resized-pixel_8.1.png)
@@ -103,7 +87,7 @@ await driver.saveElement(
 ### saveScreen
 
 ```js
-driver.saveScreen("saveScreen");
+driver.saveScreen('saveScreen')
 ```
 
 #### IOS
@@ -123,7 +107,7 @@ driver.saveScreen("saveScreen");
 #### IOS
 
 ```js
-await driver.compareElement(await $("~selector"), "compareElement");
+await driver.compareElement(await $('~selector'), 'compareElement')
 ```
 
 ![iOS Logo diff](./assets/compareelement-iphone_x.png)
@@ -133,7 +117,7 @@ await driver.compareElement(await $("~selector"), "compareElement");
 #### ANDROID
 
 ```js
-await driver.compareElement(await $("~selector"), "compareElement");
+await driver.compareElement(await $('~selector'), 'compareElement')
 ```
 
 ![Android Logo diff](./assets/compareelement-pixel_8.1.png)
@@ -143,7 +127,7 @@ await driver.compareElement(await $("~selector"), "compareElement");
 #### IOS
 
 ```js
-await driver.compareScreen("compareScreen");
+await driver.compareScreen('compareScreen')
 ```
 
 ![iOS Home diff](./assets/comparescreen-iphone_x.png)
@@ -153,7 +137,7 @@ await driver.compareScreen("compareScreen");
 #### ANDROID
 
 ```js
-await driver.compareScreen("compareScreen");
+await driver.compareScreen('compareScreen')
 ```
 
 ![Android Home diff](./assets/comparescreen-pixel_8.1.png)
@@ -165,7 +149,7 @@ await driver.compareScreen("compareScreen");
 ### blockOuts
 
 ```js
-await driver.compareScreen("compareScreen-blockOuts", {
+await driver.compareScreen('compareScreen-blockOuts', {
     blockOuts: [
         // block out area 1
         {
@@ -182,7 +166,7 @@ await driver.compareScreen("compareScreen-blockOuts", {
             y: 400,
         },
     ],
-});
+})
 ```
 
 #### IOS
@@ -198,17 +182,17 @@ await driver.compareScreen("compareScreen-blockOuts", {
 ### elementBlockOuts
 
 ```js
-await driver.compareScreen("compareScreen-elementBlockOuts", {
+await driver.compareScreen('compareScreen-elementBlockOuts', {
     elementBlockOuts: [
         // block out element 1
-        { element: await $("~selector") },
+        { element: await $('~selector') },
         // block out element 2 (shorthand) with margin
         {
-            element: await $("~selector-2"),
+            element: await $('~selector-2'),
             margin: 50,
         },
     ],
-});
+})
 ```
 
 #### IOS
@@ -224,11 +208,11 @@ await driver.compareScreen("compareScreen-elementBlockOuts", {
 ### blockOutStatusBar || blockOutNavigationBar || blockOutIphoneHomeBar
 
 ```js
-await driver.compareScreen("compare-home-screen-element-blockouts", {
+await driver.compareScreen('compare-home-screen-element-blockouts', {
     blockOutStatusBar: true,
     blockOutNavigationBar: true,
     blockOutIphoneHomeBar: true,
-});
+})
 ```
 
 #### IOS

@@ -9,7 +9,9 @@ describe('takeElementScreenshot', () => {
             takeElementScreenshot: jest.fn().mockResolvedValue(imageString),
         }
 
-        expect(await takeElementScreenshot({ elementId: 1 }, 'file-path')).toEqual(imageString)
+        expect(
+            await takeElementScreenshot({ elementId: 1 }, 'file-path')
+        ).toEqual(imageString)
 
         global.driver = {
             takeElementScreenshot: jest.fn().mockRestore(),
@@ -18,10 +20,17 @@ describe('takeElementScreenshot', () => {
 
     it('should be able to take an element screenshot when the takeElementScreenshot API is not available', async () => {
         global.driver = {}
-        const takeResizedElementScreenshotSpy = jest.spyOn(ResizedElementScreenshot, 'takeResizedElementScreenshot').mockReturnValue(imageString)
+        const takeResizedElementScreenshotSpy = jest
+            .spyOn(ResizedElementScreenshot, 'takeResizedElementScreenshot')
+            .mockReturnValue(imageString)
 
-        expect(await takeElementScreenshot({ elementId: 1 }, 'file-path')).toEqual(imageString)
+        expect(
+            await takeElementScreenshot({ elementId: 1 }, 'file-path')
+        ).toEqual(imageString)
 
-        expect(takeResizedElementScreenshotSpy).toBeCalledWith({ elementId: 1 }, 'file-path')
+        expect(takeResizedElementScreenshotSpy).toBeCalledWith(
+            { elementId: 1 },
+            'file-path'
+        )
     })
 })

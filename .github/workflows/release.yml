@@ -4,13 +4,13 @@ on:
     workflow_dispatch:
         inputs:
             releaseType:
-                description: "Release type - major, minor or patch"
+                description: 'Release type - major, minor or patch'
                 required: true
-                default: "patch"
+                default: 'patch'
             distTag:
                 description: 'NPM tag (e.g. use "next" to release a test version)'
                 required: true
-                default: "latest"
+                default: 'latest'
 
 env:
     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -21,7 +21,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
               with:
-                  ref: "main"
+                  ref: 'main'
                   fetch-depth: 0
             - uses: actions/setup-node@v1
               with:

@@ -1,4 +1,4 @@
-import * as Screenshot  from '../../lib/methods/takeBase64Screenshot'
+import * as Screenshot from '../../lib/methods/takeBase64Screenshot'
 
 describe('takeBase64Screenshot', () => {
     it('should be able to take a screenshot', async () => {
