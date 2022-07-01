@@ -5,7 +5,7 @@
 
 Visual regression testing for Native iOS and Android apps with WebdriverIO
 
-> This service works with WebdriverIO V5 and V6. To check support for WebdriverIO V4 go to the [`0.7.0`](https://github.com/wswebcreation/wdio-native-app-compare/tree/0.7.0) branch and following the instructions
+> This service works with WebdriverIO V7 and higher.
 
 # What can it do
 
