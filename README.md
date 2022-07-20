@@ -1,7 +1,7 @@
 # wdio-native-app-compare
 
 [![npm version](https://badge.fury.io/js/wdio-native-app-compare-service.svg)](https://badge.fury.io/js/wdio-native-app-compare-service)
-[![License](https://img.shields.io/npm/l/express.svg)](https://github.com/wswebcreation/wdio-native-app-compare/blob/main/LICENSE)
+[![License](https://img.shields.io/npm/l/express.svg)](https://github.com/wswebcreation/wdio-native-app-compare/blob/main/LICENSE) [![Join the chat at https://gitter.im/wswebcreation/wdio-native-app-compare](https://badges.gitter.im/wswebcreation/wdio-native-app-compare.svg)](https://gitter.im/wswebcreation/wdio-native-app-compare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Visual regression testing for Native iOS and Android apps with WebdriverIO
 
