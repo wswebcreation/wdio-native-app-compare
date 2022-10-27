@@ -10,9 +10,10 @@ module.exports = {
         browser: true,
         driver: true,
     },
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
     parserOptions: {
         ecmaVersion: 2016,
+        requireConfigFile: false,
         sourceType: 'module',
     },
     rules: {
