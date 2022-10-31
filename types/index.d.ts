@@ -42,8 +42,8 @@ declare global {
 }
 
 interface PluginOptions extends CompareOptions, CompareScreenOptions {
-    baselineFolder: string
-    screenshotPath: string
+    baselineFolder?: string
+    screenshotPath?: string
     autoSaveBaseline?: boolean
     debug?: boolean
     imageNameFormat?: string
