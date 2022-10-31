@@ -48,14 +48,6 @@ interface PluginOptions extends CompareOptions, CompareScreenOptions {
     debug?: boolean
     imageNameFormat?: string
     savePerDevice?: boolean
-    output?: {
-        largeImageThreshold?: number
-        errorColor?: {
-            red: number
-            green: number
-            blue: number
-        }
-    }
 }
 
 interface SaveElementMethodOptions {
