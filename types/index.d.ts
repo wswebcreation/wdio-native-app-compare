@@ -126,4 +126,5 @@ interface CompareMethodOutput {
         diff: string
     }
     misMatchPercentage: number
+    baselineImageCreated: boolean
 }
