@@ -13,7 +13,7 @@ If no baseline image is found the image is automatically copied to the baselinef
 ### `baselineFolder`
 
 -   **Type:** `String`
--   **Mandatory:** Yes
+-   **Mandatory:** No
 
 The directory that will hold all the baseline images that are used to execute the comparison
 
@@ -178,7 +178,7 @@ Save the images per device in a separate folder
 ### `screenshotPath`
 
 -   **Type:** `String`
--   **Mandatory:** Yes
+-   **Mandatory:** No
 
 The directory that will hold all the actual / difference screenshots
 
