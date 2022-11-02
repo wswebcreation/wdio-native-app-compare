@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Options defaultCompareOptions should return the provided options if they are provided 1`] = `
-Object {
+{
   "blockOutIphoneHomeBar": true,
   "blockOutNavigationBar": true,
   "blockOutStatusBar": true,
-  "blockOuts": Array [],
+  "blockOuts": [],
   "debug": true,
-  "elementBlockOuts": Array [],
-  "ignore": Array [],
+  "elementBlockOuts": [],
+  "ignore": [],
   "ignoreAlpha": true,
   "ignoreAntialiasing": true,
   "ignoreColors": true,
   "ignoreLess": true,
   "ignoreNothing": true,
-  "output": Object {
-    "errorColor": Object {
+  "output": {
+    "errorColor": {
       "blue": 255,
       "green": 0,
       "red": 255,
@@ -28,21 +28,21 @@ Object {
 `;
 
 exports[`Options defaultCompareOptions should set the default options if no options are provided 1`] = `
-Object {
+{
   "blockOutIphoneHomeBar": false,
   "blockOutNavigationBar": false,
   "blockOutStatusBar": false,
-  "blockOuts": Array [],
+  "blockOuts": [],
   "debug": false,
-  "elementBlockOuts": Array [],
-  "ignore": Array [],
+  "elementBlockOuts": [],
+  "ignore": [],
   "ignoreAlpha": false,
   "ignoreAntialiasing": false,
   "ignoreColors": false,
   "ignoreLess": false,
   "ignoreNothing": false,
-  "output": Object {
-    "errorColor": Object {
+  "output": {
+    "errorColor": {
       "blue": 255,
       "green": 0,
       "red": 255,
@@ -55,7 +55,7 @@ Object {
 `;
 
 exports[`Options initOptions V5 should return the default baselineFolder if it is not provided 1`] = `
-Object {
+{
   "baselineFolder": "./baseline",
   "foo": 1,
   "screenshotPath": "./screenshotPath/",
@@ -63,15 +63,15 @@ Object {
 `;
 
 exports[`Options initOptions V5 should return the default screenshotPath if it is not provided 1`] = `
-Object {
+{
   "baselineFolder": "./somewhere/",
   "screenshotPath": "./.tmp/screenshots",
 }
 `;
 
 exports[`Options initOptions V5 should return the provided options if the baselineFolder and screenshotPath are provided 1`] = `
-Object {
-  "bar": Object {
+{
+  "bar": {
     "foo": 2,
   },
   "baselineFolder": "./baselineFolder/",
@@ -81,7 +81,7 @@ Object {
 `;
 
 exports[`Options initOptions V6 should return the default baselineFolder if it is not provided 1`] = `
-Object {
+{
   "baselineFolder": "./baseline",
   "foo": 1,
   "screenshotPath": "./screenshotPath/",
@@ -89,15 +89,15 @@ Object {
 `;
 
 exports[`Options initOptions V6 should return the default screenshotPath if it is not provided 1`] = `
-Object {
+{
   "baselineFolder": "./somewhere/",
   "screenshotPath": "./.tmp/screenshots",
 }
 `;
 
 exports[`Options initOptions V6 should return the provided options if the baselineFolder and screenshotPath are provided 1`] = `
-Object {
-  "bar": Object {
+{
+  "bar": {
     "foo": 2,
   },
   "baselineFolder": "./baselineFolder/",
@@ -107,42 +107,42 @@ Object {
 `;
 
 exports[`Options initOptions should set the default options if no options are provided 1`] = `
-Object {
+{
   "baselineFolder": "./baseline",
   "screenshotPath": "./.tmp/screenshots",
 }
 `;
 
-exports[`Options instanceCompareOptions should not return the provided instance ignore options if they are false 1`] = `Object {}`;
+exports[`Options instanceCompareOptions should not return the provided instance ignore options if they are false 1`] = `{}`;
 
-exports[`Options instanceCompareOptions should return nothing if no instance options are provided 1`] = `Object {}`;
+exports[`Options instanceCompareOptions should return nothing if no instance options are provided 1`] = `{}`;
 
 exports[`Options instanceCompareOptions should return the provided instance blockout options and resize dimensions if they are provided 1`] = `
-Object {
-  "blockOuts": Array [
-    Object {
+{
+  "blockOuts": [
+    {
       "height": 100,
       "width": 100,
       "x": 250,
       "y": 900,
     },
-    Object {
+    {
       "height": 25,
       "width": 75,
       "x": 50,
       "y": 400,
     },
   ],
-  "elementBlockOuts": Array [
-    Object {
+  "elementBlockOuts": [
+    {
       "element": "LoginScreen.loginButton",
     },
-    Object {
+    {
       "element": "LoginScreen.email",
       "margin": 50,
     },
   ],
-  "resizeDimensions": Object {
+  "resizeDimensions": {
     "bottom": 100,
     "left": 40,
     "right": 20,
@@ -152,7 +152,7 @@ Object {
 `;
 
 exports[`Options instanceCompareOptions should return the provided instance ignore options if they are true 1`] = `
-Object {
+{
   "blockOutIphoneHomeBar": true,
   "blockOutNavigationBar": true,
   "blockOutStatusBar": true,

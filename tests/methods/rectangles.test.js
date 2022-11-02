@@ -1,8 +1,7 @@
-import * as DeviceInfo from '../../lib/methods/getDeviceInfo'
 import { IMAGE_STRING } from '../mocks/mocks'
 
 describe('rectangles', () => {
-    let getDeviceInfoSpy, ignoreRectanglesOptions, Rectangles
+    let getDeviceInfoSpy, ignoreRectanglesOptions, Rectangles, DeviceInfo
 
     const deviceInfo = {
         dpr: 2,
@@ -42,6 +41,7 @@ describe('rectangles', () => {
     beforeEach(() => {
         jest.isolateModules(() => {
             Rectangles = require('../../lib/methods/rectangles')
+            DeviceInfo = require('../../lib/methods/getDeviceInfo')
         })
         delete global.driver
         delete global.$$

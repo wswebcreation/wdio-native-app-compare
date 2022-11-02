@@ -7,14 +7,14 @@ exports[`utils formatFileName should format a string when all capabilities are p
 exports[`utils formatFileName should format a string when no capabilities are provided 1`] = `"no-device-name-in-caps-no-orientation-in-caps-no-platform-name-in-caps-no-platform-version-in-caps.png"`;
 
 exports[`utils getScreenshotSize should be able to retrieve the screenshot size of an image 1`] = `
-Object {
+{
   "height": 1536,
   "width": 2732,
 }
 `;
 
 exports[`utils multiplyIosObjectValuesAgainstDPR should be able to return data back for Android 1`] = `
-Object {
+{
   "v": 0,
   "x": 1,
   "y": 2,
@@ -23,7 +23,7 @@ Object {
 `;
 
 exports[`utils multiplyIosObjectValuesAgainstDPR should be able to return data back for iOS 1`] = `
-Object {
+{
   "v": 0,
   "x": 3,
   "y": 6,

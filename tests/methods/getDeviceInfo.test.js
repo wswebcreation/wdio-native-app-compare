@@ -1,5 +1,4 @@
 import { IMAGE_STRING } from '../mocks/mocks'
-import * as Utils from '../../lib/helpers/utils'
 
 describe('getDeviceInfo', () => {
     let determineSmallIphoneSpy,
@@ -7,7 +6,8 @@ describe('getDeviceInfo', () => {
         determineMediumIphoneSpy,
         determineExtraLargeIphoneSpy,
         getDeviceInfo,
-        getScreenshotSizeSpy
+        getScreenshotSizeSpy,
+        Utils
     const screenData = {
         width: 10,
         height: 20,
@@ -15,8 +15,8 @@ describe('getDeviceInfo', () => {
 
     beforeEach(() => {
         jest.isolateModules(() => {
-            getDeviceInfo =
-                require('../../lib/methods/getDeviceInfo').getDeviceInfo
+            getDeviceInfo = require('../../lib/methods/getDeviceInfo').getDeviceInfo
+            Utils = require('../../lib/helpers/utils')
         })
         delete global.driver
         global.driver = {
