@@ -64,10 +64,7 @@
         ],
         "collectCoverage": true,
         "collectCoverageFrom": [
-            "lib/**",
-            "!lib/methods/addBlockOuts.js",
-            "!lib/methods/checkBaselineImageExists.js",
-            "!lib/methods/makeCroppedBase64Image.js"
+            "lib/**"
         ],
         "coverageThreshold": {
             "global": {

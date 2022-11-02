@@ -2,6 +2,7 @@
 
 exports[`compareElement should be able to return compare element data 1`] = `
 Object {
+  "baselineImageCreated": true,
   "fileName": "save-element-filename.png",
   "folders": Object {
     "actual": "usr/save-element-filename-folder",
@@ -12,6 +13,7 @@ Object {
 
 exports[`compareElement should be able to return compare screen data with instance options are provided 1`] = `
 Object {
+  "baselineImageCreated": true,
   "fileName": "save-element-filename.png",
   "folders": Object {
     "actual": "usr/save-element-filename-folder",

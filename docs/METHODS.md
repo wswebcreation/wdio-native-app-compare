@@ -87,11 +87,12 @@ The compare methods return an object like this:
         "baseline": "/Users/wswebcreation/wdio-native-app-compare/__tests__/e2e/image-baseline/iphone_8",
         "diff": "/Users/wswebcreation/wdio-native-app-compare/.tmp/image-compare/diff/iphone_8"
     },
-    "misMatchPercentage": 0
+    "misMatchPercentage": 0,
+    "baselineCreated": true
 }
 ```
 
-Based on this info the `misMatchPercentage` can be determined, how is is called and also where it can be found
+Based on this info the `misMatchPercentage` can be determined, how it is called and also where it can be found. The `baselineCreated` boolean will tell you if a new baseline was created. This will return true if `autoSaveBaseline` is set to true and no baseline existed yet.
 
 ### compareElement
 
