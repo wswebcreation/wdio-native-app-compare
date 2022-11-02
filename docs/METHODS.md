@@ -92,7 +92,7 @@ The compare methods return an object like this:
 }
 ```
 
-Based on this info the `misMatchPercentage` can be determined, how is is called and also where it can be found. The `baselineCreated` boolean will tell you if a new baseline was created. This will return true if `autoSaveBaseline` is set to true and no baseline existed yet.
+Based on this info the `misMatchPercentage` can be determined, how it is called and also where it can be found. The `baselineCreated` boolean will tell you if a new baseline was created. This will return true if `autoSaveBaseline` is set to true and no baseline existed yet.
 
 ### compareElement
 
