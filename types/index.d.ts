@@ -39,6 +39,12 @@ declare global {
 
         interface Element {}
     }
+
+    namespace jest {
+        interface Matchers<R> {
+            toMatchAppImageSnapshot(tag: string): R
+        }
+    }
 }
 
 interface PluginOptions extends CompareOptions, CompareScreenOptions {
