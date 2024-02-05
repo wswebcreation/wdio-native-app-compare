@@ -1,5 +1,9 @@
 # wdio-native-app-compare
 
+> [!IMPORTANT]  
+> This module has been archived and deprecated. If you want to keep using it please migrate to [`@wdio/visual-testing`]([https://github.com/webdriverio/visual-testing/releases/tag/webdriver-image-comparison%404.0.0](https://github.com/webdriverio/visual-testing/releases/tag/%40wdio%2Fvisual-service%402.0.0))
+
+
 [![npm version](https://badge.fury.io/js/wdio-native-app-compare-service.svg)](https://badge.fury.io/js/wdio-native-app-compare-service)
 [![License](https://img.shields.io/npm/l/express.svg)](https://github.com/wswebcreation/wdio-native-app-compare/blob/main/LICENSE) [![Join the chat at https://gitter.im/wswebcreation/wdio-native-app-compare](https://badges.gitter.im/wswebcreation/wdio-native-app-compare.svg)](https://gitter.im/wswebcreation/wdio-native-app-compare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
