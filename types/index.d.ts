@@ -39,6 +39,17 @@ declare global {
 
         interface Element {}
     }
+
+    namespace jest {
+        interface Matchers<T> {
+            toMatchAppImageSnapshot(
+                tag: string,
+                compoareOptions?:
+                    | CompareScreenMethodOptions
+                    | CompareElementMethodOptions
+            ): T
+        }
+    }
 }
 
 interface PluginOptions extends CompareOptions, CompareScreenOptions {
@@ -50,15 +61,15 @@ interface PluginOptions extends CompareOptions, CompareScreenOptions {
     savePerDevice?: boolean
 }
 
-interface SaveElementMethodOptions {
+export interface SaveElementMethodOptions {
     resizeDimensions?: ResizeDimensions
 }
 
-interface CompareElementMethodOptions extends CompareOptions {
+export interface CompareElementMethodOptions extends CompareOptions {
     resizeDimensions?: ResizeDimensions
 }
 
-interface CompareScreenMethodOptions
+export interface CompareScreenMethodOptions
     extends CompareOptions,
         CompareScreenOptions {
     elementBlockOuts?: ElementBlockOuts[]
